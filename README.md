@@ -56,7 +56,7 @@ git checkout main
 
 * faire avec sobriété ( pas trop d'animation )
 * baser le site web sur une couleur precise #436c7c (blanc par dessus)
-* utiliser les coleur de la charte
+* utiliser les couleurs de la charte
 
 * Header
 
