@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <div id="content-container">
+                <img id="headerlogojinnov" src="{{ url_for('static', filename='img/logo_jinnov_header.png') }}">
+                <ul>
+                    <a><li>
+                        Accueil
+                    </li></a>
+                    <a><li>
+                        Qui sommes nous ?
+                    </li> </a>
+                    <a><li>
+                        Nos news
+                    </li></a>
+                    <a><li>
+                        Nos etudes
+                    </li></a>
+                    <a><li>
+                        Nous contacter
+                    </li></a>
+                </ul>
+            </div>
+        </header>
+        {% block body %}{% endblock %}
+        <footer></footer>
+    </body>
+</html>
