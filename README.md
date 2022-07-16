@@ -42,9 +42,10 @@ Informations stockées concernant un membre de la junior :
 
 
 ## Traçage des utilisateurs du site
-Le fonctionnement est assez basique, lorsqu'il accède au site web, l'utilisateur reçoit un cookie aléatoire qu'il va garder tout le long de sa session. Le cookie va disparaître quand l'utilisateur fermera l'onglet.
+Le fonctionnement est assez basique, lorsqu'il accède au site web, l'utilisateur reçoit un cookie contenant un identifiant unique généré aléatoirement qu'il va garder tout le long de sa session. Le cookie va disparaître quand l'utilisateur fermera l'onglet.
 
 Informations stockées concernant un chemin de navigation d'un utilisateur anonyme :
+- Identifiant unique
 - Date de début
 - Date de fin
-- Chemin emprunté sous la forme d'une liste de nom de page séparés par des virgules (ex: home>etudes_passees>formulaire_etude)
+- Nom de la page visitée
