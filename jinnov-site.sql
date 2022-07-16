@@ -47,7 +47,7 @@ CREATE TABLE `membre` (
 
 DROP TABLE IF EXISTS `user_path`;
 CREATE TABLE `user_path` (
-  `id` varchar(45) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `session_id` varchar(45) NOT NULL,
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
