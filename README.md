@@ -1,66 +1,41 @@
-# SiteWeb2.0
+# Liste des fonctionnalités de la base de donnée
 
-## Créer un accès local à la repository 
+## Comptes administrateurs
+Les comptes administrateurs servent à avoir un accès à la partie administrateur du site, et de notamment créer, modifier ou supprimer des articles.
+<br>
+Informations stockées concernant un compte administrateur :
+- Un identifiant unique (nombre entier)
+- Son nom complet
+- Son adresse e-mail
+- Son mot de passe chiffré
+- Le sel du chiffrage de  son mot de passe 
 
-```
-git init
-git remote add origin https://gitlab.com/jinnov1/SiteWeb2.0.git
-git pull
-git checkout main
-```
+## Articles
+Informations stockées concernant un article :
+- Un identifiant unique (nombre entier)
+- L'identifiant unique de son créateur (nombre entier)
+- L'heure de publication
+- Le titre de l'article
+- Le corps de l'article
+- Les quelconques fichiers (images) attachés, sous forme d'une liste d'url
 
-## Résumé de la réunion du 06/06/2022
+La syntaxe du corps de l'article peut éventuellement être du markdown, du html ou alors un langage simplifié qui devra être traduit côté backend.
 
-### Fonctionalitées du site
+## Études
+Informations stockées concernant une étude qui va être publiée sur le site :
+- Un identifiant unique (nombre entier)
+- Une date (correspondant à la fin d'étude ?)
+- Le nom du client
+- Un lien (site web) du client
+- Corps de la description de l'étude (similaire au corps d'un article)
 
-* Formulaire pour faire un devis d'étude
-  * sur une page distincte
-  * mail + integration de monday
-  * +1 pour les etudiants
-    * infos pour convaincre les etudiants
-* Articles d'actualités
-  * page avec titre cliquable
-  * photo d'entête (optionel)
-  * video en bas de page + lien correctement affiché
-* Telechargement de la plaquette commercial
-* 2eme page articles pour les études (pas active au debut)
-* Page qui somme nous ? distincte
-* page nos membres qui liste les membres dynamiquements + desc pôles
-  * liste photo et desc de pôles
-* faire une bannière pour dire qu'on a pas de cookie
-* utiliser le système de cookie anonyme de flask pour tracer les chemins des utilisateurs
+## Membres de la junior
+Stocker les membres actifs de la junior permet d'avoir une liste facilement modifiable de ces derniers, par exemple dans le panel administrateur du site.
 
-### Contenu
-
-* Accueil
-  * Phrases de presentation + photo & Logo
-  * slogan
-  * bouton prospection sans scroll
-  * nos valeurs
-  * presentation des competences
-
-* Footer
-  * partenaires
-  * liste page
-
-* qui sommes nous ?
-  * Photo de groupe + presentation JINNOV + Presentation du mouvement 
-  * Bouton page des membres "notre equipe"
-  * vidéo de presentation
-  * temoiniage des membre + personne de l'ecole
-
-* ecriture inclusive
-
-
-### Idées de design
-
-* faire avec sobriété ( pas trop d'animation )
-* baser le site web sur une couleur precise #436c7c (blanc par dessus)
-* utiliser les couleurs de la charte
-
-* Header
-
-
-
-
-
+Informations stockées concernant un membre de la junior :
+- Son nom complet
+- Son email @jinnov-insa.fr
+- Son numéro de téléphone	
+- Le nom de son pôle
+- Le nom de son poste
+- Le lien de sa photo de profil
