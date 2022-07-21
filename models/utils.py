@@ -1,7 +1,6 @@
 import smtplib, ssl
 from flask import *
 from email.message import EmailMessage
-from email.mime.multipart import MIMEMultipart
 
 def mail_manager(message:str, sender_email:str, receiver_email:str, connection_token:str):
     """
@@ -14,7 +13,6 @@ def mail_manager(message:str, sender_email:str, receiver_email:str, connection_t
     """
     port = 465
     smtp_server = "smtp.gmail.com"
-    print(message)
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         server.login(sender_email,  connection_token)
@@ -28,6 +26,7 @@ def Mail_devis_create():
 
     #fetching data
     if request.method == 'POST':
+        #fetching data
         nom_entreprise:str = request.form.get('nom_entreprise')
         nom:str = request.form.get('nom')
         prenom:str = request.form.get('prenom')
@@ -47,9 +46,9 @@ def Mail_devis_create():
             """
 
         #mail connection informations
-        sender_email = 'jn.bonvent@gmail.com'
-        receiver_email = 'bonvent.jn@gmail.com'
-        connection_token = 'undzgoozsfvczgcx'
+        sender_email = ''
+        receiver_email = ''
+        connection_token = ''
 
         #mail creation
         msg = EmailMessage()
@@ -76,20 +75,20 @@ def Mail_student_create():
         prenom:str = request.form.get('prenom')
         telephone:str = request.form.get('téléphone')
         motivations:str =request.form.get('motivations')
-        post:str =request.form.get('Post')
         mail:str =request.form.get('mail')
+        annee:str = request.form.get('annee_etude')
 
         #mail connection informations
-        sender_email = 'jn.bonvent@gmail.com'
-        receiver_email = 'jn.bonvent@gmail.com'
-        connection_token = 'undzgoozsfvczgcx'
+        sender_email = ''
+        receiver_email = ''
+        connection_token = ''
 
         #message creation
         message = f"""
             Nom et prenom du contact = {nom} {prenom}
         Mail de contact = {mail}
         Téléphone = {telephone}
-        Poste = {post}
+        Année d'étude = {annee}
         Motivations = {motivations} """
 
         #mail creation
@@ -101,6 +100,5 @@ def Mail_student_create():
         msg.set_content(message)
 
         message = str(msg)
-        print('1')
         mail_manager(message, sender_email, receiver_email, connection_token)
         return redirect('/')
