@@ -1,11 +1,6 @@
 <html>
     <div class='mail'>
-        <form action="mail" id = 'mail_form' method="post">
-            <label>
-                Nom de l'entreprise:
-                <input type="text" name="nom_entreprise" id="nom_entreprise">
-            </label>
-    <br>
+        <form action="mail_student" id = 'mail_form_student' method="post">
             <label>
                 Nom:
                 <input type="text" name="nom" id="nom">
@@ -14,11 +9,6 @@
             <label>
                 prenom
                 <input type="text" name="prenom" id="prenom">
-            </label>
-            <br>
-            <label>
-                Adresse
-                <input type="text" name="Adresse" id="Adresse">
             </label>
             <br>
             <label>
@@ -32,8 +22,21 @@
             </label>
             <br>
             <label>
-                Détail de la demande <br>
-                <textarea name="contenu" id="contenu" cols="30" rows="10" number ='500000' form = 'mail_form'></textarea>
+                post
+                <select name="Post" >
+
+                    <option>Chargé SE </option>
+                    <option>Chargé RH </option>
+                    <option>Chargé SI </option>
+                    <option>Chargé Dev Co </option>
+                    <option>Chargé de communication </option>
+                
+                </select>
+            </label>
+            <br>
+            <label>
+                Pourquoi voulez vous ce poste ? <br>
+                <textarea name="motivations" id="motivations" cols="30" rows="10" number ='500000' form = 'mail_form_student'></textarea>
                 
             </label>
             <br>
