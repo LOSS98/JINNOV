@@ -47,9 +47,9 @@ def Mail_devis_create():
             """
 
         #mail connection informations
-        sender_email = 'jn.bonvent@gmail.com'
-        receiver_email = 'bonvent.jn@gmail.com'
-        connection_token = 'undzgoozsfvczgcx'
+        sender_email = ''
+        receiver_email = ''
+        connection_token = ''
 
         #mail creation
         msg = EmailMessage()
@@ -80,9 +80,9 @@ def Mail_student_create():
         mail:str =request.form.get('mail')
 
         #mail connection informations
-        sender_email = 'jn.bonvent@gmail.com'
-        receiver_email = 'jn.bonvent@gmail.com'
-        connection_token = 'undzgoozsfvczgcx'
+        sender_email = ''
+        receiver_email = ''
+        connection_token = ''
 
         #message creation
         message = f"""
