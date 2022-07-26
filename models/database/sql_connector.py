@@ -65,6 +65,7 @@ class SQLConnector:
         return [Admin(*r) for r in results]
 
     def get_user_path(self):
+        # LATER
         pass
 
     def upsert_etude(self, etude: Etude):
