@@ -1,7 +1,7 @@
 import mysql.connector
-from mysql.connector import errorcode, MySQLConnection, Error
+from mysql.connector import errorcode, MySQLConnection, Error, Cursor
 
-from models.database.objects import Admin, Etude, Article, Membre
+from models.database.objects import Admin, Etude, Article, Membre, UserPath
 
 
 # This class is used to connect to a database and execute SQL queries.
@@ -63,6 +63,72 @@ class SQLConnector:
         query += where_filter
         results = self.connection.cursor().execute(query, values).fetchall()
         return [Admin(*r) for r in results]
+
+    def get_user_path(self):
+        pass
+
+    def insert_etude(self, etude: Etude):
+        query = "INSERT INTO etude(created_at,customer_name,customer_link,body) VALUES (%s,%s,%s,%s)"
+        c: Cursor = self.connection.cursor()
+        c.execute(
+            query,
+            (etude.created_at, etude.customer_name, etude.customer_link, etude.body),
+        )
+        c.commit()
+
+    def insert_article(self, article: Article):
+        query = """INSERT INTO article(created_by,created_at,title,body,attachements)
+        VALUES (%s,%s,%s,%s,%s)"""
+        c: Cursor = self.connection.cursor()
+        c.execute(
+            query,
+            (
+                article.created_by,
+                article.created_at,
+                article.title,
+                article.body,
+                article.attachements,
+            ),
+        )
+        c.commit()
+
+    def insert_admin(self, admin: Admin):
+        query = "INSERT INTO admin(full_name,email,password,salt) VALUES (%s,%s,%s,%s)"
+        c: Cursor = self.connection.cursor()
+        c.execute(query, (admin.full_name, admin.email, admin.password, admin.salt))
+        c.commit()
+
+    def insert_membre(self, membre: Membre):
+        query = """INSERT INTO membre(first_name,last_name,email,phone_number,pole,poste,picture_path)
+        VALUES (%s,%s,%s,%s,%s,%s)"""
+        c: Cursor = self.connection.cursor()
+        c.execute(
+            query,
+            (
+                membre.first_name,
+                membre.last_name,
+                membre.email,
+                membre.phone_number,
+                membre.pole,
+                membre.poste,
+                membre.picture_path,
+            ),
+        )
+        c.commit()
+
+    def insert_user_path(self, user_path: UserPath):
+        query = "INSERT INTO user_path(session_id,start_date,end_date,page) VALUES (%s,%s,%s,%s)"
+        c: Cursor = self.connection.cursor()
+        c.execute(
+            query,
+            (
+                user_path.session_id,
+                user_path.start_date,
+                user_path.end_date,
+                user_path.page,
+            ),
+        )
+        c.commit()
 
     def create_where_filter(self, **kwargs) -> tuple[str, list]:
         """
