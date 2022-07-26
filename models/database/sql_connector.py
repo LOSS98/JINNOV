@@ -147,6 +147,30 @@ class SQLConnector:
         )
         c.commit()
 
+    def delete_etude(self, etude: Etude):
+        query = "DELETE FROM etude WHERE id=%s"
+        c: Cursor = self.connection.cursor()
+        c.execute(query, (etude.id,))
+        c.commit()
+
+    def delete_article(self, article: Article):
+        query = "DELETE FROM etude WHERE id=%s"
+        c: Cursor = self.connection.cursor()
+        c.execute(query, (article.id,))
+        c.commit()
+
+    def delete_admin(self, admin: Admin):
+        query = "DELETE FROM etude WHERE id=%s"
+        c: Cursor = self.connection.cursor()
+        c.execute(query, (admin.id,))
+        c.commit()
+
+    def delete_membre(self, membre: Membre):
+        query = "DELETE FROM etude WHERE id=%s"
+        c: Cursor = self.connection.cursor()
+        c.execute(query, (membre.id,))
+        c.commit()
+
     def create_where_filter(self, **kwargs) -> tuple[str, list]:
         """
         It takes a dictionary of key-value pairs, filters out the ones where the value is None, and
