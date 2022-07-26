@@ -68,7 +68,7 @@ class Membre:
 
 class UserPath:
     def __init__(
-        self, id: int, session_id: int, start_date: int, end_date: int, page: str
+        self, id: int, session_id: str, start_date: int, end_date: int, page: str
     ) -> None:
         self.id = id
         self.session_id = session_id

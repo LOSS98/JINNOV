@@ -67,22 +67,29 @@ class SQLConnector:
     def get_user_path(self):
         pass
 
-    def insert_etude(self, etude: Etude):
-        query = "INSERT INTO etude(created_at,customer_name,customer_link,body) VALUES (%s,%s,%s,%s)"
-        c: Cursor = self.connection.cursor()
-        c.execute(
-            query,
-            (etude.created_at, etude.customer_name, etude.customer_link, etude.body),
-        )
-        c.commit()
-
-    def insert_article(self, article: Article):
-        query = """INSERT INTO article(created_by,created_at,title,body,attachements)
-        VALUES (%s,%s,%s,%s,%s)"""
+    def upsert_etude(self, etude: Etude):
+        query = "REPLACE INTO etude(id,created_at,customer_name,customer_link,body) VALUES (%s,%s,%s,%s,%s)"
         c: Cursor = self.connection.cursor()
         c.execute(
             query,
             (
+                etude.id if etude.id is not None else "NULL",
+                etude.created_at,
+                etude.customer_name,
+                etude.customer_link,
+                etude.body,
+            ),
+        )
+        c.commit()
+
+    def upsert_article(self, article: Article):
+        query = """REPLACE INTO article(id,created_by,created_at,title,body,attachements)
+        VALUES (%s,%s,%s,%s,%s,%s)"""
+        c: Cursor = self.connection.cursor()
+        c.execute(
+            query,
+            (
+                article.id if article.id is not None else "NULL",
                 article.created_by,
                 article.created_at,
                 article.title,
@@ -92,14 +99,23 @@ class SQLConnector:
         )
         c.commit()
 
-    def insert_admin(self, admin: Admin):
-        query = "INSERT INTO admin(full_name,email,password,salt) VALUES (%s,%s,%s,%s)"
+    def upsert_admin(self, admin: Admin):
+        query = "REPLACE INTO admin(id,full_name,email,password,salt) VALUES (%s,%s,%s,%s,%s)"
         c: Cursor = self.connection.cursor()
-        c.execute(query, (admin.full_name, admin.email, admin.password, admin.salt))
+        c.execute(
+            query,
+            (
+                admin.id if admin.id is not None else "NULL",
+                admin.full_name,
+                admin.email,
+                admin.password,
+                admin.salt,
+            ),
+        )
         c.commit()
 
-    def insert_membre(self, membre: Membre):
-        query = """INSERT INTO membre(first_name,last_name,email,phone_number,pole,poste,picture_path)
+    def upsert_membre(self, membre: Membre):
+        query = """REPLACE INTO membre(first_name,last_name,email,phone_number,pole,poste,picture_path)
         VALUES (%s,%s,%s,%s,%s,%s)"""
         c: Cursor = self.connection.cursor()
         c.execute(
@@ -116,12 +132,13 @@ class SQLConnector:
         )
         c.commit()
 
-    def insert_user_path(self, user_path: UserPath):
-        query = "INSERT INTO user_path(session_id,start_date,end_date,page) VALUES (%s,%s,%s,%s)"
+    def upsert_user_path(self, user_path: UserPath):
+        query = "REPLACE INTO user_path(id,session_id,start_date,end_date,page) VALUES (%s,%s,%s,%s,%s)"
         c: Cursor = self.connection.cursor()
         c.execute(
             query,
             (
+                user_path.id if user_path.id is not None else "NULL",
                 user_path.session_id,
                 user_path.start_date,
                 user_path.end_date,
