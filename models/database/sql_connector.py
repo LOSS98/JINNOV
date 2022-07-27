@@ -36,17 +36,17 @@ class SQLConnector:
 
     def get_all_etudes(self) -> list[Etude]:
         query = "SELECT id,created_at,customer_name,customer_link,body FROM etude"
-        results = self.connection.cursor().execute(query).fetchall()
+        results = self.connection.cursor(prepared=True).execute(query).fetchall()
         return [Etude(*r) for r in results]
 
     def get_all_articles(self) -> list[Article]:
         query = "SELECT id,created_by,created_at,title,body,attachements FROM article"
-        results = self.connection.cursor().execute(query).fetchall()
+        results = self.connection.cursor(prepared=True).execute(query).fetchall()
         return [Article(*r) for r in results]
 
     def get_all_membres(self) -> list[Membre]:
         query = "SELECT first_name,last_name,email,phone_number,pole,poste,picture_path FROM membre"
-        results = self.connection.cursor().execute(query).fetchall()
+        results = self.connection.cursor(prepared=True).execute(query).fetchall()
         return [Membre(*r) for r in results]
 
     def get_admins(
@@ -61,7 +61,9 @@ class SQLConnector:
             id=id, full_name=full_name, email=email, password=password
         )
         query += where_filter
-        results = self.connection.cursor().execute(query, values).fetchall()
+        results = (
+            self.connection.cursor(prepared=True).execute(query, values).fetchall()
+        )
         return [Admin(*r) for r in results]
 
     def get_user_path(self):
@@ -70,7 +72,7 @@ class SQLConnector:
 
     def upsert_etude(self, etude: Etude):
         query = "REPLACE INTO etude(id,created_at,customer_name,customer_link,body) VALUES (%s,%s,%s,%s,%s)"
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(
             query,
             (
@@ -86,7 +88,7 @@ class SQLConnector:
     def upsert_article(self, article: Article):
         query = """REPLACE INTO article(id,created_by,created_at,title,body,attachements)
         VALUES (%s,%s,%s,%s,%s,%s)"""
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(
             query,
             (
@@ -102,7 +104,7 @@ class SQLConnector:
 
     def upsert_admin(self, admin: Admin):
         query = "REPLACE INTO admin(id,full_name,email,password,salt) VALUES (%s,%s,%s,%s,%s)"
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(
             query,
             (
@@ -118,7 +120,7 @@ class SQLConnector:
     def upsert_membre(self, membre: Membre):
         query = """REPLACE INTO membre(first_name,last_name,email,phone_number,pole,poste,picture_path)
         VALUES (%s,%s,%s,%s,%s,%s)"""
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(
             query,
             (
@@ -135,7 +137,7 @@ class SQLConnector:
 
     def upsert_user_path(self, user_path: UserPath):
         query = "REPLACE INTO user_path(id,session_id,start_date,end_date,page) VALUES (%s,%s,%s,%s,%s)"
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(
             query,
             (
@@ -150,25 +152,25 @@ class SQLConnector:
 
     def delete_etude(self, etude: Etude):
         query = "DELETE FROM etude WHERE id=%s"
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(query, (etude.id,))
         c.commit()
 
     def delete_article(self, article: Article):
         query = "DELETE FROM etude WHERE id=%s"
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(query, (article.id,))
         c.commit()
 
     def delete_admin(self, admin: Admin):
         query = "DELETE FROM etude WHERE id=%s"
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(query, (admin.id,))
         c.commit()
 
     def delete_membre(self, membre: Membre):
         query = "DELETE FROM etude WHERE id=%s"
-        c: Cursor = self.connection.cursor()
+        c: Cursor = self.connection.cursor(prepared=True)
         c.execute(query, (membre.id,))
         c.commit()
 
