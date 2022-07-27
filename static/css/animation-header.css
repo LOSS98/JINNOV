@@ -1,0 +1,101 @@
+@keyframes hover_a {
+    0% {
+      background: linear-gradient(90deg, #df8848 100%, #bd5b18 100%);
+    }
+    10% {
+        background: linear-gradient(90deg, #df8848 80%, #bd5b18 100%);
+    }
+    20% {
+        background: linear-gradient(90deg, #df8848 60%, #bd5b18 100%);
+    }
+    30% {
+        background: linear-gradient(90deg, #df8848 40%, #bd5b18 100%);
+    }
+    40% {
+        background: linear-gradient(90deg, #df8848 20%, #bd5b18 100%);
+    }
+    50% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 80%);
+    }
+    60% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 60%);
+    }
+    70% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 40%);
+    }
+    80% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 20%);
+    }
+    90% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+    }
+    100% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+    }
+  }
+
+  @keyframes hover_a2 {
+    0% {
+      background: linear-gradient(90deg, #df8848 100%, #bd5b18 100%);
+    }
+    10% {
+        background: linear-gradient(90deg, #df8848 80%, #bd5b18 100%);
+    }
+    20% {
+        background: linear-gradient(90deg, #df8848 60%, #bd5b18 100%);
+    }
+    30% {
+        background: linear-gradient(90deg, #df8848 40%, #bd5b18 100%);
+    }
+    40% {
+        background: linear-gradient(90deg, #df8848 20%, #bd5b18 100%);
+    }
+    50% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 80%);
+    }
+    60% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 60%);
+    }
+    70% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 40%);
+    }
+    80% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 20%);
+    }
+    90% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+    }
+    100% {
+        background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+    }
+  }
+
+@keyframes rollout{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 40%;
+    }
+}
+
+@keyframes fadein-nav-mobile{
+    0%{
+        opacity: 0%
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%
+    }
+}
+
+@keyframes rollin{
+    0%{
+        height: 40%;
+    }
+    100%{
+        height: 0%;
+    }
+}
