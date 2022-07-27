@@ -1,6 +1,3 @@
-from turtle import pos
-
-
 class Etude:
     def __init__(
         self,
