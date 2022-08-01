@@ -1,5 +1,5 @@
-from crypt import methods
-from flask import Blueprint, redirect, render_template, url_for, request
+from flask import Blueprint, flash, redirect, render_template, url_for, request
+from models import auth_manager
 
 auth = Blueprint("auth", __name__)
 
@@ -14,9 +14,22 @@ def login_post():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    return redirect(url_for("index"))
+    if auth_manager.login(email=email, password=password):
+        return redirect(url_for("index"))
+    else:
+        flash("Identifiants incorrects !")
+        return redirect(url_for("auth.login"))
 
 
 @auth.route("/logout")
 def logout():
-    return "Logout"
+    auth_manager.logout()
+    return redirect(url_for("index"))
+
+
+@auth.route("/profile")
+def profile():
+    user = auth_manager.get_current_user()
+    return render_template(
+        "profile.html", name=user.full_name if user is not None else None
+    )
