@@ -196,3 +196,6 @@ class SQLConnector:
                 filtered.values(),
             )
         return ""
+
+
+sql_connector: SQLConnector = None
