@@ -3,7 +3,7 @@ CREATE TABLE `admin` (
   `id` int NOT NULL AUTO_INCREMENT,
   `full_name` varchar(80) NOT NULL,
   `email` varchar(80) NOT NULL,
-  `password` varchar(80) NOT NULL,
+  `password` varchar(128) NOT NULL,
   `salt` varchar(16) NOT NULL,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8mb4;
@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL,
+  `created_by` INT NOT NULL,
   `title` varchar(45) NOT NULL,
   `body` longtext NOT NULL,
   `attachements` longtext,
