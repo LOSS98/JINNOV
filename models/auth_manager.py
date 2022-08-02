@@ -31,5 +31,6 @@ def is_connected(database_check: bool = False):
 
 def get_current_user():
     if is_connected(database_check=True):
-        return sql_connector.sql_connector.get_admins(email=session["account"])[0]
+        admins = sql_connector.sql_connector.get_admins(email=session["account"])
+        return admins[0] if len(admins) == 1 else None
     return None
