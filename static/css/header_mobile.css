@@ -1,124 +1,170 @@
-body{
-    background-color: grey;
+@media screen and (orientation : portrait) {
+    header{
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        height : 150px;
+        padding-top : 10px;
+        padding-right: 5%;
+        padding-left: 5%;
+        position: fixed;
+        top : 0;
+        right: 0;
+        left:0;
+        border-bottom;
+            border-bottom-width :  15px;
+            border-bottom-style: solid ;
+            border-bottom-color : #df8848;
+    }
+
+    #menubox{
+        margin-top: 1.5%;
+        height: 75%;
+        float : right !important;
+        border-style: none;
+        background-color: white;
+    }
+
+    #headerlogojinnov{
+        margin-top : 1%;
+        height: 80%;
+        float: left !important;
+    }
+
+    #navmenu{
+        display: none;
+    }
+
+    #navmenu.closed{
+        display: block;
+        background-color: white;
+        position:fixed;
+        left:0;
+        right:0;
+        top: 175px;
+        height: 0%;
+        animation: rollin 0.3s ease-out; 
+    }
+
+    #navmenu.open{
+        background-color: white;
+        font-family: 'Inter', sans-serif;
+        display:block;
+        position:fixed;
+        left:0;
+        right:0;
+        height: 750px;
+        top: 175px;
+        animation: rollout 0.3s ease-out; 
+    }
+
+    .closed ul {
+        display: none;
+    }
+
+    .open ul {
+        list-style: none;
+        margin-top: 7%;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .open li{
+        margin-top: 72px;
+        margin-bottom: 72px;
+    }
+
+    .open a{
+        color : black;
+        text-decoration : none;
+        padding-top: 30px;
+        padding-bottom:30px;
+        font-size: 300%;
+        animation: fadein-nav-mobile 0.5s linear;
+    }
+
+    .open a:visited{
+        color : black;
+    }
+
+    .icon-1, .icon-2, .icon-3 {
+        margin-top: 20px;
+        width: 90px;
+        height: 8px;
+        border-radius: 10px;
+        background-color: black;
+        transition: all 400ms cubic-bezier(.84,.06,.52,1.8);
+    }
+
+    .icon-1.a {
+        transform: rotate(45deg) translateY(30px) translateX(10px);
+    }
+    .icon-3.c {
+        transform: rotate(-45deg) translateY(-30px) translateX(10px);
+    }
+    .icon-2.b {
+        opacity: 0;
+    }
+
+    .clear {
+        clear: both;
+    }
+    
+
+    #contact-us-button{
+        color :white;
+        background-color: #df8848;
+        padding: 30px;
+        border-radius: 60px;
+    }
 }
 
-header{
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    height: 7%;
-    padding-top : 10px;
-    padding-right: 5%;
-    padding-left: 5%;
-    position: fixed;
-    top : 0;
-    right: 0;
-    left:0;
-    border-bottom;
-        border-bottom-width :  0.75rem;
-        border-bottom-style: solid ;
-        border-bottom-color : #df8848;
-    min-height: 120px;
-}
+@media screen and (max-height : 1500px) and (orientation : portrait){
+    header{
+        height: 100px;
+        border-bottom-width: 8px;
+    }
 
-#menubox{
-    margin-top: 1.5%;
-    height: 75%;
-    float : right !important;
-    border-style: none;
-    background-color: white;
-}
+    .icon-1, .icon-2, .icon-3 {
+        margin-top: 15px;
+        width: 75px;
+        height: 6px;
+    }
 
-#headerlogojinnov{
-    margin-top : 1%;
-    height: 80%;
-    float: left !important;
-}
+    .icon-1.a {
+        transform: rotate(45deg) translateY(15px) translateX(15px);
+    }
+    .icon-3.c {
+        transform: rotate(-45deg) translateY(-15px) translateX(15px);
+    }
 
-#navmenu{
-    display: none;
-}
+    #navmenu.closed{
+        top: 118px;
+    }
 
-#navmenu.closed{
-    display: block;
-    background-color: white;
-    position:fixed;
-    left:0;
-    right:0;
-    height: 0%;
-    top: max(calc(7% + 10px + 0.75rem),calc(130px + 0.75rem));
-    animation: rollin 0.3s ease-out; 
-}
+    #navmenu.open{
+        left:0;
+        right:0;
+        height: 500px;
+        top: 118px;
+        animation: rollout 0.3s ease-out; 
+    }
 
-#navmenu.open{
-    background-color: white;
-    font-family: 'Inter', sans-serif;
-    display:block;
-    position:fixed;
-    left:0;
-    right:0;
-    height: 38%;
-    top: max(calc(7% + 10px + 0.75rem),calc(130px + 0.75rem));
-    animation: rollout 0.3s ease-out; 
-}
+    .open a{
+        font-size: 200%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
-.closed ul {
-    display: none;
-}
+    #contact-us-button{
+        color :white;
+        background-color: #df8848;
+        padding: 15px;
+        border-radius: 40px;
+    }
 
-.open ul {
-    list-style: none;
-    margin-top: 7%;
-    text-align: center;
-    padding-left: 0px;
-}
+    .open li{
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
 
-.open li{
-    margin-top: 7%;
-    margin-bottom: 7%;
-}
-
-.open a{
-    color : black;
-    text-decoration : none;
-    padding-top: 7%;
-    padding-bottom:7%;
-    font-size: 300%;
-    animation: fadein-nav-mobile 0.5s linear;
-}
-
-.open a:visited{
-    color : black;
-}
-
-.icon-1, .icon-2, .icon-3 {
-    margin-top: 20px;
-    width: 90px;
-    height: 8px;
-    background-color: black;
-    transition: all 400ms cubic-bezier(.84,.06,.52,1.8);
-}
-
-.icon-1.a {
-    transform: rotate(45deg) translateY(30px) translateX(10px);
-}
-.icon-3.c {
-    transform: rotate(-45deg) translateY(-30px) translateX(10px);
-}
-.icon-2.b {
-    opacity: 0;
-}
-
-.clear {
-    clear: both;
-}
-  
-
-#contact-us-button{
-    color :white;
-    background-color: #df8848;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-radius: 60px;
 }
