@@ -99,3 +99,21 @@
         height: 0%;
     }
 }
+
+@keyframes fadeinheader1{
+    0%{
+        border-color: #df8848;
+    }
+    100%{
+        border-color: #ffffff;
+    }
+}
+
+@keyframes fadeinheader2{
+    0%{
+        border-color: #df8848;
+    }
+    100%{
+        border-color: #ffffff;
+    }
+}
