@@ -1,4 +1,4 @@
-@media screen and (orientation : landscape) {
+@media screen and (orientation : landscape) and (min-width : 750px) {
     body{
         min-width: 750px;
         margin: 0px;
@@ -30,11 +30,6 @@
             border-bottom-color : #df8848;
         animation: fadeinheader2 200ms linear reverse;
         
-    }
-
-    header.vanish {
-        border-bottom-color : #ffffff;
-        animation: fadeinheader1 200ms linear;
     }
 
     header #headerlogojinnov{
@@ -105,7 +100,7 @@
     }
 }
 
-@media screen and (max-width : 900px) and (orientation : landscape) {
+@media screen and (max-width : 900px) and (orientation : landscape) and (min-width : 750px) {
     header ul{
         padding-left: 0px;
     }
@@ -115,17 +110,8 @@
     }
 }
 
-@media screen and (max-width : 750px) and (orientation : landscape) {
-    body{ 
-        overflow-x: scroll;
-        white-space: nowrap;
-    }
-    header{
-        margin-right: -10px;
-    }
-}
 
-@media screen and (max-width : 1260px) and (orientation : landscape){
+@media screen and (max-width : 1260px) and (orientation : landscape) and (min-width : 750px){
     header nav{
         margin-left: auto;
         margin-right: auto;
