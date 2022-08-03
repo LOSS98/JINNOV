@@ -11,7 +11,7 @@ CREATE TABLE `admin` (
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `created_at` datetime NOT NULL,
+  `created_at` INT NOT NULL,
   `created_by` INT NOT NULL,
   `title` varchar(45) NOT NULL,
   `body` longtext NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE `article` (
 DROP TABLE IF EXISTS `etude`;
 CREATE TABLE `etude` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `created_at` datetime NOT NULL,
+  `created_at` INT NOT NULL,
   `customer_name` varchar(80) NOT NULL,
   `customer_link` varchar(80) NOT NULL,
   `body` longtext NOT NULL,
@@ -50,8 +50,8 @@ DROP TABLE IF EXISTS `user_path`;
 CREATE TABLE `user_path` (
   `id` int NOT NULL AUTO_INCREMENT,
   `session_id` varchar(45) NOT NULL,
-  `start_date` datetime NOT NULL,
-  `end_date` datetime NOT NULL,
+  `start_date` INT NOT NULL,
+  `end_date` INT NOT NULL,
   `page` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8mb4;

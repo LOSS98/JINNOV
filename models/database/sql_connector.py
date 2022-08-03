@@ -41,10 +41,17 @@ class SQLConnector:
         return [Etude(*r) for r in c.fetchall()]
 
     def get_all_articles(self) -> list[Article]:
-        query = "SELECT id,created_by,created_at,title,body,attachements FROM article"
+        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.attachements,admin.full_name FROM article a INNER JOIN admin ON a.created_by = admin.id"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Article(*r) for r in c.fetchall()]
+
+    def get_article(self, id):
+        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.attachements,admin.full_name FROM article a INNER JOIN admin ON a.created_by = admin.id WHERE a.id=%s LIMIT 1"
+        c = self.connection.cursor(prepared=True)
+        c.execute(query, (id,))
+        row = c.fetchone()
+        return Article(*row) if row is not None else None
 
     def get_all_membres(self) -> list[Membre]:
         query = "SELECT first_name,last_name,email,phone_number,pole,poste,picture_path FROM membre"
@@ -85,7 +92,7 @@ class SQLConnector:
                 etude.body,
             ),
         )
-        c.commit()
+        self.connection.commit()
 
     def upsert_article(self, article: Article):
         query = """REPLACE INTO article(id,created_by,created_at,title,body,attachements)
@@ -94,7 +101,7 @@ class SQLConnector:
         c.execute(
             query,
             (
-                article.id if article.id is not None else "NULL",
+                article.id,
                 article.created_by,
                 article.created_at,
                 article.title,
@@ -102,7 +109,7 @@ class SQLConnector:
                 article.attachements,
             ),
         )
-        c.commit()
+        self.connection.commit()
 
     def upsert_admin(self, admin: Admin):
         query = "REPLACE INTO admin(id,full_name,email,password,salt) VALUES (%s,%s,%s,%s,%s)"
@@ -117,7 +124,7 @@ class SQLConnector:
                 admin.salt,
             ),
         )
-        c.commit()
+        self.connection.commit()
 
     def upsert_membre(self, membre: Membre):
         query = """REPLACE INTO membre(first_name,last_name,email,phone_number,pole,poste,picture_path)
@@ -135,7 +142,7 @@ class SQLConnector:
                 membre.picture_path,
             ),
         )
-        c.commit()
+        self.connection.commit()
 
     def upsert_user_path(self, user_path: UserPath):
         query = "REPLACE INTO user_path(id,session_id,start_date,end_date,page) VALUES (%s,%s,%s,%s,%s)"
@@ -150,31 +157,31 @@ class SQLConnector:
                 user_path.page,
             ),
         )
-        c.commit()
+        self.connection.commit()
 
     def delete_etude(self, etude: Etude):
         query = "DELETE FROM etude WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (etude.id,))
-        c.commit()
+        self.connection.commit()
 
     def delete_article(self, article: Article):
-        query = "DELETE FROM etude WHERE id=%s"
+        query = "DELETE FROM article WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (article.id,))
-        c.commit()
+        self.connection.commit()
 
     def delete_admin(self, admin: Admin):
-        query = "DELETE FROM etude WHERE id=%s"
+        query = "DELETE FROM admin WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (admin.id,))
-        c.commit()
+        self.connection.commit()
 
     def delete_membre(self, membre: Membre):
-        query = "DELETE FROM etude WHERE id=%s"
+        query = "DELETE FROM membre WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (membre.id,))
-        c.commit()
+        self.connection.commit()
 
     def create_where_filter(self, **kwargs) -> tuple[str, list]:
         """
@@ -197,7 +204,7 @@ class SQLConnector:
                 " WHERE " + " AND ".join([f"{k}=%s" for k in filtered.keys()]),
                 list(filtered.values()),
             )
-        return ""
+        return "", []
 
 
 sql_connector: SQLConnector = None

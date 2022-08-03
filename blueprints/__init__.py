@@ -1,1 +1,1 @@
-from blueprints import auth
+from blueprints import auth, adminpanel
