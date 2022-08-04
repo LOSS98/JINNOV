@@ -1,4 +1,5 @@
 @media screen and (orientation : portrait), screen and (max-width : 750px) and (orientation : landscape) {
+
     header{
         font-family: 'Inter', sans-serif;
         background-color: #ffffff;
@@ -11,9 +12,13 @@
         right: 0;
         left:0;
         border-bottom;
-            border-bottom-width :  15px;
+            border-bottom-width :  10px;
             border-bottom-style: solid ;
             border-bottom-color : #df8848;
+    }
+
+    #filler{
+        height: 160px;
     }
 
     #menubox{
@@ -40,7 +45,7 @@
         position:fixed;
         left:0;
         right:0;
-        top: 175px;
+        top: 174px;
         height: 0%;
         animation: rollin 0.3s ease-out; 
     }
@@ -53,7 +58,7 @@
         left:0;
         right:0;
         height: 750px;
-        top: 175px;
+        top: 174px;
         animation: rollout 0.3s ease-out; 
     }
 
@@ -90,7 +95,7 @@
         margin-top: 20px;
         width: 90px;
         height: 8px;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: black;
         transition: all 400ms cubic-bezier(.84,.06,.52,1.8);
     }
@@ -122,6 +127,10 @@
     header{
         height: 100px;
         border-bottom-width: 8px;
+    }
+
+    #filler{
+        height: 108px;
     }
 
     .icon-1, .icon-2, .icon-3 {
@@ -172,7 +181,11 @@
 @media screen and (max-height : 1000px) and (orientation : portrait), screen and (max-width : 750px) and (max-height : 1000px) and (orientation : landscape){
     header{
         height: 70px;
-        border-bottom-width: 7px;
+        border-bottom-width: 5px;
+    }
+
+    #filler{
+        height: 75px;
     }
 
     .icon-1, .icon-2, .icon-3 {
@@ -186,10 +199,10 @@
     }
 
     .icon-1.a {
-        transform: rotate(45deg) translateY(6px) translateX(15px);
+        transform: rotate(45deg) translateY(15px) translateX(5px);
     }
     .icon-3.c {
-        transform: rotate(-45deg) translateY(-6px) translateX(15px);
+        transform: rotate(-45deg) translateY(-15px) translateX(5px);
     }
 
     #navmenu.closed{
@@ -222,9 +235,4 @@
         margin-bottom: 40px;
     }
 
-}
-
-header.vanish {
-    border-bottom-color : #ffffff;
-    animation: fadeinheader1 200ms linear;
 }

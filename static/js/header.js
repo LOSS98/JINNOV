@@ -10,17 +10,3 @@ element.addEventListener("mouseout",function(){
     element.classList.remove("anim");
     element.classList.add("classic");
 });
-
-
-window.onscroll = function(e) {
-    scroll = window.scrollY;
-    console.log(scroll);
-    if(scroll==0){
-        header = document.getElementById('header');
-        header.classList.remove('vanish');
-    }
-    else{
-        header = document.getElementById('header');
-        header.classList.add('vanish');
-    }
-}
