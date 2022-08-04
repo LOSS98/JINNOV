@@ -1,44 +1,47 @@
-<html>
-    <div class='mail'>
-        <form action="mail_student" id = 'mail_form_student' method="post">
-            <label>
-                Nom:
-                <input type="text" name="nom" id="nom">
-            </label>
-    <br>
-            <label>
-                prénom :
-                <input type="text" name="prenom" id="prenom">
-            </label>
-            <br>
-            <label>
-                Téléphone :
-                <input type="text" name="téléphone" id="téléphone">
-            </label>
-            <br>
-            <label>
-                Mail :
-                <input type="mail" name="mail" id="mail">
-            </label>
-            <br>
-            <label>
-                Année d'étude :
-                <select name = 'annee_etude'>
-                    <option> 1A </option>
-                    <option> 2A </option>
-                    <option> 3A </option>
-                    <option> 4A </option>
-                    <option> 5A </option>
-                </select>
-            </label>
-            <br>
-            <label>
-                Qu'est-ce qui t'intéresse chez Jinnov ? <br>
-                <textarea name="motivations" id="motivations" cols="30" rows="10" number ='500000' form = 'mail_form_student'></textarea>
-                
-            </label>
-            <br>
-                <input type="submit" value="Envoyer">
-        </form>
-    </div>
-</html>
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<div class='mail'>
+    <form action="mail_student" id = 'mail_form_student' method="post">
+        <label>
+            Nom:
+            <input type="text" name="nom" id="nom">
+        </label>
+<br>
+        <label>
+            prénom :
+            <input type="text" name="prenom" id="prenom">
+        </label>
+        <br>
+        <label>
+            Téléphone :
+            <input type="text" name="téléphone" id="téléphone">
+        </label>
+        <br>
+        <label>
+            Mail :
+            <input type="mail" name="mail" id="mail">
+        </label>
+        <br>
+        <label>
+            Année d'étude :
+            <select name = 'annee_etude'>
+                <option> 1A </option>
+                <option> 2A </option>
+                <option> 3A </option>
+                <option> 4A </option>
+                <option> 5A </option>
+            </select>
+        </label>
+        <br>
+        <label>
+            Qu'est-ce qui t'intéresse chez Jinnov ? <br>
+            <textarea name="motivations" id="motivations" cols="30" rows="10" number ='500000' form = 'mail_form_student'></textarea>
+            
+        </label>
+        <br>
+            <input type="submit" value="Envoyer">
+    </form>
+</div>
+{% endblock %}

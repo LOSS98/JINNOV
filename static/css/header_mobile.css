@@ -186,10 +186,10 @@
     }
 
     .icon-1.a {
-        transform: rotate(45deg) translateY(6px) translateX(15px);
+        transform: rotate(45deg) translateY(15px) translateX(5px);
     }
     .icon-3.c {
-        transform: rotate(-45deg) translateY(-6px) translateX(15px);
+        transform: rotate(-45deg) translateY(-15px) translateX(5px);
     }
 
     #navmenu.closed{
