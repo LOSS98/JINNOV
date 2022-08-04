@@ -16,6 +16,9 @@ class Etude:
         self.customer_link = customer_link
         self.body = body
 
+    def strDate(self):
+        return datetime.fromtimestamp(self.created_at).strftime("%d/%m/%Y")
+
 
 class Article:
     def __init__(

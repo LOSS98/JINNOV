@@ -9,66 +9,58 @@ adminpanel = Blueprint("adminpanel", __name__)
 # Articles
 
 
-@adminpanel.route("/articles")
-def articles():
+@adminpanel.route("/etudes")
+def etudes():
     return render_template(
-        "articles.html", articles=sql_connector.sql_connector.get_all_articles()
+        "etudes.html", etudes=sql_connector.sql_connector.get_all_etudes()
     )
 
 
-@adminpanel.route("/articles/<id>", methods=["GET"])
-def article(id):
-    article = sql_connector.sql_connector.get_article(id)
-    if article is not None:
-        return render_template("article.html", article=article)
+@adminpanel.route("/etudes/<id>", methods=["GET"])
+def etude(id):
+    etude = sql_connector.sql_connector.get_etude(id)
+    if etude is not None:
+        return render_template("etude.html", etude=etude)
     abort(404)
 
 
-@adminpanel.route("/articles/delete/<id>", methods=["GET"])
-def article_delete(id):
+@adminpanel.route("/etudes/delete/<id>", methods=["GET"])
+def etude_delete(id):
     if auth_manager.is_connected():
-        article = sql_connector.sql_connector.get_article(id)
-        if article is not None:
-            sql_connector.sql_connector.delete_article(article)
-            return redirect(url_for("adminpanel.articles"))
+        etude = sql_connector.sql_connector.get_etude(id)
+        if etude is not None:
+            sql_connector.sql_connector.delete_etude(etude)
+            return redirect(url_for("adminpanel.etudes"))
         abort(404)
     abort(401)
 
 
-@adminpanel.route("/new-article", methods=["GET"])
-def create_article():
+@adminpanel.route("/new-etude", methods=["GET"])
+def create_etude():
     if auth_manager.is_connected():
-        return render_template(
-            "article_form.html",
-            authors={
-                admin.id: admin.full_name
-                for admin in sql_connector.sql_connector.get_admins()
-            },
-        )
+        return render_template("etude_form.html")
     abort(401)
 
 
-@adminpanel.route("/new-article", methods=["POST"])
-def create_article_post():
+@adminpanel.route("/new-etude", methods=["POST"])
+def create_etude_post():
     if auth_manager.is_connected():
-        title = request.form.get("title")
+        customer_name = request.form.get("customer_name")
         body = request.form.get("body")
-        author = request.form.get("author")
+        customer_link = request.form.get("customer_link")
         date = request.form.get("date")
-        # TODO attachements
         if (
-            title is not None
+            customer_name is not None
             and body is not None
-            and author is not None
+            and customer_link is not None
             and date is not None
         ):
             try:
                 date = int(time.mktime(datetime.strptime(date, "%Y-%m-%d").timetuple()))
-                author = int(author)
-                sql_connector.sql_connector.upsert_article(
-                    objects.Article(None, author, date, title, body, None, None)
+                sql_connector.sql_connector.upsert_etude(
+                    objects.Etude(None, date, customer_name, customer_link, body)
                 )
-                return redirect(url_for("adminpanel.articles"))
+                return redirect(url_for("adminpanel.etudes"))
             except ValueError as _:
                 pass
         abort(400)

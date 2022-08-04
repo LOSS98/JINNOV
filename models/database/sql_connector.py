@@ -40,6 +40,13 @@ class SQLConnector:
         c.execute(query)
         return [Etude(*r) for r in c.fetchall()]
 
+    def get_etude(self, id) -> Etude:
+        query = "SELECT id,created_at,customer_name,customer_link,body FROM etude WHERE id=%s"
+        c = self.connection.cursor(prepared=True)
+        c.execute(query, (id,))
+        row = c.fetchone()
+        return Etude(*row) if row is not None else None
+
     def get_all_articles(self) -> list[Article]:
         query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.attachements,admin.full_name FROM article a INNER JOIN admin ON a.created_by = admin.id"
         c = self.connection.cursor(prepared=True)
@@ -85,7 +92,7 @@ class SQLConnector:
         c.execute(
             query,
             (
-                etude.id if etude.id is not None else "NULL",
+                etude.id,
                 etude.created_at,
                 etude.customer_name,
                 etude.customer_link,
@@ -117,7 +124,7 @@ class SQLConnector:
         c.execute(
             query,
             (
-                admin.id if admin.id is not None else "NULL",
+                admin.id,
                 admin.full_name,
                 admin.email,
                 admin.password,
@@ -150,7 +157,7 @@ class SQLConnector:
         c.execute(
             query,
             (
-                user_path.id if user_path.id is not None else "NULL",
+                user_path.id,
                 user_path.session_id,
                 user_path.start_date,
                 user_path.end_date,
