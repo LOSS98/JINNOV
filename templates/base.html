@@ -1,18 +1,19 @@
 <html>
     <head>
+        <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/header-fullsize.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/animation-header.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/header_mobile.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-fullsize.css') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
         {% block head %}{% endblock %}  
     </head>
     <body>
         <header id="header">
             <div id="content-container">
-                <img id="headerlogojinnov" src="{{ url_for('static', filename='img/logo_jinnov_header.png') }}">
+                <a href="{{url_for('index')}}"><img id="headerlogojinnov" src="{{ url_for('static', filename='img/logo_jinnov_header.png') }}"></a>
                 <div  id="menubox">
                     <div class="icon-1" id="menua"></div>
                     <div class="icon-2" id="menub"></div>
@@ -40,6 +41,7 @@
                 </nav>
             </div>
         </header>
+        <div id="filler"></div>
         {% block body %}{% endblock %}
         <footer>
             <div id="footer-container">
@@ -94,31 +96,34 @@
                 </div>
                 <div id="footer-second-column">
                     <h1>Partenaires</h1>
-
-                    <a href="https://junior-entreprises.com/">
-                        <img id="JE" src="{{url_for('static', filename='img/cnje.png')}}"/>
-                    </a>
-                    <a href="https://www.insa-hautsdefrance.fr/">
-                    <img src="{{url_for('static', filename='img/insahdf.png')}}"/>
-                    </a>
-                    <a href="https://www.epnak.org/">
-                        <img src="{{url_for('static', filename='img/epnak.png')}}"/>
-                    </a>
-                    <a href="https://centralelilleprojets.fr/">
-                        <img src="{{url_for('static', filename='img/CLP.png')}}"/>
-                    </a>
+                    <div class="footer-image-container">
+                        <a href="https://junior-entreprises.com/">
+                            <img id="JE" src="{{url_for('static', filename='img/cnje.png')}}"/>
+                        </a>
+                        <a href="https://www.insa-hautsdefrance.fr/">
+                        <img src="{{url_for('static', filename='img/insahdf.png')}}"/>
+                        </a>
+                        <a href="https://www.epnak.org/">
+                            <img src="{{url_for('static', filename='img/epnak.png')}}"/>
+                        </a>
+                        <a href="https://centralelilleprojets.fr/">
+                            <img src="{{url_for('static', filename='img/CLP.png')}}"/>
+                        </a>
+                    </div>
                 </div>
                 <div id="footer-third-column">
                     <h1>Nos liens</h1>
-                    <a href="https://www.linkedin.com/company/jinnov/">
-                        <img src="{{url_for('static',filename='img/linkedin.jpg')}}"/>
-                    </a>
-                    <a href="https://www.facebook.com/jinnov.insa/">
-                        <img src="{{url_for('static',filename='img/facebook.png')}}"/>
-                    </a>
-                    <a href="https://www.instagram.com/jinnov.insa/">
-                        <img src="{{url_for('static',filename='img/instagram.png')}}"/>
-                    </a>
+                    <div class="footer-image-container">
+                        <a href="https://www.linkedin.com/company/jinnov/">
+                            <img src="{{url_for('static',filename='img/linkedin.jpg')}}"/>
+                        </a>
+                        <a href="https://www.facebook.com/jinnov.insa/">
+                            <img src="{{url_for('static',filename='img/facebook.png')}}"/>
+                        </a>
+                        <a href="https://www.instagram.com/jinnov.insa/">
+                            <img src="{{url_for('static',filename='img/instagram.png')}}"/>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div id="legal-mentions">

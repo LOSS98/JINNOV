@@ -3,6 +3,10 @@
         min-width: 750px;
         margin: 0px;
     }
+
+    #filler{
+        height: 0px;
+    }
     
     #menubox{
         display: hidden;
@@ -25,11 +29,9 @@
         left:0;
         min-width: inherit;
         border-bottom;
-            border-bottom-width :  0.25rem;
+            border-bottom-width :  3px;
             border-bottom-style: solid ;
-            border-bottom-color : #df8848;
-        animation: fadeinheader2 200ms linear reverse;
-        
+            border-bottom-color : #df8848; 
     }
 
     header #headerlogojinnov{
@@ -40,7 +42,7 @@
     }
 
     header ul {
-        margin-top : 30px;
+        margin-top : 10px;
         display: flex;
     }
 
