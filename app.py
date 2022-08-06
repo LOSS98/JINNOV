@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from models.database import sql_connector
-
+from models.utils import *
 import os
 import blueprints
 
@@ -18,12 +18,12 @@ def devisform():
 #route pour la création de devis
 @app.route('/mail_devis', methods=["POST"])
 def mail_devis():
-    return Mail_devis_create()
+    return create_mail_devis()
     
 #route pour la création d"une demande d'inscriptions
 @app.route('/mail_student', methods=["POST"])
 def mail_student():
-    return Mail_student_create()
+    return create_mail_student()
 
 @app.route('/')
 def index():

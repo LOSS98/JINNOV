@@ -1,48 +1,37 @@
 {% extends "base.html" %}
 {% block head %}
 <title>JINNOV | Demander un devis</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/devis.css')}}">
 {% endblock %}
 {% block body %}
-<div class='mail'>
-    <form action="mail_devis" id = 'mail_form_devis' method="post">
-        <label>
-            Nom de l'entreprise (optionnel):
+<div id="fancy-title">
+    <h1>Demander un devis</h1>
+</div>
+<div id='formulaire'>
+    <form action="{{url_for('mail_devis')}}" id ='mail_form_devis' method="post">
+        <label>Nom de l'entreprise (optionnel)
             <input type="text" name="nom_entreprise" id="nom_entreprise">
         </label>
-<br>
-        <label>
-            Nom:
-            <input type="text" name="nom" id="nom">
+        <div id="names">
+            <label class="margin">Nom *
+                <input type="text" name="nom" id="nom">
+            </label>
+            <label>Prénom *
+                <input type="text" name="prenom" id="prenom">
+            </label>
+        </div>
+        <div id="contact">
+            <label class="margin">Téléphone *
+                <input type="text" name="téléphone" id="téléphone">
+            </label>
+            <label>Email *
+                <input type="mail" name="mail" id="mail">
+            </label>
+        </div>
+        <label id="Textarea">Détail de la demande *
+            <textarea name="contenu" id="contenu" cols="30" rows="10" number ='500000' form = 'mail_form_devis' placeholder="Votre message"></textarea>
         </label>
-<br>
-        <label>
-            Prénom :
-            <input type="text" name="prenom" id="prenom">
-        </label>
-        <br>
-        <label>
-            Adresse  (optionnel) :
-            <input type="text" name="Adresse" id="Adresse">
-        </label>
-        <br>
-        <label>
-            Téléphone :
-            <input type="text" name="téléphone" id="téléphone">
-        </label>
-        <br>
-        <label>
-            mail :
-            <input type="mail" name="mail" id="mail">
-        </label>
-        <br>
-        <label>
-            Détail de la demande :
-            <br>
-            <textarea name="contenu" id="contenu" cols="30" rows="10" number ='500000' form = 'mail_form_devis'></textarea>
-            
-        </label>
-        <br>
-        <input type="submit" value="Envoyer">
+        <input type="submit" value="Envoyer" id="button">
     </form>
 </div>
 {% endblock %}

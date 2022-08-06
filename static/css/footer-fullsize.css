@@ -4,7 +4,7 @@ footer {
     border-top-width: 1px;
     border-top-color: #96a8b0;
     border-top-style: solid;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     margin-bottom: 15px;
 }
 
