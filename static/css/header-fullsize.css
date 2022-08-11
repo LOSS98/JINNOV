@@ -1,6 +1,6 @@
 @media screen and (orientation : landscape) and (min-width : 750px) {
     body{
-        min-width: 750px;
+        min-width: 700px;
         margin: 0px;
     }
 
@@ -122,5 +122,16 @@
     }
     header ul{
         width: 700px;
+    }
+    header {
+        padding-top: 0px ;
+    }
+    
+    header #headerlogojinnov{
+        margin-top: -10px;;
+    }
+
+    header nav ul {
+        margin-top: 0px;
     }
 }
