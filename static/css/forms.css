@@ -130,8 +130,8 @@ label#select{
 
 @media screen and (orientation : portrait), screen and (max-width : 750px) and (orientation : landscape){
     #formulaire{
-        margin-left : 5%;
-        margin-right: 5%;
+        margin-left : 7%;
+        margin-right: 7%;
     }  
 
     #formulaire form > label{
@@ -167,6 +167,10 @@ label#select{
         border-radius: 20px;
     }
 
+    label#smoltext{
+        font-size: 240% !important;
+    }
+
     #formulaire {
         margin-bottom: 400px;
     }
@@ -182,6 +186,7 @@ label#select{
     textarea{
         height: 800px !important;
         border-radius: 20px !important;
+        margin-top: 20px !important;
     }
 
     main h1{
@@ -202,7 +207,6 @@ label#select{
     }
     
     label#select{
-    
         padding-top : 0px ;
         height: 70px;
         margin-bottom : 80px;
