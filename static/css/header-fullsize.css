@@ -42,12 +42,14 @@
     }
 
     header ul {
+        z-index: 1000;
         margin-top : 10px;
         display: flex;
     }
 
     header li {
         list-style: none;
+        z-index: inherit;
     }
 
     header a {
@@ -84,11 +86,6 @@
         background: #bd5b18;
         animation : hover_a 0.15s ease-in-out;
         animation-direction: normal;
-    }
-
-    .placeholder{
-        height: 1000px;
-        min-width: inherit;
     }
 }
 
@@ -134,4 +131,8 @@
     header nav ul {
         margin-top: 0px;
     }
+}
+
+header{
+    background-color: white;
 }
