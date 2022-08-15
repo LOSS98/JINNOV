@@ -1,7 +1,12 @@
 button2 = document.getElementById('scroll');
 var state = 0;
 button2.addEventListener('click', function(){
-    console.log('zizi');
-    var h = window.innerHeight; 
-    window.scroll(0,h*1.12);
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    if(w > 1260){
+        window.scroll(0,h*1.12);
+    }
+    else if(w < 1260 ||(h < 1000 && h > w)){
+        window.scroll(0,h*1.02);
+    }
 });
