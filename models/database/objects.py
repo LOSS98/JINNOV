@@ -25,6 +25,7 @@ class Article:
         created_at: int,
         title: str,
         body: str,
+        image: str,
         attachements: str,
         author_name: str,
     ) -> None:
@@ -33,6 +34,7 @@ class Article:
         self.created_at = created_at
         self.title = title
         self.body = body
+        self.image = image
         self.attachements = attachements
         self.author_name = author_name
 
@@ -54,6 +56,7 @@ class Admin:
 class Membre:
     def __init__(
         self,
+        id: int,
         first_name: str,
         last_name: str,
         email: str,
@@ -62,6 +65,7 @@ class Membre:
         poste: str,
         picture_path: str,
     ) -> None:
+        self.id = id
         self.first_name = first_name
         self.last_name = last_name
         self.email = email

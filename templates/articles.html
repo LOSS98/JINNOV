@@ -11,6 +11,7 @@
 
     {% for article in articles %}
     <a href="{{url_for('adminpanel.article', id=article.id)}}">
+      <img src="{{url_for('static', filename=article.image)}}" height="100px">
       <h1>{{article.title}}</h1>
       <span>Par : {{article.author_name}} le {{article.strDate()}}</span>
     </a>

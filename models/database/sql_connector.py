@@ -41,20 +41,20 @@ class SQLConnector:
         return [Etude(*r) for r in c.fetchall()]
 
     def get_all_articles(self) -> list[Article]:
-        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.attachements,admin.full_name FROM article a INNER JOIN admin ON a.created_by = admin.id"
+        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM article a INNER JOIN membre ON a.created_by = membre.id"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Article(*r) for r in c.fetchall()]
 
     def get_article(self, id):
-        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.attachements,admin.full_name FROM article a INNER JOIN admin ON a.created_by = admin.id WHERE a.id=%s LIMIT 1"
+        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM article a INNER JOIN membre ON a.created_by = membre.id WHERE a.id=%s LIMIT 1"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (id,))
         row = c.fetchone()
         return Article(*row) if row is not None else None
 
     def get_all_membres(self) -> list[Membre]:
-        query = "SELECT first_name,last_name,email,phone_number,pole,poste,picture_path FROM membre"
+        query = "SELECT id,first_name,last_name,email,phone_number,pole,poste,picture_path FROM membre"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Membre(*r) for r in c.fetchall()]
@@ -95,8 +95,8 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_article(self, article: Article):
-        query = """REPLACE INTO article(id,created_by,created_at,title,body,attachements)
-        VALUES (%s,%s,%s,%s,%s,%s)"""
+        query = """REPLACE INTO article(id,created_by,created_at,title,body,image,attachements)
+        VALUES (%s,%s,%s,%s,%s,%s,%s)"""
         c = self.connection.cursor(prepared=True)
         c.execute(
             query,
@@ -106,6 +106,7 @@ class SQLConnector:
                 article.created_at,
                 article.title,
                 article.body,
+                article.image,
                 article.attachements,
             ),
         )
@@ -127,12 +128,13 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_membre(self, membre: Membre):
-        query = """REPLACE INTO membre(first_name,last_name,email,phone_number,pole,poste,picture_path)
-        VALUES (%s,%s,%s,%s,%s,%s)"""
+        query = """REPLACE INTO membre(id,first_name,last_name,email,phone_number,pole,poste,picture_path)
+        VALUES (%s,%s,%s,%s,%s,%s,%s)"""
         c = self.connection.cursor(prepared=True)
         c.execute(
             query,
             (
+                membre.id,
                 membre.first_name,
                 membre.last_name,
                 membre.email,
