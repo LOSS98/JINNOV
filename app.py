@@ -14,6 +14,10 @@ def index():
 
 
 if __name__ == "__main__":
+    # Dirs
+    os.makedirs("static/articles", exist_ok=True)
+    os.makedirs("static/etudes", exist_ok=True)
+
     # Database System
     sql_connector.sql_connector = sql_connector.SQLConnector(
         host="127.0.0.1", user="root", password="", database="jinnov"

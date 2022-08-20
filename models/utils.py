@@ -4,6 +4,9 @@ from flask import request, redirect
 from email.message import EmailMessage
 
 
+ALLOWED_EXTENSIONS = ["png", "jpg", "jpeg", "gif", "jfif", "pjpeg", "jpeg", "pjp"]
+
+
 def send_mail(
     message: str, sender_email: str, receiver_email: str, connection_token: str
 ):

@@ -10,11 +10,18 @@
   <body>
     
 
-    <form method="POST" action="{{url_for('adminpanel.create_etude_post')}}">
+    <form enctype="multipart/form-data" method="POST" action="{{url_for('adminpanel.create_etude_post')}}">
+        <input type="file" name="icon" accept="image/png, image/gif, image/jpeg" required/>
         <input type="text" name="customer_name" placeholder="Nom du client" required>
         <input type="url" name="customer_link" placeholder="Site du client" required>
         <textarea name="body" placeholder="Texte" rows="20" cols="40" required></textarea>
+        <select name="author">
+          {% for id,name in authors.items() %}
+          <option value="{{id}}">{{name}}</option>
+          {% endfor %}
+        </select>
         <input type="date" name="date" required>
+        <input type="file" name="attachements" multiple accept="image/png, image/gif, image/jpeg">
         <input type="submit" value="Poster l'étude"/>
     </form>
 

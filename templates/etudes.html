@@ -11,8 +11,9 @@
 
     {% for etude in etudes %}
     <a href="{{url_for('adminpanel.etude', id=etude.id)}}">
+      <img src="{{url_for('static', filename=etude.image)}}" height="100px">
       <h1>{{etude.customer_name}}</h1>
-      <span>Le {{etude.strDate()}}</span>
+      <span>Par : {{etude.author_name}} Le {{etude.strDate()}}</span>
     </a>
     {% endfor %}
 

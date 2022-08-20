@@ -6,15 +6,23 @@ class Etude:
         self,
         id: int,
         created_at: int,
+        created_by: int,
         customer_name: str,
         customer_link: str,
         body: str,
+        image: str,
+        attachements: str,
+        author_name: str,
     ) -> None:
         self.id = id
         self.created_at = created_at
+        self.created_by = created_by
         self.customer_name = customer_name
         self.customer_link = customer_link
         self.body = body
+        self.image = image
+        self.attachements = attachements
+        self.author_name = author_name
 
     def strDate(self):
         return datetime.fromtimestamp(self.created_at).strftime("%d/%m/%Y")
@@ -28,6 +36,7 @@ class Article:
         created_at: int,
         title: str,
         body: str,
+        image: str,
         attachements: str,
         author_name: str,
     ) -> None:
@@ -36,6 +45,7 @@ class Article:
         self.created_at = created_at
         self.title = title
         self.body = body
+        self.image = image
         self.attachements = attachements
         self.author_name = author_name
 
@@ -57,6 +67,7 @@ class Admin:
 class Membre:
     def __init__(
         self,
+        id: int,
         first_name: str,
         last_name: str,
         email: str,
@@ -64,7 +75,9 @@ class Membre:
         pole: str,
         poste: str,
         picture_path: str,
+        active: bool,
     ) -> None:
+        self.id = id
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
@@ -72,6 +85,7 @@ class Membre:
         self.pole = pole
         self.poste = poste
         self.picture_path = picture_path
+        self.active = active
 
 
 class UserPath:

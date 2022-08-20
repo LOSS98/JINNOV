@@ -8,30 +8,9 @@ CREATE TABLE `admin` (
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8mb4;
 
-DROP TABLE IF EXISTS `article`;
-CREATE TABLE `article` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `created_at` INT NOT NULL,
-  `created_by` INT NOT NULL,
-  `title` varchar(45) NOT NULL,
-  `body` longtext NOT NULL,
-  `attachements` longtext,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`created_by`) REFERENCES `admin` (`id`)
-) DEFAULT CHARSET=utf8mb4;
-
-DROP TABLE IF EXISTS `etude`;
-CREATE TABLE `etude` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `created_at` INT NOT NULL,
-  `customer_name` varchar(80) NOT NULL,
-  `customer_link` varchar(80) NOT NULL,
-  `body` longtext NOT NULL,
-  PRIMARY KEY (`id`)
-) DEFAULT CHARSET=utf8mb4;
-
 DROP TABLE IF EXISTS `membre`;
 CREATE TABLE `membre` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(80) NOT NULL,
   `first_name` varchar(80) NOT NULL,
   `last_name` varchar(80) NOT NULL,
@@ -39,11 +18,35 @@ CREATE TABLE `membre` (
   `pole` varchar(45) NOT NULL,
   `poste` varchar(45) NOT NULL,
   `picture_path` varchar(80) NOT NULL,
-  PRIMARY KEY (`email`),
-  UNIQUE KEY `first_name_UNIQUE` (`first_name`),
-  UNIQUE KEY `last_name_UNIQUE` (`last_name`),
-  UNIQUE KEY `phone_number_UNIQUE` (`phone_number`),
-  UNIQUE KEY `picture_path_UNIQUE` (`picture_path`)
+  `active` TINYINT,
+  PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE `article` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `created_at` INT NOT NULL,
+  `created_by` INT NOT NULL,
+  `title` varchar(45) NOT NULL,
+  `body` longtext NOT NULL,
+  `image`longtext NOT NULL,
+  `attachements` longtext,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`created_by`) REFERENCES `membre` (`id`)
+) DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS `etude`;
+CREATE TABLE `etude` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `created_at` INT NOT NULL,
+  `created_by` INT NOT NULL,
+  `customer_name` varchar(80) NOT NULL,
+  `customer_link` varchar(80) NOT NULL,
+  `body` longtext NOT NULL,
+  `image`longtext NOT NULL,
+  `attachements` longtext,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`created_by`) REFERENCES `membre` (`id`)
 ) DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `user_path`;
