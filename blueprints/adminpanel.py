@@ -1,4 +1,5 @@
 from datetime import datetime
+import shutil
 import time
 import os
 from traceback import format_exc
@@ -32,7 +33,7 @@ def article_delete(id):
         article = sql_connector.sql_connector.get_article(id)
         if article is not None:
             sql_connector.sql_connector.delete_article(article)
-            os.remove("static/" + article.image)
+            shutil.rmtree("static/articles/" + article.image.split("/")[1])
             return redirect(url_for("adminpanel.articles"))
         abort(404)
     abort(401)
@@ -59,7 +60,7 @@ def create_article_post():
         body = request.form.get("body")
         author = request.form.get("author")
         date = request.form.get("date")
-        # TODO attachements
+        attachements = request.files.getlist("attachements")
         if (
             title is not None
             and image is not None
@@ -68,17 +69,35 @@ def create_article_post():
             and date is not None
         ):
             try:
+                now = int(time.time_ns())
+                os.makedirs(f"static/articles/{now}", exist_ok=True)
                 extension = os.path.splitext(image.filename)[1][1:].lower()
                 if extension in utils.ALLOWED_EXTENSIONS:
-                    image_path = f"articles/image_{time.time_ns()}.{extension}"
+                    image_path = f"articles/{now}/image.{extension}"
                     image.save("static/" + image_path)
+                    attachements_path = []
+                    for i in range(len(attachements)):
+                        extension = os.path.splitext(image.filename)[1][1:].lower()
+                        if extension in utils.ALLOWED_EXTENSIONS:
+                            extra_path = f"articles/{now}/attachement_{i}.{extension}"
+                            attachements[i].save("static/" + extra_path)
+                            attachements_path.append(extra_path)
+                        else:
+                            abort(400)
                     date = int(
                         time.mktime(datetime.strptime(date, "%Y-%m-%d").timetuple())
                     )
                     author = int(author)
                     sql_connector.sql_connector.upsert_article(
                         objects.Article(
-                            None, author, date, title, body, image_path, None, None
+                            None,
+                            author,
+                            date,
+                            title,
+                            body,
+                            image_path,
+                            ",".join(attachements_path),
+                            None,
                         )
                     )
                     return redirect(url_for("adminpanel.articles"))
