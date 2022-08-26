@@ -1,4 +1,5 @@
 from datetime import datetime
+import shutil
 import time
 import os
 from traceback import format_exc
@@ -32,6 +33,7 @@ def etude_delete(id):
     if auth_manager.is_connected():
         etude = sql_connector.sql_connector.get_etude(id)
         if etude is not None:
+            shutil.rmtree("static/etudes/" + etude.image.split("/")[1])
             sql_connector.sql_connector.delete_etude(etude)
             return redirect(url_for("adminpanel.etudes"))
         abort(404)
@@ -55,12 +57,12 @@ def create_etude():
 def create_etude_post():
     if auth_manager.is_connected():
         customer_name = request.form.get("customer_name")
-        image = request.files.get("icon")
+        image = request.files.get("image")
         body = request.form.get("body")
         customer_link = request.form.get("customer_link")
         author = request.form.get("author")
         date = request.form.get("date")
-        # TODO attachements
+        attachements = request.files.getlist("attachements")
         if (
             customer_name is not None
             and image is not None
@@ -70,14 +72,25 @@ def create_etude_post():
             and date is not None
         ):
             try:
+                now = int(time.time_ns())
+                os.makedirs(f"static/etudes/{now}", exist_ok=True)
                 extension = os.path.splitext(image.filename)[1][1:].lower()
                 if extension in utils.ALLOWED_EXTENSIONS:
-                    image_path = f"etudes/image_{time.time_ns()}.{extension}"
+                    image_path = f"etudes/{now}/image.{extension}"
                     image.save("static/" + image_path)
-
+                    attachements_path = []
+                    for i in range(len(attachements)):
+                        extension = os.path.splitext(image.filename)[1][1:].lower()
+                        if extension in utils.ALLOWED_EXTENSIONS:
+                            extra_path = f"etudes/{now}/attachement_{i}.{extension}"
+                            attachements[i].save("static/" + extra_path)
+                            attachements_path.append(extra_path)
+                        else:
+                            abort(400)
                     date = int(
                         time.mktime(datetime.strptime(date, "%Y-%m-%d").timetuple())
                     )
+                    author = int(author)
                     sql_connector.sql_connector.upsert_etude(
                         objects.Etude(
                             None,
