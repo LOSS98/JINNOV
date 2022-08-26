@@ -56,7 +56,7 @@ def create_article():
 def create_article_post():
     if auth_manager.is_connected():
         title = request.form.get("title")
-        image = request.files.get("icon")
+        image = request.files.get("image")
         body = request.form.get("body")
         author = request.form.get("author")
         date = request.form.get("date")
