@@ -50,8 +50,8 @@ DROP TABLE IF EXISTS `user_path`;
 CREATE TABLE `user_path` (
   `id` int NOT NULL AUTO_INCREMENT,
   `session_id` varchar(45) NOT NULL,
-  `start_date` datetime NOT NULL,
-  `end_date` datetime NOT NULL,
+  `start_date` INT NOT NULL,
+  `end_date` INT,
   `page` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8mb4;
