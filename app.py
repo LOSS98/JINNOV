@@ -33,6 +33,7 @@ if __name__ == "__main__":
     # Register blueprints
     app.register_blueprint(blueprints.auth.auth)
     app.register_blueprint(blueprints.adminpanel.adminpanel)
+    app.register_blueprint(blueprints.core.core)
 
     # Running
     app.run(host="0.0.0.0", port=80, debug=False)
