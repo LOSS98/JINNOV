@@ -12,6 +12,6 @@
     <img src="{{url_for('static', filename=article.image)}}">
     <span>{{article.body}}</span>
     <span>Par : {{article.author_name}} le {{article.strDate()}}</span>
-    <a href="{{url_for('adminpanel.article_delete', id=article.id)}}">Delete</a>
+    {% if admin %}<a href="{{url_for('adminpanel.article_delete', id=article.id)}}">Delete</a>{% endinf %}
   </body>
 </html>

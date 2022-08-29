@@ -12,21 +12,6 @@ adminpanel = Blueprint("adminpanel", __name__)
 # Articles
 
 
-@adminpanel.route("/articles")
-def articles():
-    return render_template(
-        "articles.html", articles=sql_connector.sql_connector.get_all_articles()
-    )
-
-
-@adminpanel.route("/articles/<id>", methods=["GET"])
-def article(id):
-    article = sql_connector.sql_connector.get_article(id)
-    if article is not None:
-        return render_template("article.html", article=article)
-    abort(404)
-
-
 @adminpanel.route("/articles/delete/<id>", methods=["GET"])
 def article_delete(id):
     if auth_manager.is_connected():
