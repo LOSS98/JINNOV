@@ -371,6 +371,12 @@ svg#out_wave {
     }
 }
 
+@media screen and (orientation : portrait){
+    #short-prez{
+        background-size: auto 100%;
+    }
+}
+
 @media screen and (orientation : portrait), screen and (max-width : 750px) and (orientation : landscape){
     body{
         margin-left: 0vh;
@@ -413,10 +419,6 @@ svg#out_wave {
     #slogan{
         margin-top: 7vh;
         margin-bottom: 7vh;
-    }
-
-    #short-prez{
-        background-size: auto 100%;
     }
 
     #disp-presta div.row-alt {
@@ -471,6 +473,53 @@ svg#out_wave {
 
     #disp-presta div div.element div.title-holder h1{
         font-size: 130%;
+    }
+
+    #deroulement-scroll-container{
+        margin-left : 5%;
+        margin-right: 5%;
+        padding-top: 5vh;
+    }
+
+    #deroulement-scroll-container .image-wrapper{
+        width: 85px;
+        height: 85px;
+        margin-right: 0px;
+        padding: 12px;
+        margin-top: -0.5vw;
+        border-radius: 40%;
+        text-align: center;
+    }
+
+    #deroulement-scroll-container .paragraph{
+        margin-top: 5px;
+    }
+
+    #deroulement-scroll-container .paragraph > h1{
+        font-size: 150%;
+        margin-top: 0;
+        margin-bottom: 1vh;
+        text-align: right;
+    }
+    
+    #deroulement-scroll-container .paragraph > p{
+        font-size: 100%;
+        margin-top: 0;
+        text-align: right;
+    }
+
+    #deroulement-scroll-container  .paragraph{
+        margin-left: 0;
+        width: calc(100% - 130px);
+    }
+
+    #deroulement-scroll-container .line{
+        height: 100px;
+        margin-top: -40px;
+        margin-bottom: -10px;
+        margin-left: 30px;
+        z-index: -1;
+        position: relative;
     }
 
 }
