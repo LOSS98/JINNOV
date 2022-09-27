@@ -61,11 +61,8 @@ class SQLConnector:
         return Article(*row) if row is not None else None
 
     def get_all_membres(self) -> list[Membre]:
-<<<<<<< HEAD
-        query = "SELECT id,first_name,last_name,email,phone_number,pole,poste,picture_path FROM membre"
-=======
+
         query = "SELECT id,first_name,last_name,email,phone_number,pole,poste,picture_path,active FROM membre"
->>>>>>> origin/feat-6
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Membre(*r) for r in c.fetchall()]
@@ -142,13 +139,8 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_membre(self, membre: Membre):
-<<<<<<< HEAD
-        query = """REPLACE INTO membre(id,first_name,last_name,email,phone_number,pole,poste,picture_path)
-        VALUES (%s,%s,%s,%s,%s,%s,%s)"""
-=======
         query = """REPLACE INTO membre(id,first_name,last_name,email,phone_number,pole,poste,picture_path,active)
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"""
->>>>>>> origin/feat-6
         c = self.connection.cursor(prepared=True)
         c.execute(
             query,
