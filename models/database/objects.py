@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Etude:
     def __init__(
         self,
@@ -22,14 +25,21 @@ class Article:
         created_at: int,
         title: str,
         body: str,
+        image: str,
         attachements: str,
+        author_name: str,
     ) -> None:
         self.id = id
         self.created_by = created_by
         self.created_at = created_at
         self.title = title
         self.body = body
+        self.image = image
         self.attachements = attachements
+        self.author_name = author_name
+
+    def strDate(self):
+        return datetime.fromtimestamp(self.created_at).strftime("%d/%m/%Y")
 
 
 class Admin:
@@ -46,6 +56,7 @@ class Admin:
 class Membre:
     def __init__(
         self,
+        id: int,
         first_name: str,
         last_name: str,
         email: str,
@@ -54,6 +65,7 @@ class Membre:
         poste: str,
         picture_path: str,
     ) -> None:
+        self.id = id
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
