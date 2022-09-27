@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{etude.customer_name}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>{{etude.customer_name}}</h1>
+    <img src="{{url_for('static', filename=etude.image)}}">
+    <span>{{etude.body}}</span>
+    <span>Site du client : {{etude.customer_link}}</span>
+    <span>Par : {{etude.author_name}} le {{etude.strDate()}}</span>
+    {% if admin %}<a href="{{url_for('adminpanel.etude_delete', id=etude.id)}}">Delete</a>{% endinf %}
+  </body>
+</html>

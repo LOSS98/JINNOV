@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Études</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    {% for etude in etudes %}
+    <a href="{{url_for('adminpanel.etude', id=etude.id)}}">
+      <img src="{{url_for('static', filename=etude.image)}}" height="100px">
+      <h1>{{etude.customer_name}}</h1>
+      <span>Par : {{etude.author_name}} Le {{etude.strDate()}}</span>
+    </a>
+    {% endfor %}
+
+  </body>
+</html>

@@ -43,6 +43,11 @@ CREATE TABLE `etude` (
   `customer_name` varchar(80) NOT NULL,
   `customer_link` varchar(80) NOT NULL,
   `body` longtext NOT NULL,
+<<<<<<< HEAD
+=======
+  `image`longtext NOT NULL,
+  `attachements` longtext,
+>>>>>>> origin/feat-6
   PRIMARY KEY (`id`),
   FOREIGN KEY (`created_by`) REFERENCES `membre` (`id`)
 ) DEFAULT CHARSET=utf8mb4;

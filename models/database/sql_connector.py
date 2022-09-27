@@ -35,10 +35,17 @@ class SQLConnector:
             self.connection.close()
 
     def get_all_etudes(self) -> list[Etude]:
-        query = "SELECT id,created_at,customer_name,customer_link,body FROM etude"
+        query = "SELECT e.id,e.created_at,e.created_by,e.customer_name,e.customer_link,e.body,e.image,e.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM etude e INNER JOIN membre ON e.created_by = membre.id"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Etude(*r) for r in c.fetchall()]
+
+    def get_etude(self, id):
+        query = "SELECT e.id,e.created_at,e.created_by,e.customer_name,e.customer_link,e.body,e.image,e.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM etude e INNER JOIN membre ON e.created_by = membre.id WHERE e.id=%s LIMIT 1"
+        c = self.connection.cursor(prepared=True)
+        c.execute(query, (id,))
+        row = c.fetchone()
+        return Etude(*row) if row is not None else None
 
     def get_all_articles(self) -> list[Article]:
         query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM article a INNER JOIN membre ON a.created_by = membre.id"
@@ -54,7 +61,11 @@ class SQLConnector:
         return Article(*row) if row is not None else None
 
     def get_all_membres(self) -> list[Membre]:
+<<<<<<< HEAD
         query = "SELECT id,first_name,last_name,email,phone_number,pole,poste,picture_path FROM membre"
+=======
+        query = "SELECT id,first_name,last_name,email,phone_number,pole,poste,picture_path,active FROM membre"
+>>>>>>> origin/feat-6
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Membre(*r) for r in c.fetchall()]
@@ -80,16 +91,19 @@ class SQLConnector:
         pass
 
     def upsert_etude(self, etude: Etude):
-        query = "REPLACE INTO etude(id,created_at,customer_name,customer_link,body) VALUES (%s,%s,%s,%s,%s)"
+        query = "REPLACE INTO etude(id,created_at,created_by,customer_name,customer_link,body,image,attachements) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
         c = self.connection.cursor(prepared=True)
         c.execute(
             query,
             (
-                etude.id if etude.id is not None else "NULL",
+                etude.id,
                 etude.created_at,
+                etude.created_by,
                 etude.customer_name,
                 etude.customer_link,
                 etude.body,
+                etude.image,
+                etude.attachements,
             ),
         )
         self.connection.commit()
@@ -128,8 +142,13 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_membre(self, membre: Membre):
+<<<<<<< HEAD
         query = """REPLACE INTO membre(id,first_name,last_name,email,phone_number,pole,poste,picture_path)
         VALUES (%s,%s,%s,%s,%s,%s,%s)"""
+=======
+        query = """REPLACE INTO membre(id,first_name,last_name,email,phone_number,pole,poste,picture_path,active)
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"""
+>>>>>>> origin/feat-6
         c = self.connection.cursor(prepared=True)
         c.execute(
             query,
@@ -142,6 +161,7 @@ class SQLConnector:
                 membre.pole,
                 membre.poste,
                 membre.picture_path,
+                membre.active,
             ),
         )
         self.connection.commit()
