@@ -17,7 +17,7 @@ a{
 #short-prez{
     background: linear-gradient(#2f2f2f7c,#2f2f2f7c), url('/static/img/shortprez.jpg');
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: cover;
     background-position: center;
     text-align: center;
     padding-top: 10vh;
@@ -266,6 +266,46 @@ svg#out_wave {
     stroke: #2f2f2f;
 }
 
+#avantages{
+    background-color: #436c7c;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+#avantages-title{
+    color: white;
+}
+
+.avantages-line{
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 60px;
+}
+
+.avantages-line > .e:first-child {
+    margin-right : 10%;
+}
+
+.avantages-line > .e {
+    width: 45%;
+}
+
+.avantages-line > .e > img {
+    height: 120px;
+    width: 120px;
+    background-color: white;
+    padding : 15px;
+    border-radius: 25%;
+    margin-left: calc(50% - 75px);
+}
+
+.avantages-line > .e > p {
+    text-align: center;
+    color : white;
+    font-size: 140%;
+}
+
 @media screen and (max-width : 1260px){ 
     #short-prez{
         padding-top: 5vh;
@@ -363,18 +403,17 @@ svg#out_wave {
         font-size: 280%;
         text-align: center;
     }
+    #avantages{
+        background-color: #436c7c;
+        padding-top: 15px;
+        padding-bottom: 55px;
+    }
 }
 
 @media screen and (max-width : 1050px){
     svg#out_wave {
         width: 100vw;
         margin-top: -6vh;
-    }
-}
-
-@media screen and (orientation : portrait){
-    #short-prez{
-        background-size: auto 100%;
     }
 }
 
@@ -520,6 +559,10 @@ svg#out_wave {
         position: relative;
     }
 
+    .avantages-line{
+        margin-left: 3%;
+        margin-right: 3%;
+    }
 }
 
 @media screen and (orientation : portrait) and (min-height : 1000px), screen and (max-width : 750px) and (min-height : 1000px) and (orientation : landscape){
@@ -613,6 +656,11 @@ svg#out_wave {
         font-size: 200%;
     }
 
+    #deroulement-scroll-container{
+        margin-left : 3%;
+        margin-right: 3%;
+    }
+
     #deroulement-scroll-container .image-wrapper{
         width: 150px;
         height: 150px;
@@ -626,6 +674,7 @@ svg#out_wave {
     #deroulement-scroll-container .paragraph{
         margin-top: 30px;
         margin-left: 5%;
+        margin-top: 10px;
         width: calc(100% - 210px - 5%);
     }
 
@@ -643,8 +692,8 @@ svg#out_wave {
     }
 
     #deroulement-scroll-container .line{
-        height: 100px;
-        margin-top: -40px;
+        height: 110px;
+        margin-top: -50px;
         margin-bottom: -10px;
         margin-left: 80px;
         z-index: -1;
