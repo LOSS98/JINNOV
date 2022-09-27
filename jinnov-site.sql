@@ -43,11 +43,8 @@ CREATE TABLE `etude` (
   `customer_name` varchar(80) NOT NULL,
   `customer_link` varchar(80) NOT NULL,
   `body` longtext NOT NULL,
-<<<<<<< HEAD
-=======
   `image`longtext NOT NULL,
   `attachements` longtext,
->>>>>>> origin/feat-6
   PRIMARY KEY (`id`),
   FOREIGN KEY (`created_by`) REFERENCES `membre` (`id`)
 ) DEFAULT CHARSET=utf8mb4;
@@ -57,7 +54,7 @@ CREATE TABLE `user_path` (
   `id` int NOT NULL AUTO_INCREMENT,
   `session_id` varchar(45) NOT NULL,
   `start_date` INT NOT NULL,
-  `end_date` INT NOT NULL,
+  `end_date` INT,
   `page` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8mb4;
