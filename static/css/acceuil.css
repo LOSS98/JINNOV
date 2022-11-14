@@ -1,3 +1,7 @@
+#filler-bottom{
+    height: 100px;
+}
+
 body{
     overflow-x:hidden;
 }
@@ -306,6 +310,29 @@ svg#out_wave {
     font-size: 140%;
 }
 
+#partnership {
+    margin-bottom : 80px;
+}
+
+#partnership #img-holder{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#partnership #img-holder .img-holder-line{
+    display: flex;
+    margin-top: 40px;
+}
+
+#partnership #img-holder a{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#partnership #img-holder img{
+    height: 100px;
+}
+
 @media screen and (max-width : 1260px){ 
     #short-prez{
         padding-top: 5vh;
@@ -407,6 +434,9 @@ svg#out_wave {
         background-color: #436c7c;
         padding-top: 15px;
         padding-bottom: 55px;
+    }
+    #partnership #img-holder img{
+        height: 70px;
     }
 }
 
@@ -563,6 +593,15 @@ svg#out_wave {
         margin-left: 3%;
         margin-right: 3%;
     }
+
+    #partnership #img-holder{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #partnership #img-holder img{
+        height: 50px;
+    }
 }
 
 @media screen and (orientation : portrait) and (min-height : 1000px), screen and (max-width : 750px) and (min-height : 1000px) and (orientation : landscape){
@@ -618,6 +657,10 @@ svg#out_wave {
 
     .part-title{
         font-size: 400%;
+    }
+
+    #partnership #img-holder img{
+        height: 70px;
     }
 
 }
@@ -699,4 +742,10 @@ svg#out_wave {
         z-index: -1;
         position: relative;
     }
+
+    #partnership #img-holder img{
+        height: 100px;
+    }
+
+
 }
