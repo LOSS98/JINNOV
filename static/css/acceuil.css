@@ -296,8 +296,8 @@ svg#out_wave {
 }
 
 .avantages-line > .e > img {
-    height: 120px;
-    width: 120px;
+    height: 90px;
+    width: 90px;
     background-color: white;
     padding : 15px;
     border-radius: 25%;
@@ -315,8 +315,8 @@ svg#out_wave {
 }
 
 #partnership #img-holder{
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 12%;
+    margin-right: 12%;
 }
 
 #partnership #img-holder .img-holder-line{
@@ -330,7 +330,7 @@ svg#out_wave {
 }
 
 #partnership #img-holder img{
-    height: 100px;
+    height: 110px;
 }
 
 @media screen and (max-width : 1260px){ 
