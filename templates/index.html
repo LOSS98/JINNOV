@@ -31,34 +31,70 @@
         <h1 class="part-title">Nos prestations</h1>
         <div class="row" id="a">
             <div class="element">
-                <img src="https://elevatio.fr/wp-content/uploads/2018/03/internet.png">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
                 <div class="title-holder"><h1>Bilans énergétiques et analyse de cycle de vie</h1></div>
                 <p>Lorem ipsum del petibonum</p>
             </div>
             <div class="element">
-                <img src="https://elevatio.fr/wp-content/uploads/2018/03/internet.png">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
                 <div class="title-holder"><h1>Developpement Web, Mobile, Logiciel</h1></div>
                 <p>Lorem ipsum del petibonum</p>
             </div>
             <div class="element">
-                <img src="https://elevatio.fr/wp-content/uploads/2018/03/internet.png">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
                 <div class="title-holder"><h1>Audits de conformité RGPD</h1></div>
                 <p>Lorem ipsum del petibonum</p>
             </div>
         </div>
         <div class="row" id="b">
             <div class="element">
-                <img src="https://elevatio.fr/wp-content/uploads/2018/03/internet.png">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
                 <div class="title-holder"><h1>CAO, DAO et maquettes numériques</h1></div>
                 <p>Lorem ipsum del petibonum</p>
             </div>
             <div class="element">
-                <img src="https://elevatio.fr/wp-content/uploads/2018/03/internet.png">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
                 <div class="title-holder"><h1>Stratégie BIM</h1></div>
                 <p>Lorem ipsum del petibonum</p>
             </div>
             <div class="element">
-                <img src="https://elevatio.fr/wp-content/uploads/2018/03/internet.png">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
+                <div class="title-holder"><h1>Developpement Web, Mobile, Logiciel</h1></div>
+                <p>Lorem ipsum del petibonum</p>
+            </div>
+        </div>
+        <div class="row-alt" id="a">
+            <div class="element">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
+                <div class="title-holder"><h1>Bilans énergétiques et analyse de cycle de vie</h1></div>
+                <p>Lorem ipsum del petibonum</p>
+            </div>
+            <div class="element">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
+                <div class="title-holder"><h1>Developpement Web, Mobile, Logiciel</h1></div>
+                <p>Lorem ipsum del petibonum</p>
+            </div>
+        </div>
+        <div class="row-alt" id="b">
+            <div class="element">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
+                <div class="title-holder"><h1>Audits de conformité RGPD</h1></div>
+                <p>Lorem ipsum del petibonum</p>
+            </div>
+            <div class="element">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
+                <div class="title-holder"><h1>CAO, DAO et maquettes numériques</h1></div>
+                <p>Lorem ipsum del petibonum</p>
+            </div>
+        </div>
+        <div class="row-alt" id="c">
+            <div class="element">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
+                <div class="title-holder"><h1>Stratégie BIM</h1></div>
+                <p>Lorem ipsum del petibonum</p>
+            </div>
+            <div class="element">
+                <img src="{{ url_for('static', filename='img/logointernet.jpg')}}">
                 <div class="title-holder"><h1>Developpement Web, Mobile, Logiciel</h1></div>
                 <p>Lorem ipsum del petibonum</p>
             </div>
@@ -129,6 +165,60 @@
                 <h1>Rendu du livrable</h1>
                 <p>blablabla watchu night popelup, u got to pompelup, ya zebii pompelup nananana dinemok</p>
             </div>
+        </div>
+    </div>
+</div>
+<div id="avantages">
+    <h1 class="part-title" id="avantages-title">Pourquoi travailler avec JINNOV ?</h1>
+    <div id="four-point">
+        <div class="avantages-line">
+            <div class="e">
+                <img src="{{url_for('static', filename='img/Qualite.svg')}}">
+                <p>Un travail de qualité à des prix attractifs</p>
+            </div>
+            <div class="e">
+                <img src="{{url_for('static', filename='img/Progression.svg')}}">
+                <p>Des solutions innovantes et futuristes</p>
+            </div>
+        </div>
+        <div class="avantages-line">
+            <div class="e">
+                <img src="{{url_for('static', filename='img/Diplome.svg')}}">
+                <p>Des élèves formé⋅e⋅s dans le plus grand groupe d'école d'ingénieur de France</p>
+            </div>
+            <div class="e">
+                <img src="{{url_for('static', filename='img/Conversation.svg')}}">
+                <p>Un accompagnement personnalisé pour répondre à votre demande</p>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+</div>
+<div id="partnership">
+    <h1 class="part-title">Nos partenaires</h1>
+    <div id="img-holder">
+        <div class="img-holder-line">
+            <a href="">
+                <img src="{{ url_for('static', filename='img/logos_EPNAK.svg')}}">
+            </a>
+            <a href="">
+                <img src="{{ url_for('static', filename='img/cnje.png')}}">
+            </a>
+            <a href="">
+                <img src="{{ url_for('static', filename='img/CLP.png')}}">
+            </a>
+        </div>
+        <div class="img-holder-line">
+            <a href="">
+                <img src="{{ url_for('static', filename='img/Junior_insa.png')}}">
+            </a>
+            <a href="">
+                <img src="{{ url_for('static', filename='img/insa-logo.svg')}}">
+            </a>
+            <a href="">
+                <img src="{{ url_for('static', filename='img/JENORD.png')}}">
+            </a>
         </div>
     </div>
 </div>
