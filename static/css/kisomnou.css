@@ -1,0 +1,56 @@
+main{
+    font-family: 'Inter',sans-serif;
+}
+
+#grand-titre {
+    padding-top : 1px;
+    background-color: #df8848;
+    text-align: center;
+    margin-bottom: -119px;
+}
+
+#grand-titre > #bigh1 {
+    font-size: 450%;
+    position: relative;
+    color : white;
+}
+
+#grand-titre > svg {
+    margin-top: -90px;
+    width: 100vw;
+    height: auto;
+}
+
+#spacer{
+    height: 119px;
+    background-color: white;
+    margin-bottom: -20px;
+}
+
+.part-title{
+    font-size: 300%;
+}
+
+#desc {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#desc > #splitter {
+    display: flex;
+
+}
+
+#desc > #splitter > p {
+    width: 80%;
+    height: 80%;
+    margin-right: 2%;
+    text-align: justify;
+    font-size: 1.2vw;
+}
+
+#desc > #splitter > img {
+    width: 80%;
+    height: 80%;
+    margin-left: 2%;
+}

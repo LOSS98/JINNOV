@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block head %}
+<title>JINNOV | Qui sommes nous ?</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/kisomnou.css')}}">
+{% endblock %}
+{% block body %}
+<div id="grand-titre">
+    <h1 id="bigh1">Qui sommes nous ?</h1>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 1604 1920 119" >
+        <path class="st3" fill="#df8848" d="M-2.8,1603.5h1927.7C990.1,1843.2,58.1,1618.6-2.8,1603.5z"/>
+    </svg>
+</div>
+<div id="spacer"></div>
+<div id="desc">
+    <h2 class="part-title">Nous sommes, une phrase qui pète sa mère</h2>
+    <div id="splitter">
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and 
+            typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown 
+            printer took a galley of type and scrambled it to make a 
+            type specimen book. It has survived not only five centuries, 
+            but also the leap into electronic typesetting, remaining 
+            essentially unchanged. It was popularised in the 1960s with 
+            the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus 
+            PageMaker including versions of Lorem Ipsum. but also the leap 
+            into electronic typesetting, remaining 
+            essentially unchanged. It was popularised in the 1960s with 
+            the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus 
+            PageMaker including versions of Lorem Ipsum.but also the leap
+            into electronic typesetting, remaining 
+            essentially unchanged. It was popularised in the 1960s with 
+        </p>
+        <img src="{{url_for('static',filename='img/photogroup.JPG')}}">
+    </div>
+
+</div>
+{% endblock %}
+{% block script %}
+{% endblock %}

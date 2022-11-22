@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from models.utils import *
 
 # Fields
+
 app = Flask(__name__)
 
 @app.route('/formulaire_etudiant', methods=["GET","POST"])
@@ -21,6 +22,10 @@ def mail_devis():
 @app.route('/mail_student', methods=["POST"])
 def mail_student():
     return create_mail_student()
+
+@app.route('/qui_sommes_nous')
+def aboutus():
+    return render_template("kisomnou.html")
 
 @app.route('/')
 def index():
