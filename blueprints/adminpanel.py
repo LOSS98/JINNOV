@@ -63,7 +63,7 @@ def create_etude_post():
         attachements = request.files.getlist("attachements")
         if (
             title is not None
-            customer_name is not None
+            and customer_name is not None
             and image is not None
             and body is not None
             and customer_link is not None
@@ -109,21 +109,20 @@ def create_etude_post():
                     )
                     return redirect(url_for("adminpanel.articles"))
             except Exception as _:
-                print(format_exc())
-                    sql_connector.sql_connector.upsert_etude(
-                        objects.Etude(
-                            None,
-                            date,
-                            author,
-                            customer_name,
-                            customer_link,
-                            body,
-                            image_path,
-                            None,
-                            None,
-                        )
+                sql_connector.sql_connector.upsert_etude(
+                    objects.Etude(
+                        None,
+                        date,
+                        author,
+                        customer_name,
+                        customer_link,
+                        body,
+                        image_path,
+                        None,
+                        None,
                     )
-                    return redirect(url_for("adminpanel.etudes"))
+                )
+                return redirect(url_for("adminpanel.etudes"))
             except ValueError as _:
                 pass
         abort(400)
