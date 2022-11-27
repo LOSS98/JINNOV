@@ -1,0 +1,409 @@
+a {
+  text-decoration: none;
+}
+
+@keyframes hover {
+  0% {
+    background: linear-gradient(90deg, #df8848 100%, #bd5b18 100%);
+  }
+
+  10% {
+    background: linear-gradient(90deg, #df8848 80%, #bd5b18 100%);
+  }
+
+  20% {
+    background: linear-gradient(90deg, #df8848 60%, #bd5b18 100%);
+  }
+
+  30% {
+    background: linear-gradient(90deg, #df8848 40%, #bd5b18 100%);
+  }
+
+  40% {
+    background: linear-gradient(90deg, #df8848 20%, #bd5b18 100%);
+  }
+
+  50% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 80%);
+  }
+
+  60% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 60%);
+  }
+
+  70% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 40%);
+  }
+
+  80% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 20%);
+  }
+
+  90% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+  }
+
+  100% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+  }
+}
+
+@keyframes hover2 {
+  0% {
+    background: linear-gradient(90deg, #df8848 100%, #bd5b18 100%);
+  }
+
+  10% {
+    background: linear-gradient(90deg, #df8848 80%, #bd5b18 100%);
+  }
+
+  20% {
+    background: linear-gradient(90deg, #df8848 60%, #bd5b18 100%);
+  }
+
+  30% {
+    background: linear-gradient(90deg, #df8848 40%, #bd5b18 100%);
+  }
+
+  40% {
+    background: linear-gradient(90deg, #df8848 20%, #bd5b18 100%);
+  }
+
+  50% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 80%);
+  }
+
+  60% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 60%);
+  }
+
+  70% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 40%);
+  }
+
+  80% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 20%);
+  }
+
+  90% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+  }
+
+  100% {
+    background: linear-gradient(90deg, #df8848 0%, #bd5b18 0%);
+  }
+}
+
+.rounded-button {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 50px;
+  background: #df8848;
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 330px;
+  text-align: center;
+}
+
+.classic {
+  background: #df8848;
+  animation: hover 0.15s ease-in-out;
+  animation-direction: reverse;
+}
+
+.anim {
+  background: #bd5b18;
+  animation: hover2 0.15s ease-in-out;
+  animation-direction: normal;
+}
+
+
+.box-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 100px;
+}
+
+.stick {
+  justify-content: center;
+}
+
+#presidence {
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 20px #df8848;
+  border: #df8848 solid 7px;
+}
+
+#pres-infos {
+  margin-left: 30px;
+}
+
+#pres-infos h1,
+#pres-infos h3 {
+  margin: 0 0 7px 0;
+}
+
+.social-icon {
+  width: 100px;
+}
+
+#socials h3 {
+  text-align: center;
+}
+
+#address {
+  font-size: 1.2rem;
+  font-weight: 500;
+  height: 300px;
+  padding-top: 30px;
+  margin-left: 30px;
+}
+
+main {
+  font-family: 'Inter', sans-serif;
+}
+
+main h1 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 300%;
+  color: #000000;
+}
+
+#formulaire {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 150px;
+}
+
+#formulaire form input {
+  font-size: 125%;
+  border-radius: 15px;
+  height: 50px;
+  margin-top: 10px;
+  background-color: #f2f4f5;
+  border-style: none;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+#formulaire form>label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  font-size: 100%;
+}
+
+#formulaire form>label>input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 125%;
+}
+
+#names input {
+  width: 100%;
+}
+
+#names label {
+  width: 50%;
+}
+
+#contact input {
+  width: 100%;
+}
+
+#devis {
+  padding-top: 70px;
+}
+
+#formulaire label {
+  margin-top: 20px;
+}
+
+#contact label {
+  width: 50%;
+}
+
+#formulaire textarea {
+  width: 100%;
+  height: 275px;
+  resize: none;
+  margin-top: 10px;
+  font-size: 125%;
+  font-family: 'Inter', sans-serif;
+  background-color: #f2f4f5;
+  border-style: none;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-sizing: border-box !important;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box !important;
+  /* Firefox, other Gecko */
+  box-sizing: border-box !important;
+  /* Opera/IE 8+ */
+}
+
+form #button {
+  float: right;
+  font-weight: 600;
+  margin-right: 10%;
+  margin-top: 30px !important;
+  background-color: #df8848 !important;
+  color: white;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  cursor: pointer;
+}
+
+form #button:hover {
+  background-color: #bd5b18 !important;
+}
+
+select {
+  width: 60px;
+  height: 50px;
+  font-size: 100%;
+  border-style: none;
+  background-color: #f2f4f5;
+  border-radius: 5px;
+  text-align: center;
+  float: right;
+  margin-top: -20px
+}
+
+label#select {
+
+  padding-top: 20px;
+  height: 35px;
+}
+
+
+
+
+
+
+@media screen and (orientation : landscape) and (min-width : 750px) {
+  #formulaire form>div {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .margin {
+    margin-right: calc(10% - 5px);
+  }
+
+}
+
+@media screen and (orientation : portrait),
+screen and (max-width : 750px) and (orientation : landscape) {
+  #formulaire {
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  #formulaire form>label {
+    width: 100%;
+  }
+
+  form #button {
+    margin-right: 10px;
+  }
+
+  #formulaire form>div {
+    display: block;
+  }
+
+  input {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (orientation : portrait) and (min-height : 1000px),
+screen and (max-width : 750px) and (min-height : 1000px) {
+  input {
+    margin-bottom: 80px;
+  }
+
+  label {
+    font-size: 250% !important;
+  }
+
+  #formulaire form input {
+    height: 100px;
+    font-size: 100%;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  label#smoltext {
+    font-size: 240% !important;
+  }
+
+  #formulaire {
+    margin-bottom: 400px;
+  }
+
+  form #button {
+    margin-top: 50px !important;
+    font-size: 300% !important;
+    border-radius: 30px !important;
+    width: 250px !important;
+    height: 124px !important;
+  }
+
+  textarea {
+    height: 800px !important;
+    border-radius: 20px !important;
+    margin-top: 20px !important;
+  }
+
+  main h1 {
+    font-size: 500%;
+  }
+
+  select {
+    width: 130px;
+    height: 120px;
+    font-size: 100%;
+    border-style: none;
+    background-color: #f2f4f5;
+    border-radius: 5px;
+    text-align: center;
+    float: right;
+    margin-top: -40px;
+    border-radius: 20px
+  }
+
+  label#select {
+    padding-top: 0px;
+    height: 70px;
+    margin-bottom: 80px;
+  }
+
+}
+
+@media screen and (max-width : 1260px) and (orientation : landscape) and (min-width : 750px) {
+  #formulaire {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}

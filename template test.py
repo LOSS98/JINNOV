@@ -8,10 +8,6 @@ app = Flask(__name__)
 def etuform():
     return render_template("mail_form_student.html")
 
-@app.route('/devis', methods=["GET","POST"])
-def devisform():
-    return render_template("mail_form_devis.html")
-
 #route pour la création de devis
 @app.route('/mail_devis', methods=["POST"])
 def mail_devis():
@@ -25,6 +21,10 @@ def mail_student():
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 if __name__ == "__main__":
     # Running

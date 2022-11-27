@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, abort
-from models import auth_manager
+from models import auth_manager, utils
 from models.database import sql_connector
 
 core = Blueprint("core", __name__)
@@ -33,3 +33,8 @@ def etude(id):
         return render_template(
             "etude.html", etude=etude, admin=auth_manager.is_connected())
     abort(404)
+
+
+@core.route("/ask-devis", methods=["POST"])
+def post_devis():
+    return utils.create_mail_devis()
