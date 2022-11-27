@@ -105,9 +105,9 @@ a {
   background: #df8848;
   text-decoration: none;
   color: white;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  width: 330px;
+  width: 200px;
   text-align: center;
 }
 
@@ -129,7 +129,7 @@ a {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin: 100px;
+  margin: 55px;
 }
 
 .stick {
@@ -144,7 +144,7 @@ a {
 }
 
 #pres-infos {
-  margin-left: 30px;
+  margin-left: 50px;
 }
 
 #pres-infos h1,
@@ -175,8 +175,12 @@ main {
 main h1 {
   margin-top: 40px;
   text-align: center;
-  font-size: 300%;
   color: #000000;
+}
+
+main>h1 {
+  font-size: 300%;
+  margin-bottom: 20px;
 }
 
 #formulaire {
