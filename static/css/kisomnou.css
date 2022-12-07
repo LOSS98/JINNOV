@@ -54,3 +54,124 @@ main{
     height: 80%;
     margin-left: 2%;
 }
+
+#valors {
+    margin-top: 5%;
+    background-color: #da6518;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+}
+
+#valors .part-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 6vh;
+}
+
+#scroller{
+    display: flex;
+    overflow-x: scroll;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 2vh;
+}
+
+.valeur{
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    display : flex;
+    flex-direction: column;
+    align-content: center;
+    min-width: 250px;
+    width: calc(17% - 20px);
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+.valeur img {
+    width: 100%;
+}
+
+.valeur > div {
+    width: 36%;
+    padding: 12% ;
+    margin-left: auto;
+    margin-right: auto ;
+    border-radius: 50%;
+}
+
+#zero{
+    color : #3d5467;
+}
+
+#zero > div {
+    background-color: #3d5467;
+}   
+
+#un{
+    color : #df8848;
+}
+
+#un > div {
+    background-color: #df8848;
+}   
+
+#deux {
+    color : #96a8b0;
+}
+
+#deux > div {
+    background-color: #96a8b0;
+}   
+
+#trois {
+    color : #bd5b18;
+}
+
+#trois > div {
+    background-color: #bd5b18;
+}
+
+#quatre {
+    color: #436c7c;
+}
+
+#quatre > div {
+    background-color: #436c7c;
+}   
+
+.valeur > h2 {
+    text-align: center;
+}
+
+.valeur > p {
+    text-align: center;
+    font-size: 100%;
+}
+
+#CNJE {
+    background-color: #436c7c;
+}
+
+#CNJE .part-title {
+    color: white;
+}
+
+#CNJE div {
+    display: flex;
+}
+
+#CNJE div img {
+    width: 20%;
+    height: 20%;
+    margin: 5%;
+}
+
+#CNJE div p {
+    width: 60%;
+    margin: 5%;
+    font-size: 1.2vw;
+    text-align: justify;
+    color : white;
+}
