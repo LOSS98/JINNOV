@@ -169,8 +169,13 @@ a {
   text-align: start;
 }
 
+#pres-infos a {
+  color: black;
+}
+
 .social-icon {
   width: 100px;
+  border-radius: 5px;
 }
 
 #socials h3 {
