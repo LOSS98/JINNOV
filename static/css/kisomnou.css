@@ -4,6 +4,8 @@ body{
 }
 
 main{
+    margin: 0px;
+    margin-top: -1px;
     font-family: 'Inter',sans-serif;
 }
 
@@ -11,7 +13,7 @@ main{
     padding-top : 1px;
     background-color: #df8848;
     text-align: center;
-    height: 150px;
+    min-height: 150px;
 }
 
 #grand-titre > #bigh1 {
@@ -43,15 +45,22 @@ main{
 
 #desc > #splitter {
     display: flex;
-
+    align-items: center;
 }
 
-#desc > #splitter > p {
+#desc > #splitter > div {
     width: 80%;
-    height: 80%;
     margin-right: 2%;
+}
+
+#desc > #splitter  p {
+    width: 100%;
+    height: 100%;
     text-align: justify;
     font-size: 1.2vw;
+    margin-bottom: 45px;
+    margin-top: 45px;
+
 }
 
 #desc > #splitter > img {
@@ -172,6 +181,7 @@ main{
     padding-right: 10%;
     padding-top : 120px;
     margin-top: -70px;
+    padding-bottom: 10vh;
 }
 
 #CNJE .part-title {
@@ -180,19 +190,110 @@ main{
 
 #CNJE div {
     display: flex;
+    align-items: center;
 }
 
 #CNJE div img {
     width: 20%;
     height: 20%;
-    margin: 5%;
-    margin-top: 9%;
 }
 
 #CNJE div p {
-    width: 60%;
-    margin: 5%;
+    width: 80%;
+    margin-left: 5%;
     font-size: 1.2vw;
     text-align: justify;
     color : white;
 }
+
+#INSA {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top : 120px;
+    margin-top: -70px;
+    padding-bottom: 5vh;
+}
+
+#INSA .part-title {
+    color: black;
+}
+
+#INSA div {
+    display: flex;
+    align-items: center;
+}
+
+#INSA div img {
+    width: 20%;
+}
+
+#INSA div p {
+    width: 80%;
+    margin: 5%;
+    font-size: 1.2vw;
+    text-align: justify;
+    color : black;
+}
+
+@media screen and (orientation : portrait){
+
+    .part-title{
+        font-size: 300%;
+        text-align: center;
+    }
+
+    #desc {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #grand-titre {
+        padding-top : 1px;
+        background-color: #df8848;
+        text-align: center;
+        height: 150px;
+        padding-bottom: 50px;
+    }
+
+    #grand-titre > #bigh1 {
+        font-size: 10vw;
+        position: relative;
+        color : white;
+    }
+
+    #grand-titre > svg {
+        margin-top:-14px;
+        width: 100vw;
+        height: auto;
+    }
+
+    #desc > #splitter {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    #desc > #splitter > div {
+        margin-right: 0px;
+        width :100%;
+    }
+
+
+    #desc > #splitter  p {
+        width: 100%;
+        text-align: justify;
+        font-size: 1.8vh;
+        margin-bottom: 3vh;
+    }
+    
+    #desc > #splitter > img {
+        width: 100%;
+        height: auto;
+    }
+    
+    #CNJE{
+        margin-top: -85px;
+        margin-bottom: 2vh ;
+    }
+}
+

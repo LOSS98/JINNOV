@@ -1,3 +1,7 @@
+header a {
+    color : black;
+}
+
 @media screen and (orientation : landscape) and (min-width : 750px) {
     body{
         min-width: 700px;
@@ -28,10 +32,9 @@
         right:0;
         left:0;
         min-width: inherit;
-        border-bottom;
-            border-bottom-width :  3px;
-            border-bottom-style: solid ;
-            border-bottom-color : #df8848; 
+        border-bottom-width :  3px;
+        border-bottom-style: solid ;
+        border-bottom-color : #df8848; 
     }
 
     header #headerlogojinnov{
