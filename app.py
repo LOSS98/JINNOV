@@ -28,6 +28,17 @@ def contact():
 def aboutus():
     return render_template("kisomnou.html")
 
+@app.route('/actualites')
+def actualites():
+    return render_template("soon.html")
+
+@app.route('/etudes')
+def etudes():
+    return render_template("soon.html")
+
+@app.route('/liste_membres')
+def liste_membres():
+    return render_template("soon.html")
 
 if __name__ == "__main__":
     # Dirs
