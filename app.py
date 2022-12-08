@@ -24,6 +24,10 @@ def index():
 def contact():
     return render_template("contact.html")
 
+@app.route('/qui_sommes_nous')
+def aboutus():
+    return render_template("kisomnou.html")
+
 
 if __name__ == "__main__":
     # Dirs
@@ -32,7 +36,7 @@ if __name__ == "__main__":
 
     # Database System
     sql_connector.sql_connector = sql_connector.SQLConnector(
-        host="127.0.0.1", user="root", password="", database="jinnov"
+        host="jinnov-insa.fr", user="axel", password="", database="siteweb"
     )
     sql_connector.sql_connector.connect()
 

@@ -34,7 +34,7 @@
                         <li><a href="">
                             Nos études
                         </a></li>
-                        <li><a id="contact-us-button" href="" class="">
+                        <li><a id="contact-us-button" href="{{ url_for('contact') }}" class="">
                             Nous contacter
                         </a></li>
                     </ul>
@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="{{url_for('aboutus')}}">
                                 Qui sommes-nous ?
                             </a>
                         </li>
@@ -78,7 +78,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="">
+                            <a href="{{ url_for('contact') }}" class="">
                                 Nous contacter
                             </a>
                         </li>
