@@ -13,6 +13,6 @@
     <span>{{etude.body}}</span>
     <span>Site du client : {{etude.customer_link}}</span>
     <span>Par : {{etude.author_name}} le {{etude.strDate()}}</span>
-    {% if admin %}<a href="{{url_for('adminpanel.etude_delete', id=etude.id)}}">Delete</a>{% endinf %}
+    {% if admin %}<a href="{{url_for('adminpanel.etude_delete', id=etude.id)}}">Delete</a>{% endif %}
   </body>
 </html>

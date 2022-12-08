@@ -20,7 +20,7 @@ def article_delete(id):
         if article is not None:
             sql_connector.sql_connector.delete_article(article)
             shutil.rmtree("static/articles/" + article.image.split("/")[1])
-            return redirect(url_for("adminpanel.articles"))
+            return redirect(url_for("core.articles"))
         abort(404)
     abort(401)
 
@@ -32,7 +32,7 @@ def etude_delete(id):
         if etude is not None:
             shutil.rmtree("static/etudes/" + etude.image.split("/")[1])
             sql_connector.sql_connector.delete_etude(etude)
-            return redirect(url_for("adminpanel.etudes"))
+            return redirect(url_for("core.etudes"))
         abort(404)
     abort(401)
 
@@ -53,7 +53,6 @@ def create_etude():
 @adminpanel.route("/new-etude", methods=["POST"])
 def create_etude_post():
     if auth_manager.is_connected():
-        title = request.form.get("title")
         customer_name = request.form.get("customer_name")
         image = request.files.get("image")
         body = request.form.get("body")
@@ -62,7 +61,6 @@ def create_etude_post():
         date = request.form.get("date")
         attachements = request.files.getlist("attachements")
         if (
-            title is not None
             customer_name is not None
             and image is not None
             and body is not None
@@ -72,10 +70,6 @@ def create_etude_post():
         ):
             try:
                 now = int(time.time_ns())
-                os.makedirs(f"static/articles/{now}", exist_ok=True)
-                extension = os.path.splitext(image.filename)[1][1:].lower()
-                if extension in utils.ALLOWED_EXTENSIONS:
-                    image_path = f"articles/{now}/image.{extension}"
                 os.makedirs(f"static/etudes/{now}", exist_ok=True)
                 extension = os.path.splitext(image.filename)[1][1:].lower()
                 if extension in utils.ALLOWED_EXTENSIONS:
@@ -85,8 +79,77 @@ def create_etude_post():
                     for i in range(len(attachements)):
                         extension = os.path.splitext(image.filename)[1][1:].lower()
                         if extension in utils.ALLOWED_EXTENSIONS:
-                            extra_path = f"articles/{now}/attachement_{i}.{extension}"
                             extra_path = f"etudes/{now}/attachement_{i}.{extension}"
+                            attachements[i].save("static/" + extra_path)
+                            attachements_path.append(extra_path)
+                        else:
+                            abort(400)
+                    date = int(
+                        time.mktime(datetime.strptime(date, "%Y-%m-%d").timetuple())
+                    )
+                    author = int(author)
+                    sql_connector.sql_connector.upsert_etude(
+                        objects.Etude(
+                            None,
+                            date,
+                            author,
+                            customer_name,
+                            customer_link,
+                            body,
+                            image_path,
+                            None,
+                            None,
+                        )
+                    )
+                    return redirect(url_for("core.etudes"))
+            except ValueError as _:
+                pass
+        abort(400)
+    abort(401)
+
+
+
+@adminpanel.route("/new-article", methods=["GET"])
+def create_article():
+    if auth_manager.is_connected():
+        return render_template(
+            "article_form.html",
+            authors={
+                membre.id: membre.first_name + " " + membre.last_name
+                for membre in sql_connector.sql_connector.get_all_membres()
+            },
+        )
+    abort(401)
+
+
+@adminpanel.route("/new-article", methods=["POST"])
+def create_article_post():
+    if auth_manager.is_connected():
+        title = request.form.get("title")
+        image = request.files.get("image")
+        body = request.form.get("body")
+        author = request.form.get("author")
+        date = request.form.get("date")
+        attachements = request.files.getlist("attachements")
+        if (
+            title is not None
+            and image is not None
+            and body is not None
+            and author is not None
+            and date is not None
+        ):
+            try:
+                now = int(time.time_ns())
+                os.makedirs(f"static/articles/{now}", exist_ok=True)
+                extension = os.path.splitext(image.filename)[1][1:].lower()
+                if extension in utils.ALLOWED_EXTENSIONS:
+                    image_path = f"articles/{now}/image.{extension}"
+                    image.save("static/" + image_path)
+                    attachements_path = []
+                    for i in range(len(attachements)):
+                        extension = os.path.splitext(image.filename)[1][1:].lower()
+                        if extension in utils.ALLOWED_EXTENSIONS:
+                            extra_path = f"articles/{now}/attachement_{i}.{extension}"
                             attachements[i].save("static/" + extra_path)
                             attachements_path.append(extra_path)
                         else:
@@ -107,24 +170,8 @@ def create_etude_post():
                             None,
                         )
                     )
-                    return redirect(url_for("adminpanel.articles"))
+                    return redirect(url_for("core.articles"))
             except Exception as _:
                 print(format_exc())
-                    sql_connector.sql_connector.upsert_etude(
-                        objects.Etude(
-                            None,
-                            date,
-                            author,
-                            customer_name,
-                            customer_link,
-                            body,
-                            image_path,
-                            None,
-                            None,
-                        )
-                    )
-                    return redirect(url_for("adminpanel.etudes"))
-            except ValueError as _:
-                pass
         abort(400)
     abort(401)
