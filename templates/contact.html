@@ -2,11 +2,12 @@
 {% block head %}
 <title>JINNOV | Nous contacter</title>
 <link rel="stylesheet" href="{{url_for('static', filename='css/contact.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/forms.css')}}">
 {% endblock %}
 {% block body %}
 <h1>Nous contacter</h1>
 <div class="box-col">
-  <a href="#devis" class="rounded-button">
+  <a href="{{url_for('contact', _anchor='devis')}}" class="rounded-button">
     Demander un devis
   </a>
   <a href="{{ url_for('etuform') }}" class="rounded-button">
@@ -78,7 +79,7 @@
           <label id="Textarea">Détail de la demande * :
               <textarea name="contenu" id="contenu" cols="30" rows="10" number ='500000' form = 'mail_form_devis' placeholder="Votre message"></textarea>
           </label>
-          <input type="submit" value="Envoyer" id="button" class="rounded-button">
+          <input type="submit" value="Envoyer" id="button">
       </form>
   </div>
 </div>
