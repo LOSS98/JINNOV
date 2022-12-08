@@ -1,3 +1,8 @@
+body{
+    overflow-x: hidden;
+    margin : 0px
+}
+
 main{
     font-family: 'Inter',sans-serif;
 }
@@ -6,7 +11,7 @@ main{
     padding-top : 1px;
     background-color: #df8848;
     text-align: center;
-    margin-bottom: -119px;
+    height: 150px;
 }
 
 #grand-titre > #bigh1 {
@@ -16,7 +21,7 @@ main{
 }
 
 #grand-titre > svg {
-    margin-top: -90px;
+    margin-top:-34px;
     width: 100vw;
     height: auto;
 }
@@ -50,8 +55,8 @@ main{
 }
 
 #desc > #splitter > img {
-    width: 80%;
-    height: 80%;
+    width: 50%;
+    height: auto;
     margin-left: 2%;
 }
 
@@ -59,7 +64,11 @@ main{
     margin-top: 5%;
     background-color: #da6518;
     padding-top: 2vh;
-    padding-bottom: 5vh;
+    padding-bottom: 10vh;
+    border-top-right-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+    position: relative;
+    z-index: 100;
 }
 
 #valors .part-title {
@@ -74,6 +83,13 @@ main{
     padding-left: 3vw;
     padding-right: 3vw;
     padding-bottom: 2vh;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
 }
 
 .valeur{
@@ -152,6 +168,10 @@ main{
 
 #CNJE {
     background-color: #436c7c;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top : 120px;
+    margin-top: -70px;
 }
 
 #CNJE .part-title {
@@ -166,6 +186,7 @@ main{
     width: 20%;
     height: 20%;
     margin: 5%;
+    margin-top: 9%;
 }
 
 #CNJE div p {
