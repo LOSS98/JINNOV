@@ -6,7 +6,7 @@ from models.database import sql_connector
 from models.database.objects import Admin
 
 TOKEN_TIMEOUT = 30  # minutes
-auth_tokens: dict[str, tuple[Admin, int]] = {}
+auth_tokens: dict = {}
 
 
 def login(email: str, password: str) -> bool:
