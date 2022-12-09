@@ -34,7 +34,7 @@ class SQLConnector:
         if self.connection is not None:
             self.connection.close()
 
-    def get_all_etudes(self) -> list[Etude]:
+    def get_all_etudes(self) -> list:
         query = "SELECT e.id,e.created_at,e.created_by,e.customer_name,e.customer_link,e.body,e.image,e.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM etude e INNER JOIN membre ON e.created_by = membre.id"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
@@ -47,7 +47,7 @@ class SQLConnector:
         row = c.fetchone()
         return Etude(*row) if row is not None else None
 
-    def get_all_articles(self) -> list[Article]:
+    def get_all_articles(self) -> list:
         query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM article a INNER JOIN membre ON a.created_by = membre.id"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
@@ -60,7 +60,7 @@ class SQLConnector:
         row = c.fetchone()
         return Article(*row) if row is not None else None
 
-    def get_all_membres(self) -> list[Membre]:
+    def get_all_membres(self) -> list:
 
         query = "SELECT id,first_name,last_name,email,phone_number,pole,poste,picture_path,active FROM membre"
         c = self.connection.cursor(prepared=True)
@@ -73,7 +73,7 @@ class SQLConnector:
         full_name: str = None,
         email: str = None,
         password: str = None,
-    ) -> list[Admin]:
+    ) -> list:
         query = "SELECT id,full_name,email,password,salt FROM admin"
         where_filter, values = self.create_where_filter(
             id=id, full_name=full_name, email=email, password=password
@@ -197,7 +197,7 @@ class SQLConnector:
         c.execute(query, (membre.id,))
         self.connection.commit()
 
-    def create_where_filter(self, **kwargs) -> tuple[str, list]:
+    def create_where_filter(self, **kwargs) -> tuple:
         """
         It takes a dictionary of key-value pairs, filters out the ones where the value is None, and
         returns a tuple of a string and a list.
