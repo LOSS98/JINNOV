@@ -40,6 +40,12 @@ def etudes():
 def liste_membres():
     return render_template("soon.html")
 
+# Register blueprints
+app.register_blueprint(blueprints.auth.auth)
+app.register_blueprint(blueprints.adminpanel.adminpanel)
+app.register_blueprint(blueprints.core.core)
+
+
 if __name__ == "__main__":
     # Dirs
     os.makedirs("static/articles", exist_ok=True)
@@ -56,11 +62,6 @@ if __name__ == "__main__":
         raise Exception("SecretKeyNotFound")
     with open("secret.key") as key:
         app.config["SECRET_KEY"] = key.read()
-
-    # Register blueprints
-    app.register_blueprint(blueprints.auth.auth)
-    app.register_blueprint(blueprints.adminpanel.adminpanel)
-    app.register_blueprint(blueprints.core.core)
 
     # Running
     app.run(host="0.0.0.0", port=80, debug=False)
