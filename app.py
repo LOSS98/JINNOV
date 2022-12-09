@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     # Database System
     sql_connector.sql_connector = sql_connector.SQLConnector(
-        host="jinnov-insa.fr", user="axel", password="Lezizietlescouilles59!", database="siteweb"
+        host="jinnov-insa.fr", user="axel", password="", database="siteweb"
     )
     sql_connector.sql_connector.connect()
 
