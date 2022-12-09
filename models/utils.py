@@ -91,7 +91,7 @@ def create_mail_student():
         # mail connection informations
         sender_email = "devis@jinnov-insa.fr"
         receiver_email = "axel.lenroue@jinnov-insa.fr"
-        connection_token = "Lezizietlescouilles59!"
+        connection_token = ""
 
         # message creation
         message = f"""
