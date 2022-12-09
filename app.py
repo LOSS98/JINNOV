@@ -10,11 +10,6 @@ app = Flask(__name__)
 @app.route('/formulaire_etudiant', methods=["GET","POST"])
 def etuform():
     return render_template("mail_form_student.html")
-    
-#route pour la création d"une demande d'inscriptions
-@app.route('/mail_student', methods=["POST"])
-def mail_student():
-    return create_mail_student()
 
 @app.route('/')
 def index():
@@ -53,7 +48,7 @@ if __name__ == "__main__":
 
     # Database System
     sql_connector.sql_connector = sql_connector.SQLConnector(
-        host="jinnov-insa.fr", user="axel", password="", database="siteweb"
+        host="jinnov-insa.fr", user="axel", password="Lezizietlescouilles59!", database="siteweb"
     )
     sql_connector.sql_connector.connect()
 

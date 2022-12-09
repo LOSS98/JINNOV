@@ -9,7 +9,7 @@
         <h1>Devenir membre</h1>
     </div>
     <div id='formulaire'>
-        <form action="mail_student" id = 'mail_form_student' method="post">
+        <form action="{{url_for('core.post_student')}}" id = 'mail_form_student' method="post">
             <div id="names">
                 <label class="margin">
                     Nom :
