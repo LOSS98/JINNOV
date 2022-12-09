@@ -164,6 +164,7 @@ svg#out_wave {
     margin-top: 10%;
     width: 30%;
     height: auto;
+    aspect-ratio: 1/1;
     display: block;
     margin-left: auto;
     margin-right: auto;
