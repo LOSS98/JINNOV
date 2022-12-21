@@ -1,5 +1,5 @@
 import smtplib
-import ssl
+import os
 from flask import request, redirect
 from email.message import EmailMessage
 
@@ -19,12 +19,11 @@ def send_mail(
     :param connection_token: This is the application token of the email address you're sending from
     """
     
-    port = 465
-    smtp_server = "smtp.gmail.com"
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        server.login(sender_email, connection_token)
-        server.sendmail(sender_email, receiver_email, message)
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.starttls()
+    server.login(sender_email,connection_token)
+    server.sendmail(sender_email, receiver_email, message)
+    server.quit()
 
 
 def create_mail_devis():
@@ -46,18 +45,18 @@ def create_mail_devis():
 
         # message creation
         message = f"""
-            Nom de l'entreprise = {nom_entreprise}
-            Nom et prenom du contact = {nom} {prenom}
-            Adresse de l'entreprise (optionnel) = {adresse}
-            Mail de contact = {mail}
-            Téléphone = {telephone}
-            Demande =  \n{contenu}
-            """
+        Nom de l'entreprise = {nom_entreprise}
+        Nom et prenom du contact = {nom} {prenom}
+        Adresse de l'entreprise (optionnel) = {adresse}
+        Mail de contact = {mail}
+        Téléphone = {telephone}
+        Demande =  \n{contenu}
+        """
 
         # mail connection informations
-        sender_email = ""
-        receiver_email = ""
-        connection_token = ""
+        sender_email = os.getenv("MAIL_USERNAME")
+        receiver_email = os.getenv("MAIL_DEVIS_RECIPIENT")
+        connection_token = os.getenv("MAIL_PASSWORD")
 
         # mail creation
         msg = EmailMessage()
@@ -89,13 +88,13 @@ def create_mail_student():
         annee: str = request.form.get("annee_etude")
 
         # mail connection informations
-        sender_email = "devis@jinnov-insa.fr"
-        receiver_email = "axel.lenroue@jinnov-insa.fr"
-        connection_token = ""
+        sender_email = os.getenv("MAIL_USERNAME")
+        receiver_email = os.getenv("MAIL_STUDENT_RECIPIENT")
+        connection_token = os.getenv("MAIL_PASSWORD")
 
         # message creation
         message = f"""
-            Nom et prenom du contact = {nom} {prenom}
+        Nom et prenom du contact = {nom} {prenom}
         Mail de contact = {mail}
         Téléphone = {telephone}
         Année d'étude = {annee}
