@@ -10,11 +10,6 @@ app = Flask(__name__)
 @app.route('/formulaire_etudiant', methods=["GET","POST"])
 def etuform():
     return render_template("mail_form_student.html")
-    
-#route pour la création d"une demande d'inscriptions
-@app.route('/mail_student', methods=["POST"])
-def mail_student():
-    return create_mail_student()
 
 @app.route('/')
 def index():
@@ -27,6 +22,23 @@ def contact():
 @app.route('/qui_sommes_nous')
 def aboutus():
     return render_template("kisomnou.html")
+
+@app.route('/actualites')
+def actualites():
+    return render_template("soon.html")
+
+@app.route('/etudes')
+def etudes():
+    return render_template("soon.html")
+
+@app.route('/liste_membres')
+def liste_membres():
+    return render_template("soon.html")
+
+# Register blueprints
+app.register_blueprint(blueprints.auth.auth)
+app.register_blueprint(blueprints.adminpanel.adminpanel)
+app.register_blueprint(blueprints.core.core)
 
 
 if __name__ == "__main__":
@@ -45,11 +57,6 @@ if __name__ == "__main__":
         raise Exception("SecretKeyNotFound")
     with open("secret.key") as key:
         app.config["SECRET_KEY"] = key.read()
-
-    # Register blueprints
-    app.register_blueprint(blueprints.auth.auth)
-    app.register_blueprint(blueprints.adminpanel.adminpanel)
-    app.register_blueprint(blueprints.core.core)
 
     # Running
     app.run(host="0.0.0.0", port=80, debug=False)

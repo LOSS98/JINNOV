@@ -18,6 +18,7 @@ def send_mail(
     :param receiver_email: The email address of the person you want to send the email to
     :param connection_token: This is the application token of the email address you're sending from
     """
+    
     port = 465
     smtp_server = "smtp.gmail.com"
     context = ssl.create_default_context()
@@ -88,8 +89,8 @@ def create_mail_student():
         annee: str = request.form.get("annee_etude")
 
         # mail connection informations
-        sender_email = ""
-        receiver_email = ""
+        sender_email = "devis@jinnov-insa.fr"
+        receiver_email = "axel.lenroue@jinnov-insa.fr"
         connection_token = ""
 
         # message creation

@@ -7,7 +7,7 @@ from models.database import objects, sql_connector
 class Track:
     def __init__(self, session_id: str) -> None:
         self.session_id: str = session_id
-        self.paths: list[objects.UserPath] = []
+        self.paths: list = []
 
     def register_page_enter(self, page: str):
         if len(self.paths) == 0 or self.path[-1].page != page:
@@ -20,7 +20,7 @@ class Track:
             self.paths.append(path)
 
 
-tracks: dict[str, Track] = {}
+tracks: dict = {}
 
 
 def get_or_create_current_track() -> Track:
