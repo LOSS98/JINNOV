@@ -37,10 +37,8 @@ def etude(id):
 
 @core.route("/ask-devis", methods=["POST"])
 def post_devis():
-    return render_template("soon.html")
-    # return utils.create_mail_devis()
+    return utils.create_mail_devis()
     
 @core.route('/mail_student', methods=["POST"])
 def post_student():
-    # return utils.create_mail_student()
-    return render_template("soon.html")
+    return utils.create_mail_student()

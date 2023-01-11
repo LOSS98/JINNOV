@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from dotenv import load_dotenv
 from models.database import sql_connector
 from models.utils import *
 import os
@@ -42,13 +43,19 @@ app.register_blueprint(blueprints.core.core)
 
 
 if __name__ == "__main__":
+    
+    # Load .env variables
+    if not os.path.exists(".env"):
+        raise Exception("EnvFileNotFound")
+    load_dotenv()
+    
     # Dirs
     os.makedirs("static/articles", exist_ok=True)
     os.makedirs("static/etudes", exist_ok=True)
 
     # Database System
     sql_connector.sql_connector = sql_connector.SQLConnector(
-        host="jinnov-insa.fr", user="axel", password="", database="siteweb"
+        host=os.getenv("DATABASE_HOST"), user=os.getenv("DATABASE_USERNAME"), password=os.getenv("DATABASE_PASSWORD"), database=os.getenv("DATABASE_NAME")
     )
     sql_connector.sql_connector.connect()
 
