@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block head %}
+<title>JINNOV | Demander un devis</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/presta.css') }}">
+{% endblock %}
+{% block body %}
+<h1 id="bigh1">Nos prestations</h1>
+<div id="prestalist">
+    <div class="prestael prestar">
+        <h1>DIGITALISATION</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+                <img src="{{url_for('static',filename='img/dev.png')}}">
+            </div>
+            <div class="presta-flex-r">
+                <ul>
+                    <li>Développement Web</li>
+                    <li>Développement Mobile</li>
+                    <li>Audit des Systèmes informatiques</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="prestael prestal">
+        <h1>RGPD</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+
+            </div>
+            <div class="presta-flex-r">
+                <img src="{{url_for('static',filename='img/rgpd.png')}}">
+            </div>
+        </div>
+    </div>
+    <div class="prestael prestar">
+        <h1>ÉNERGÉTIQUE</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+                <img src="{{url_for('static',filename='img/energetique.png')}}">
+            </div>
+            <div class="presta-flex-r">
+
+            </div>
+        </div>
+    </div>
+    <div class="prestael prestal">
+        <h1>MÉCANIQUE</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+
+            </div>
+            <div class="presta-flex-r">
+                <img src="{{url_for('static',filename='img/conception.png')}}">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+{% endblock %}

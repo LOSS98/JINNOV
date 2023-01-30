@@ -1,0 +1,58 @@
+main {
+    font-family: 'Inter';
+}
+
+#bigh1 {
+    text-align: center;
+}
+
+#prestalist{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.prestar h1{
+    color : #436c7c;
+    text-align: left;
+}
+
+.prestal h1{
+    color : #df8848;
+    text-align: right;
+}
+
+.presta-flex-container {
+    display: flex;
+}
+
+.prestar .presta-flex-r {
+    width: 40%;
+}
+
+.prestar .presta-flex-l {
+    width: 60%;
+    display: grid;
+    place-items: center start;
+}
+
+.prestal .presta-flex-r {
+    width: 60%;
+    display: grid;
+    place-items: center end;
+}
+
+.prestal .presta-flex-l {
+    width: 40%;
+}
+
+.presta-flex-l img {
+    max-width: 100%;
+    height: 40vh;
+    border-radius: 50px;
+}
+
+.presta-flex-r img {
+    max-width: 100%;
+    height: 40vh;
+    border-radius: 50px;
+}
