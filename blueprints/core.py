@@ -5,8 +5,8 @@ from models.database import sql_connector
 core = Blueprint("core", __name__)
 
 
-@core.route("/articles")
-def articles():
+@core.route("/actualites")
+def actualites():
     return render_template(
         "articles.html", articles=sql_connector.sql_connector.get_all_articles()
     )
