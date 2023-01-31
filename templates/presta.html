@@ -7,7 +7,7 @@
 <h1 id="bigh1">Nos prestations</h1>
 <div id="prestalist">
     <div class="prestael prestar">
-        <h1>DIGITALISATION</h1>
+        <h1 class="ptitle">DIGITALISATION</h1>
         <div class="presta-flex-container">
             <div class="presta-flex-l">
                 <img src="{{url_for('static',filename='img/dev.png')}}">
@@ -22,10 +22,14 @@
         </div>
     </div>
     <div class="prestael prestal">
-        <h1>RGPD</h1>
+        <h1 class="ptitle">RGPD</h1>
         <div class="presta-flex-container">
             <div class="presta-flex-l">
-
+                <ul>
+                    <li>Audit</li>
+                    <li>Mise en conformité</li>
+                    <li>Formation</li>
+                </ul>
             </div>
             <div class="presta-flex-r">
                 <img src="{{url_for('static',filename='img/rgpd.png')}}">
@@ -33,21 +37,27 @@
         </div>
     </div>
     <div class="prestael prestar">
-        <h1>ÉNERGÉTIQUE</h1>
+        <h1 class="ptitle">ÉNERGÉTIQUE</h1>
         <div class="presta-flex-container">
             <div class="presta-flex-l">
                 <img src="{{url_for('static',filename='img/energetique.png')}}">
             </div>
             <div class="presta-flex-r">
-
+                <ul>
+                    <li>Energetique des bâtiments</li>
+                </ul>
             </div>
         </div>
     </div>
     <div class="prestael prestal">
-        <h1>MÉCANIQUE</h1>
+        <h1 class="ptitle">MÉCANIQUE</h1>
         <div class="presta-flex-container">
             <div class="presta-flex-l">
-
+                <ul>
+                    <li>Dimensionnement et calculs de structures</li>
+                    <li>Modélisation Analytique et numérique de pièces</li>
+                    <li>Prototypage</li>
+                </ul>
             </div>
             <div class="presta-flex-r">
                 <img src="{{url_for('static',filename='img/conception.png')}}">
