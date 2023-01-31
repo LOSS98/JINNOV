@@ -30,11 +30,12 @@ CREATE TABLE `article` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` INT NOT NULL,
   `created_by` INT NOT NULL,
-  `title` varchar(45) NOT NULL,
+  `title` varchar(80) NOT NULL,
   `body` longtext NOT NULL,
   `description` longtext NOT NULL,
   `image`longtext NOT NULL,
   `attachements` longtext,
+  `highlighted` tinyint,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`created_by`) REFERENCES `membre` (`id`)
 ) DEFAULT CHARSET=utf8mb4;

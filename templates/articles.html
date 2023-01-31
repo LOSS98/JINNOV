@@ -5,44 +5,30 @@
 {% endblock %}
 {% block body %}
 <h1>Nos actualités</h1>
+{% if highlighted %}
 <div class="news-box">
   <h2>À la une</h2>
   <div id="news-top">
     <div class="news">
-      <img src="{{url_for('static', filename='articles/')}}">
-      <h3>Congrès National d'Hiver 2022</h3>
-      <h5>Le 12/12/2022</h5>
-      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit iusto tenetur tempora fugit adipisci quas, beatae qui modi sit iure provident quia quaerat! Tempora beatae reprehenderit voluptate nesciunt temporibus, quaerat corrupti debitis nam aspernatur officiis, iusto, vel nobis sequi? Distinctio.</span>
+      <img src="{{url_for('static', filename=highlighted.image)}}">
+      <h3>{{highlighted.title}}</h3>
+      <h5>Le {{highlighted.strDate()}}</h5>
+      <span>{{highlighted.description}}</span>
     </div>
   </div>
 </div>
+{% endif %}
 <div class="news-box">
   <h2>Tous nos articles</h2>
   <div id="news-grid">
+    {% for a in articles %}
     <div class="news">
-      <img src="{{url_for('static', filename='articles/')}}">
-      <h3>Congrès Régional d'Automne 2022</h3>
-      <h5>Le 12/12/2022</h5>
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente unde corporis, officiis laudantium totam enim, vero consequatur eligendi exercitationem adipisci suscipit accusantium delectus nulla. Earum maxime accusantium in at natus assumenda fugit?</span>
+      <img src="{{url_for('static', filename=a.image)}}">
+      <h3>{{a.title}}</h3>
+      <h5>Le {{a.strDate()}}</h5>
+      <span>{{a.description}}</span>
     </div>
-    <div class="news">
-      <img src="{{url_for('static', filename='articles/')}}">
-      <h3>Robin JOSEPH se renomme officiellement en Robin JINNOV !</h3>
-      <h5>Le 12/12/2022</h5>
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, recusandae veritatis? Assumenda, eaque nulla dicta repellat dolore doloribus nobis doloremque enim mollitia corporis. Magni corporis amet quis asperiores corrupti tenetur!</span>
-    </div>
-    <div class="news">
-      <img src="{{url_for('static', filename='articles/')}}">
-      <h3>Congrès Régional d'Automne 2022</h3>
-      <h5>Le 12/12/2022</h5>
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente unde corporis, officiis laudantium totam enim, vero consequatur eligendi exercitationem adipisci suscipit accusantium delectus nulla. Earum maxime accusantium in at natus assumenda fugit?</span>
-    </div>
-    <div class="news">
-      <img src="{{url_for('static', filename='articles/')}}">
-      <h3>Robin JOSEPH se renomme officiellement en Robin JINNOV !</h3>
-      <h5>Le 12/12/2022</h5>
-      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, recusandae veritatis? Assumenda, eaque nulla dicta repellat dolore doloribus nobis doloremque enim mollitia corporis. Magni corporis amet quis asperiores corrupti tenetur!</span>
-    </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}
