@@ -54,7 +54,7 @@ class SQLConnector:
         return [Article(*r) for r in c.fetchall()]
 
     def get_article(self, id):
-        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM article a INNER JOIN membre ON a.created_by = membre.id WHERE a.id=%s LIMIT 1"
+        query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.description,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name),a.highlighted FROM article a INNER JOIN membre ON a.created_by = membre.id WHERE a.id=%s LIMIT 1"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (id,))
         row = c.fetchone()

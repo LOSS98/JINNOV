@@ -1,15 +1,5 @@
-main {
-  font-family: 'Inter', sans-serif;
-}
-
-main h1 {
-  margin-top: 40px;
-  text-align: center;
-  color: black;
-  font-size: 300%;
-}
-
 a {
+  color: black;
   text-decoration: none;
 }
 
@@ -75,7 +65,6 @@ a {
   padding: 15px;
   border-radius: 10px;
   border: 3px solid black;
-  cursor: pointer;
 }
 
 #news-top>.news {
@@ -84,6 +73,7 @@ a {
 
 .news img {
   max-width: inherit;
+  border-radius: 10px;
 }
 
 #news-top img {

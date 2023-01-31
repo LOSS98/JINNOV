@@ -1,25 +1,22 @@
-#filler-bottom{
+#filler-bottom {
     height: 100px;
 }
 
-body{
-    overflow-x:hidden;
+body {
+    overflow-x: hidden;
 }
+
 html {
     scroll-behavior: smooth;
 }
 
-main {
-    font-family: 'Inter', sans-serif;
-}
-
-a{
+a {
     z-index: 100;
 }
 
 
-#short-prez{
-    background: linear-gradient(#2f2f2f7c,#2f2f2f7c), url('/static/img/shortprez.jpg');
+#short-prez {
+    background: linear-gradient(#2f2f2f7c, #2f2f2f7c), url('/static/img/shortprez.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -27,44 +24,44 @@ a{
     padding-top: 10vh;
 }
 
-#short-prez h1{
+#short-prez h1 {
     margin-top: 0px;
-    color : #ffffff;
+    color: #ffffff;
     font-size: 5vh;
     margin-bottom: 0px;
 }
 
-#short-prez h2{
+#short-prez h2 {
     margin-top: 0px;
-    color : #ffffff;
+    color: #ffffff;
     font-size: 4.75vh;
     margin-bottom: 0px;
 }
 
 #short-prez p {
     margin-top: 3vh;
-    color : #ffffff;
+    color: #ffffff;
     font-size: 3.4vh;
     margin-left: calc(50% - 30vw);
     margin-right: calc(50% - 30vw);
     margin-bottom: 10vh;
 }
 
-#short-prez a{
+#short-prez a {
     font-style: none;
-    color : white;
+    color: white;
     text-decoration: none;
     background-color: #df8848;
-    font-size : 2.5vh;
-    padding : 2.2vh;
+    font-size: 2.5vh;
+    padding: 2.2vh;
     border-radius: 4.4vh;
 }
 
-#short-prez a:hover{
+#short-prez a:hover {
     background-color: #bd5b18;
 }
 
-#holder{
+#holder {
     height: 17vh;
 }
 
@@ -73,17 +70,17 @@ svg#out_wave {
     margin-top: -8vh;
 }
 
-#slogan{
+#slogan {
     margin-top: calc(2.2vh - 20px);
     margin-bottom: 50px;
     min-height: 20vh;
     margin-top: -15px;
 }
 
-#slogan h1{
- text-align: center;
- font-size: 300%;
- margin-bottom: 4vh;
+#slogan h1 {
+    text-align: center;
+    font-size: 300%;
+    margin-bottom: 4vh;
 }
 
 #slogan img {
@@ -97,15 +94,15 @@ svg#out_wave {
 #disp-presta {
     background-color: #bd5b18;
     padding-bottom: 6vh;
-    padding-top : 4vh;
+    padding-top: 4vh;
 }
 
-.part-title{
+.part-title {
     font-size: 320%;
     text-align: center;
 }
 
-#disp-presta > h1{
+#disp-presta>h1 {
     color: white;
     margin-bottom: 90px;
     margin-top: 0;
@@ -132,21 +129,21 @@ svg#out_wave {
     padding-right: 20px;
     border-radius: 20px;
     box-shadow: 0vh 1vh 2vh #00000044;
-    transition : ease-out 0.3s;
+    transition: ease-out 0.3s;
 }
 
 #disp-presta div.row div.element:hover {
-    transform : scale(1.1);
-    transition : ease-out 0.3s;
+    transform: scale(1.1);
+    transition: ease-out 0.3s;
 }
 
-#disp-presta div div.element div.title-holder h1{
-    display:table-cell;
+#disp-presta div div.element div.title-holder h1 {
+    display: table-cell;
     font-size: 150%;
     vertical-align: middle;
 }
 
-#disp-presta div div.element div.title-holder{
+#disp-presta div div.element div.title-holder {
     margin-top: 10px;
     height: 90px;
     display: table;
@@ -155,12 +152,12 @@ svg#out_wave {
 }
 
 
-#disp-presta div div.element p{
+#disp-presta div div.element p {
     font-size: 110%;
     text-align: center;
 }
 
-#disp-presta div div.element img{
+#disp-presta div div.element img {
     margin-top: 10%;
     width: 30%;
     height: auto;
@@ -170,35 +167,35 @@ svg#out_wave {
     margin-right: auto;
 }
 
-#bordertop img{
+#bordertop img {
     height: 200px;
     width: 100%;
     object-fit: cover;
-    object-position : 0 -5.1vh ;
+    object-position: 0 -5.1vh;
 }
 
-#borderbottom{
+#borderbottom {
     margin-top: -1px;
 }
 
-#deroulement-part{
+#deroulement-part {
     margin-bottom: 10vh;
     margin-top: 15vh;
 }
 
-#deroulement-scroll-container{
-    margin-left : 25%;
+#deroulement-scroll-container {
+    margin-left: 25%;
     margin-right: 25%;
     padding-top: 5vh;
 }
 
-#deroulement-scroll-container > .shuttle{
+#deroulement-scroll-container>.shuttle {
     display: flex;
     margin-left: auto;
     margin-right: auto;
 }
 
-#deroulement-scroll-container .image-wrapper{
+#deroulement-scroll-container .image-wrapper {
     width: 4vw;
     height: 4vw;
     margin-right: 3vw;
@@ -208,49 +205,49 @@ svg#out_wave {
     text-align: center;
 }
 
-.image-wrapper > img{
+.image-wrapper>img {
     width: 100%;
     margin-top: 50%;
     transform: translate(0%, -50%);
 }
 
-#deroulement-scroll-container #metro-1 .image-wrapper{
+#deroulement-scroll-container #metro-1 .image-wrapper {
     background-color: #3d5467;
 }
 
-#deroulement-scroll-container #metro-2 .image-wrapper{
-    background-color:#df8848 ;
+#deroulement-scroll-container #metro-2 .image-wrapper {
+    background-color: #df8848;
 }
 
-#deroulement-scroll-container #metro-3 .image-wrapper{
+#deroulement-scroll-container #metro-3 .image-wrapper {
     background-color: #3d5467;
 }
 
-#deroulement-scroll-container #metro-4 .image-wrapper{
-    background-color:#df8848 ;
+#deroulement-scroll-container #metro-4 .image-wrapper {
+    background-color: #df8848;
 }
 
-#deroulement-scroll-container #metro-5 .image-wrapper{
+#deroulement-scroll-container #metro-5 .image-wrapper {
     background-color: #3d5467;
 }
 
-#deroulement-scroll-container .paragraph > h1{
+#deroulement-scroll-container .paragraph>h1 {
     font-size: 1.6vw;
     margin-top: 0;
     margin-bottom: 1vh;
 }
 
-#deroulement-scroll-container  .paragraph > p{
+#deroulement-scroll-container .paragraph>p {
     font-size: 1vw;
     margin-top: 0;
 }
 
-#deroulement-scroll-container  .paragraph{
+#deroulement-scroll-container .paragraph {
     margin-left: 3vw;
     width: calc(100% - 9vw);
 }
 
-#deroulement-scroll-container .line{
+#deroulement-scroll-container .line {
     height: 3.5vw;
     margin-top: -1vw;
     margin-bottom: -1vw;
@@ -259,79 +256,79 @@ svg#out_wave {
     position: relative;
 }
 
-#deroulement-scroll-container .line svg{
-   height: 100%;
+#deroulement-scroll-container .line svg {
+    height: 100%;
 }
 
-.line-item{
+.line-item {
     stroke: #2f2f2f;
 }
 
-#avantages{
+#avantages {
     background-color: #436c7c;
     padding-top: 10px;
     padding-bottom: 50px;
 }
 
-#avantages-title{
+#avantages-title {
     color: white;
 }
 
-.avantages-line{
+.avantages-line {
     display: flex;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 60px;
 }
 
-.avantages-line > .e:first-child {
-    margin-right : 10%;
+.avantages-line>.e:first-child {
+    margin-right: 10%;
 }
 
-.avantages-line > .e {
+.avantages-line>.e {
     width: 45%;
 }
 
-.avantages-line > .e > img {
+.avantages-line>.e>img {
     height: 90px;
     width: 90px;
     background-color: white;
-    padding : 15px;
+    padding: 15px;
     border-radius: 25%;
     margin-left: calc(50% - 75px);
 }
 
-.avantages-line > .e > p {
+.avantages-line>.e>p {
     text-align: center;
-    color : white;
+    color: white;
     font-size: 140%;
 }
 
 #partnership {
-    margin-bottom : 80px;
+    margin-bottom: 80px;
 }
 
-#partnership #img-holder{
+#partnership #img-holder {
     margin-left: 12%;
     margin-right: 12%;
 }
 
-#partnership #img-holder .img-holder-line{
+#partnership #img-holder .img-holder-line {
     display: flex;
     margin-top: 40px;
 }
 
-#partnership #img-holder a{
+#partnership #img-holder a {
     margin-left: auto;
     margin-right: auto;
 }
 
-#partnership #img-holder img{
+#partnership #img-holder img {
     height: 110px;
 }
 
-@media screen and (max-width : 1260px){ 
-    #short-prez{
+@media screen and (max-width : 1260px) {
+    #short-prez {
         padding-top: 5vh;
     }
 
@@ -339,12 +336,12 @@ svg#out_wave {
         margin-bottom: 8vh;
     }
 
-    #holder{
+    #holder {
         height: 10vh;
     }
 
-    #deroulement-scroll-container{
-        margin-left : 10%;
+    #deroulement-scroll-container {
+        margin-left: 10%;
         margin-right: 10%;
     }
 
@@ -358,63 +355,63 @@ svg#out_wave {
         margin-right: 3%;
     }
 
-    #disp-presta div.row div.element div.title-holder h1{
+    #disp-presta div.row div.element div.title-holder h1 {
         font-size: 130%;
     }
-    
-    #disp-presta div.row div.element div.title-holder{
+
+    #disp-presta div.row div.element div.title-holder {
         height: 90px;
     }
-    
-    
-    #disp-presta div.row div.element p{
+
+
+    #disp-presta div.row div.element p {
         font-size: 100%;
     }
-    
-    #slogan{
+
+    #slogan {
         margin-top: calc(2vh - 35px);
     }
-    
-    #short-prez h1{
-        margin-left: 1vw ;
+
+    #short-prez h1 {
+        margin-left: 1vw;
         margin-right: 1vw;
     }
-    
-    #short-prez h2{
-        margin-left: 1vw ;
+
+    #short-prez h2 {
+        margin-left: 1vw;
         margin-right: 1vw;
     }
-    
-    #deroulement-scroll-container > .shuttle{
+
+    #deroulement-scroll-container>.shuttle {
         display: flex;
         margin-left: auto;
         margin-right: auto;
     }
-    
-    #deroulement-scroll-container .image-wrapper{
+
+    #deroulement-scroll-container .image-wrapper {
         width: 8vw;
         height: 8vw;
         margin-right: 5vw;
         margin-top: -0.5vw;
     }
-    
-    #deroulement-scroll-container .paragraph > h1{
+
+    #deroulement-scroll-container .paragraph>h1 {
         font-size: 2.6vw;
         margin-top: 0;
         margin-bottom: 1vh;
     }
-    
-    #deroulement-scroll-container  .paragraph > p{
+
+    #deroulement-scroll-container .paragraph>p {
         font-size: 1.7vw;
         margin-top: 0;
     }
-    
-    #deroulement-scroll-container  .paragraph{
+
+    #deroulement-scroll-container .paragraph {
         margin-left: 3vw;
         width: calc(100% - 12vw);
     }
-    
-    #deroulement-scroll-container .line{
+
+    #deroulement-scroll-container .line {
         height: 4.5vw;
         margin-top: -1vw;
         margin-bottom: -1vw;
@@ -423,29 +420,32 @@ svg#out_wave {
         position: relative;
     }
 
-    .part-title{
+    .part-title {
         font-size: 280%;
         text-align: center;
     }
-    #avantages{
+
+    #avantages {
         background-color: #436c7c;
         padding-top: 15px;
         padding-bottom: 55px;
     }
-    #partnership #img-holder img{
+
+    #partnership #img-holder img {
         height: 70px;
     }
 }
 
-@media screen and (max-width : 1050px){
+@media screen and (max-width : 1050px) {
     svg#out_wave {
         width: 100vw;
         margin-top: -6vh;
     }
 }
 
-@media screen and (orientation : portrait), screen and (max-width : 750px) and (orientation : landscape){
-    body{
+@media screen and (orientation : portrait),
+screen and (max-width : 750px) and (orientation : landscape) {
+    body {
         margin-left: 0vh;
         margin-right: 0vh;
         overflow-x: hidden;
@@ -453,10 +453,10 @@ svg#out_wave {
 
     #disp-presta {
         margin-top: -0.1px;
-        margin-bottom: -0.1px ;
+        margin-bottom: -0.1px;
     }
 
-    #holder{
+    #holder {
         height: 10vh;
     }
 
@@ -483,7 +483,7 @@ svg#out_wave {
         margin-bottom: -1px;
     }
 
-    #slogan{
+    #slogan {
         margin-top: 7vh;
         margin-bottom: 7vh;
     }
@@ -492,7 +492,7 @@ svg#out_wave {
     #disp-presta div#a {
         margin-bottom: 25px;
     }
-    
+
     #disp-presta div div.element {
         width: 37%;
         min-width: 180px;
@@ -505,10 +505,10 @@ svg#out_wave {
         padding-right: 20px;
         border-radius: 20px;
         box-shadow: 0vh 1vh 2vh #00000044;
-        transition : ease-out 0.3s;
+        transition: ease-out 0.3s;
     }
 
-    #disp-presta div div.element div.title-holder{
+    #disp-presta div div.element div.title-holder {
         margin-top: 8px;
         height: 70px;
         display: table;
@@ -525,17 +525,17 @@ svg#out_wave {
         margin-top: 25px;
     }
 
-    #disp-presta div div.element div.title-holder h1{
+    #disp-presta div div.element div.title-holder h1 {
         font-size: 130%;
     }
 
-    #deroulement-scroll-container{
-        margin-left : 5%;
+    #deroulement-scroll-container {
+        margin-left: 5%;
         margin-right: 5%;
         padding-top: 5vh;
     }
 
-    #deroulement-scroll-container .image-wrapper{
+    #deroulement-scroll-container .image-wrapper {
         width: 85px;
         height: 85px;
         margin-right: 0px;
@@ -545,26 +545,26 @@ svg#out_wave {
         text-align: center;
     }
 
-    #deroulement-scroll-container .paragraph{
+    #deroulement-scroll-container .paragraph {
         margin-top: 5px;
         margin-left: 5%;
         width: calc(100% - 130px - 5%);
     }
 
-    #deroulement-scroll-container .paragraph > h1{
+    #deroulement-scroll-container .paragraph>h1 {
         font-size: 150%;
         margin-top: 0;
         margin-bottom: 1vh;
         text-align: left;
     }
-    
-    #deroulement-scroll-container .paragraph > p{
+
+    #deroulement-scroll-container .paragraph>p {
         font-size: 100%;
         margin-top: 0;
         text-align: left;
     }
 
-    #deroulement-scroll-container .line{
+    #deroulement-scroll-container .line {
         height: 130px;
         margin-top: -80px;
         margin-bottom: -15px;
@@ -573,28 +573,29 @@ svg#out_wave {
         position: relative;
     }
 
-    .avantages-line{
+    .avantages-line {
         margin-left: 3%;
         margin-right: 3%;
     }
 
-    #partnership #img-holder{
+    #partnership #img-holder {
         margin-left: 5%;
         margin-right: 5%;
     }
 
-    #partnership #img-holder img{
+    #partnership #img-holder img {
         height: 50px;
     }
 }
 
-@media screen and (orientation : portrait) and (min-height : 1000px), screen and (max-width : 750px) and (min-height : 1000px) and (orientation : landscape){
-    #slogan h1{
+@media screen and (orientation : portrait) and (min-height : 1000px),
+screen and (max-width : 750px) and (min-height : 1000px) and (orientation : landscape) {
+    #slogan h1 {
         font-size: 600%;
     }
 
-    #slogan img{
-        width : 100px;
+    #slogan img {
+        width: 100px;
     }
 
     #disp-presta div div.element {
@@ -609,10 +610,10 @@ svg#out_wave {
         padding-right: 20px;
         border-radius: 20px;
         box-shadow: 0vh 1vh 2vh #00000044;
-        transition : ease-out 0.3s;
+        transition: ease-out 0.3s;
     }
 
-    #disp-presta div div.element div.title-holder{
+    #disp-presta div div.element div.title-holder {
         margin-top: 8px;
         height: 100px;
     }
@@ -625,35 +626,36 @@ svg#out_wave {
         margin-top: 25px;
     }
 
-    .part-title{
+    .part-title {
         font-size: 400%;
     }
 
-    #partnership #img-holder img{
+    #partnership #img-holder img {
         height: 70px;
     }
 
 }
 
-@media screen and (orientation : portrait) and (min-height : 1260px), screen and (max-width : 750px) and (min-height : 1260px) and (orientation : landscape){
+@media screen and (orientation : portrait) and (min-height : 1260px),
+screen and (max-width : 750px) and (min-height : 1260px) and (orientation : landscape) {
     #disp-presta div div.element {
         height: 450px;
     }
 
-    #slogan{
+    #slogan {
         margin-bottom: 11vh;
-    } 
+    }
 
     #disp-presta {
         padding-top: 70px;
         padding-bottom: 160px;
     }
 
-    #disp-presta .part-title{
+    #disp-presta .part-title {
         margin-bottom: 140px;
     }
 
-    #disp-presta div div.element div.title-holder{
+    #disp-presta div div.element div.title-holder {
         margin-top: 8px;
         height: 160px;
         display: table;
@@ -661,20 +663,20 @@ svg#out_wave {
         width: 100%;
     }
 
-    #disp-presta div div.element div.title-holder h1{
+    #disp-presta div div.element div.title-holder h1 {
         font-size: 230%;
     }
 
-    #disp-presta div div.element  p{
+    #disp-presta div div.element p {
         font-size: 200%;
     }
 
-    #deroulement-scroll-container{
-        margin-left : 3%;
+    #deroulement-scroll-container {
+        margin-left: 3%;
         margin-right: 3%;
     }
 
-    #deroulement-scroll-container .image-wrapper{
+    #deroulement-scroll-container .image-wrapper {
         width: 150px;
         height: 150px;
         margin-right: 0px;
@@ -684,27 +686,27 @@ svg#out_wave {
         text-align: center;
     }
 
-    #deroulement-scroll-container .paragraph{
+    #deroulement-scroll-container .paragraph {
         margin-top: 30px;
         margin-left: 5%;
         margin-top: 10px;
         width: calc(100% - 210px - 5%);
     }
 
-    #deroulement-scroll-container .paragraph > h1{
+    #deroulement-scroll-container .paragraph>h1 {
         font-size: 230%;
         margin-top: 0;
         margin-bottom: 1vh;
         text-align: left;
     }
-    
-    #deroulement-scroll-container .paragraph > p{
+
+    #deroulement-scroll-container .paragraph>p {
         font-size: 150%;
         margin-top: 0;
         text-align: left;
     }
 
-    #deroulement-scroll-container .line{
+    #deroulement-scroll-container .line {
         height: 110px;
         margin-top: -50px;
         margin-bottom: -10px;
@@ -713,7 +715,7 @@ svg#out_wave {
         position: relative;
     }
 
-    #partnership #img-holder img{
+    #partnership #img-holder img {
         height: 100px;
     }
 

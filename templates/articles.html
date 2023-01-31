@@ -9,12 +9,12 @@
 <div class="news-box">
   <h2>À la une</h2>
   <div id="news-top">
-    <div class="news">
+    <a class="news" href="{{url_for('core.article', id=highlighted.id)}}">
       <img src="{{url_for('static', filename=highlighted.image)}}">
       <h3>{{highlighted.title}}</h3>
       <h5>Le {{highlighted.strDate()}}</h5>
       <span>{{highlighted.description}}</span>
-    </div>
+    </a>
   </div>
 </div>
 {% endif %}
@@ -22,12 +22,12 @@
   <h2>Tous nos articles</h2>
   <div id="news-grid">
     {% for a in articles %}
-    <div class="news">
+    <a class="news" href="{{url_for('core.article', id=a.id)}}">
       <img src="{{url_for('static', filename=a.image)}}">
       <h3>{{a.title}}</h3>
       <h5>Le {{a.strDate()}}</h5>
       <span>{{a.description}}</span>
-    </div>
+    </a>
     {% endfor %}
   </div>
 </div>
