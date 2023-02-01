@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 {% block head %}
 <title>JINNOV | Nos actualités</title>
+<style>
+  :root{
+    --image: url({{url_for('static', filename=article.image)}});
+  }
+</style>
 <link rel="stylesheet" href="{{url_for('static', filename='css/article.css')}}">
 {% endblock %}
 {% block body %}
-<h1>{{article.title}}</h1>
+<div class="header">
+  <h1>{{article.title}}</h1>
+</div>
+<div class="content">
+  {{article.body|safe}}
+</div>
 {% endblock %}

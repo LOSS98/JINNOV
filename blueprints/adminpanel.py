@@ -77,7 +77,7 @@ def create_etude_post():
                     image.save("static/" + image_path)
                     attachements_path = []
                     for i in range(len(attachements)):
-                        if attachements[i].content_length > 0:
+                        if attachements[i].filename != "":
                             extension = os.path.splitext(image.filename)[1][1:].lower()
                             if extension in utils.ALLOWED_EXTENSIONS:
                                 extra_path = f"etudes/{now}/attachement_{i}.{extension}"
@@ -149,7 +149,7 @@ def create_article_post():
                     image.save("static/" + image_path)
                     attachements_path = []
                     for i in range(len(attachements)):
-                        if attachements[i].content_length > 0:
+                        if attachements[i].filename != "":
                             extension = os.path.splitext(image.filename)[1][1:].lower()
                             if extension in utils.ALLOWED_EXTENSIONS:
                                 extra_path = (

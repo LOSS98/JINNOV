@@ -22,6 +22,7 @@ def article(id):
         return render_template(
             "article.html", article=article, admin=auth_manager.is_connected()
         )
+    abort(404)
 
 
 @core.route("/etudes")

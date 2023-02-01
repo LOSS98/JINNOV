@@ -57,7 +57,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 100px;
-  grid-row-gap: 200px;
+  grid-row-gap: 100px;
 }
 
 .news {
