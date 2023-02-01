@@ -93,8 +93,6 @@ main{
     padding-right: 3vw;
     padding-bottom: 2vh;
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
 #scroller::-webkit-scrollbar{
