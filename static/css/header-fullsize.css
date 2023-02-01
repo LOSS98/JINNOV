@@ -150,3 +150,8 @@ body{
 header{
     background-color: white;
 }
+
+ul {
+    align-items: center;
+    padding: 0;
+}
