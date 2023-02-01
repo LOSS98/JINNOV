@@ -10,11 +10,6 @@ app = Flask(__name__)
 @app.route('/formulaire_etudiant', methods=["GET","POST"])
 def etuform():
     return render_template("mail_form_student.html")
-    
-#route pour la création d"une demande d'inscriptions
-@app.route('/mail_student', methods=["POST"])
-def mail_student():
-    return create_mail_student()
 
 @app.route('/')
 def index():
@@ -27,6 +22,18 @@ def contact():
 @app.route('/qui_sommes_nous')
 def aboutus():
     return render_template("kisomnou.html")
+
+@app.route('/actualites')
+def actualites():
+    return render_template("soon.html")
+
+@app.route('/etudes')
+def etudes():
+    return render_template("soon.html")
+
+@app.route('/liste_membres')
+def liste_membres():
+    return render_template("soon.html")
 
 @app.route('/prestations')
 def presta():
