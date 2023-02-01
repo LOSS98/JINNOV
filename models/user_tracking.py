@@ -30,4 +30,6 @@ def get_or_create_current_track() -> Track:
     else:
         session_id = uuid.uuid4()
         session["track"] = session_id
-        return Track(session_id)
+        track = Track(session_id)
+        tracks[session_id] = track
+        return track

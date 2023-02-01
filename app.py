@@ -47,32 +47,32 @@ app.register_blueprint(blueprints.auth.auth)
 app.register_blueprint(blueprints.adminpanel.adminpanel)
 app.register_blueprint(blueprints.core.core)
 
+# Load .env variables
+if not os.path.exists(".env"):
+    raise Exception("EnvFileNotFound")
+load_dotenv()
+
+# Dirs
+os.makedirs("static/articles", exist_ok=True)
+os.makedirs("static/etudes", exist_ok=True)
+
+# Database System
+sql_connector.sql_connector = sql_connector.SQLConnector(
+    host=os.getenv("DATABASE_HOST"),
+    user=os.getenv("DATABASE_USERNAME"),
+    password=os.getenv("DATABASE_PASSWORD"),
+    database=os.getenv("DATABASE_NAME"),
+)
+sql_connector.sql_connector.connect()
+
+# Secret Key reading
+if not os.path.exists("secret.key"):
+    raise Exception("SecretKeyNotFound")
+with open("secret.key") as key:
+    app.config["SECRET_KEY"] = key.read()
+
 
 if __name__ == "__main__":
-
-    # Load .env variables
-    if not os.path.exists(".env"):
-        raise Exception("EnvFileNotFound")
-    load_dotenv()
-
-    # Dirs
-    os.makedirs("static/articles", exist_ok=True)
-    os.makedirs("static/etudes", exist_ok=True)
-
-    # Database System
-    sql_connector.sql_connector = sql_connector.SQLConnector(
-        host=os.getenv("DATABASE_HOST"),
-        user=os.getenv("DATABASE_USERNAME"),
-        password=os.getenv("DATABASE_PASSWORD"),
-        database=os.getenv("DATABASE_NAME"),
-    )
-    sql_connector.sql_connector.connect()
-
-    # Secret Key reading
-    if not os.path.exists("secret.key"):
-        raise Exception("SecretKeyNotFound")
-    with open("secret.key") as key:
-        app.config["SECRET_KEY"] = key.read()
 
     # Running
     app.run(host="0.0.0.0", port=80, debug=False)
