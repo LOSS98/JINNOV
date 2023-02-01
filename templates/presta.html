@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block head %}
+<title>JINNOV | Demander un devis</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/presta.css') }}">
+{% endblock %}
+{% block body %}
+<h1 id="bigh1">Nos prestations</h1>
+<div id="prestalist">
+    <div class="prestael prestar">
+        <h1 class="ptitle">DIGITALISATION</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+                <img src="{{url_for('static',filename='img/dev.png')}}">
+            </div>
+            <div class="presta-flex-r">
+                <ul>
+                    <li>Développement Web</li>
+                    <li>Développement Mobile</li>
+                    <li>Audit des Systèmes informatiques</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="prestael prestal">
+        <h1 class="ptitle">PROTECTION DES DONNÉES</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+                <ul>
+                    <li>Audit</li>
+                    <li>Mise en conformité</li>
+                    <li>Formation</li>
+                </ul>
+            </div>
+            <div class="presta-flex-r">
+                <img src="{{url_for('static',filename='img/rgpd.png')}}">
+            </div>
+        </div>
+    </div>
+    <div class="prestael prestar">
+        <h1 class="ptitle">ÉNERGÉTIQUE DU BÂTIMENT</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+                <img src="{{url_for('static',filename='img/energetique.png')}}">
+            </div>
+            <div class="presta-flex-r">
+                <ul>
+                    <li>Audit énergétique</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="prestael prestal">
+        <h1 class="ptitle">MÉCANIQUE</h1>
+        <div class="presta-flex-container">
+            <div class="presta-flex-l">
+                <ul>
+                    <li>Dimensionnement et calculs de structures</li>
+                    <li>Modélisation Analytique et numérique de pièces</li>
+                    <li>Prototypage / Fabrication aditive</li>
+                </ul>
+            </div>
+            <div class="presta-flex-r">
+                <img src="{{url_for('static',filename='img/conception.png')}}">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+{% endblock %}
