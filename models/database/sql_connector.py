@@ -1,5 +1,5 @@
 import mysql.connector
-from mysql.connector import errorcode, MySQLConnection, Error
+from mysql.connector import errorcode, MySQLConnection, Error, RefreshOption
 
 from models.database.objects import Admin, Etude, Article, Membre, UserPath
 
@@ -33,14 +33,21 @@ class SQLConnector:
     def disconnect(self):
         if self.connection is not None:
             self.connection.close()
+            self.connection = None
+
+    def refresh(self):
+        self.disconnect()
+        self.connect()
 
     def get_all_etudes(self) -> list:
+        self.refresh()
         query = "SELECT e.id,e.created_at,e.created_by,e.customer_name,e.customer_link,e.body,e.image,e.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM etude e INNER JOIN membre ON e.created_by = membre.id"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Etude(*r) for r in c.fetchall()]
 
     def get_etude(self, id):
+        self.refresh()
         query = "SELECT e.id,e.created_at,e.created_by,e.customer_name,e.customer_link,e.body,e.image,e.attachements,CONCAT(membre.first_name, ' ', membre.last_name) FROM etude e INNER JOIN membre ON e.created_by = membre.id WHERE e.id=%s LIMIT 1"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (id,))
@@ -48,12 +55,14 @@ class SQLConnector:
         return Etude(*row) if row is not None else None
 
     def get_all_articles(self) -> list:
+        self.refresh()
         query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.description,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name),a.highlighted FROM article a INNER JOIN membre ON a.created_by = membre.id"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
         return [Article(*r) for r in c.fetchall()]
 
     def get_article(self, id):
+        self.refresh()
         query = "SELECT a.id,a.created_by,a.created_at,a.title,a.body,a.description,a.image,a.attachements,CONCAT(membre.first_name, ' ', membre.last_name),a.highlighted FROM article a INNER JOIN membre ON a.created_by = membre.id WHERE a.id=%s LIMIT 1"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (id,))
@@ -61,6 +70,7 @@ class SQLConnector:
         return Article(*row) if row is not None else None
 
     def get_all_membres(self) -> list:
+        self.refresh()
         query = "SELECT id,first_name,last_name,email,phone_number,pole,poste,picture_path,active FROM membre"
         c = self.connection.cursor(prepared=True)
         c.execute(query)
@@ -73,6 +83,7 @@ class SQLConnector:
         email: str = None,
         password: str = None,
     ) -> list:
+        self.refresh()
         query = "SELECT id,full_name,email,password,salt FROM admin"
         where_filter, values = self.create_where_filter(
             id=id, full_name=full_name, email=email, password=password
@@ -87,6 +98,7 @@ class SQLConnector:
         pass
 
     def upsert_etude(self, etude: Etude):
+        self.refresh()
         query = "REPLACE INTO etude(id,created_at,created_by,customer_name,customer_link,body,image,attachements) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
         c = self.connection.cursor(prepared=True)
         c.execute(
@@ -105,6 +117,7 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_article(self, article: Article):
+        self.refresh()
         query = """REPLACE INTO article(id,created_by,created_at,title,body,description,image,attachements,highlighted)
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
         c = self.connection.cursor(prepared=True)
@@ -125,6 +138,7 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_admin(self, admin: Admin):
+        self.refresh()
         query = "REPLACE INTO admin(id,full_name,email,password,salt) VALUES (%s,%s,%s,%s,%s)"
         c = self.connection.cursor(prepared=True)
         c.execute(
@@ -140,6 +154,7 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_membre(self, membre: Membre):
+        self.refresh()
         query = """REPLACE INTO membre(id,first_name,last_name,email,phone_number,pole,poste,picture_path,active)
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"""
         c = self.connection.cursor(prepared=True)
@@ -160,6 +175,7 @@ class SQLConnector:
         self.connection.commit()
 
     def upsert_user_path(self, user_path: UserPath):
+        self.refresh()
         query = "REPLACE INTO user_path(id,session_id,start_date,end_date,page) VALUES (%s,%s,%s,%s,%s)"
         c = self.connection.cursor(prepared=True)
         c.execute(
@@ -175,24 +191,28 @@ class SQLConnector:
         self.connection.commit()
 
     def delete_etude(self, etude: Etude):
+        self.refresh()
         query = "DELETE FROM etude WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (etude.id,))
         self.connection.commit()
 
     def delete_article(self, article: Article):
+        self.refresh()
         query = "DELETE FROM article WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (article.id,))
         self.connection.commit()
 
     def delete_admin(self, admin: Admin):
+        self.refresh()
         query = "DELETE FROM admin WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (admin.id,))
         self.connection.commit()
 
     def delete_membre(self, membre: Membre):
+        self.refresh()
         query = "DELETE FROM membre WHERE id=%s"
         c = self.connection.cursor(prepared=True)
         c.execute(query, (membre.id,))
