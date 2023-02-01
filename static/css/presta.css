@@ -2,6 +2,11 @@ main {
     font-family: 'Inter';
 }
 
+body {
+    margin : 0;
+}
+
+
 #bigh1 {
     text-align: center;
     font-size: 500%;
@@ -19,13 +24,11 @@ main {
 .prestar h1{
     color : #436c7c;
     text-align: left;
-    margin-left : 25px;
 }
 
 .prestal h1{
     color : #df8848;
     text-align: right;
-    margin-right: 25px;
 }
 
 .presta-flex-container {
@@ -71,11 +74,22 @@ main {
 .presta-flex-container ul {
     font-size : 190%;
     list-style: none;
+    max-height: 350px;
+    margin : 0;
+}
+
+.prestal ul {
+    padding-left: 0px;
+    padding-right: 10px;
 }
 
 .presta-flex-container li {
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.prestael{
+    margin-bottom: 80px;
 }
 
 @media screen and (max-width : 1750px) {
@@ -106,6 +120,7 @@ main {
     .presta-flex-container ul {
         font-size : 150%;
         list-style: none;
+        max-height: 250px;
     }
     
     .presta-flex-container li {
@@ -116,12 +131,68 @@ main {
     .ptitle {
         font-size: 200%;
     }
+}
 
-    .prestar h1{
-        margin-left : 10px;
+@media screen and (max-width : 800px){
+    #bigh1 {
+        font-size: 400%;
     }
     
-    .prestal h1{
-        margin-right: 10px;
+    .presta-flex-l img {
+        height: 200px;
+        border-radius: 10px;
+    }
+    
+    .presta-flex-r img {
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    .presta-flex-container ul {
+        font-size : 115%;
+        list-style: none;
+    }
+    
+    .presta-flex-container li {
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    .ptitle {
+        font-size: 170%;
+    }
+
+    
+
+}
+
+@media screen and (max-width : 650px){
+    #bigh1 {
+        font-size: 300%;
+    }
+    
+    .presta-flex-l img {
+        height: 150px;
+        border-radius: 10px;
+    }
+    
+    .presta-flex-r img {
+        height: 150px;
+        border-radius: 10px;
+    }
+
+    .presta-flex-container ul {
+        font-size : 90%;
+        list-style: none;
+        max-height: 150px;
+    }
+    
+    .presta-flex-container li {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .ptitle {
+        font-size: 170%;
     }
 }
