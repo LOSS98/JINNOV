@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+a>h1 {
+  text-align: center;
+}
+
 #devis {
   padding-top: 60px;
 }
@@ -197,4 +201,8 @@ screen and (max-width: 750px) and (orientation: landscape) {
   }
 
 
+}
+
+#devis>h1 {
+  text-align: center;
 }
