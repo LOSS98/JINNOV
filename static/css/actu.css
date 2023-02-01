@@ -76,6 +76,13 @@ a {
   border-radius: 10px;
 }
 
+.news-text {
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #news-top img {
   width: 100%;
 }

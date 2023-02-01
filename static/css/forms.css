@@ -62,7 +62,7 @@
     height: 275px;
     resize: none;
     margin-top: 10px;
-    font-size: 125%;
+    font-size: 110%;
     font-family: 'Inter', sans-serif;
     background-color: #f2f4f5;
     border-style: none;
@@ -96,7 +96,8 @@ select {
     border-radius: 5px;
     text-align: center;
     float: right;
-    margin-top: -20px
+    margin-top: -20px;
+    margin-right: 40%;
 }
 
 label#select {

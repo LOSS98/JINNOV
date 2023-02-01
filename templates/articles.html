@@ -24,9 +24,11 @@
     {% for a in articles %}
     <a class="news" href="{{url_for('core.article', id=a.id)}}">
       <img src="{{url_for('static', filename=a.image)}}">
-      <h3>{{a.title}}</h3>
-      <h5></h5>
-      <span>{{a.description}}</span>
+      <div class="news-text">
+        <h3>{{a.title}}</h3>
+        <h5></h5>
+        <span>{{a.description}}</span>
+      </div>
     </a>
     {% endfor %}
   </div>
