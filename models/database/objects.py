@@ -36,18 +36,22 @@ class Article:
         created_at: int,
         title: str,
         body: str,
+        description: str,
         image: str,
         attachements: str,
         author_name: str,
+        highlighted: bool,
     ) -> None:
         self.id = id
         self.created_by = created_by
         self.created_at = created_at
         self.title = title
         self.body = body
+        self.description = description
         self.image = image
         self.attachements = attachements
         self.author_name = author_name
+        self.highlighted = highlighted
 
     def strDate(self):
         return datetime.fromtimestamp(self.created_at).strftime("%d/%m/%Y")

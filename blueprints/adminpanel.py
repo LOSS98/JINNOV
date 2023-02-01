@@ -77,13 +77,14 @@ def create_etude_post():
                     image.save("static/" + image_path)
                     attachements_path = []
                     for i in range(len(attachements)):
-                        extension = os.path.splitext(image.filename)[1][1:].lower()
-                        if extension in utils.ALLOWED_EXTENSIONS:
-                            extra_path = f"etudes/{now}/attachement_{i}.{extension}"
-                            attachements[i].save("static/" + extra_path)
-                            attachements_path.append(extra_path)
-                        else:
-                            abort(400)
+                        if attachements[i].filename != "":
+                            extension = os.path.splitext(image.filename)[1][1:].lower()
+                            if extension in utils.ALLOWED_EXTENSIONS:
+                                extra_path = f"etudes/{now}/attachement_{i}.{extension}"
+                                attachements[i].save("static/" + extra_path)
+                                attachements_path.append(extra_path)
+                            else:
+                                abort(400)
                     date = int(
                         time.mktime(datetime.strptime(date, "%Y-%m-%d").timetuple())
                     )
@@ -108,7 +109,6 @@ def create_etude_post():
     abort(401)
 
 
-
 @adminpanel.route("/new-article", methods=["GET"])
 def create_article():
     if auth_manager.is_connected():
@@ -128,6 +128,7 @@ def create_article_post():
         title = request.form.get("title")
         image = request.files.get("image")
         body = request.form.get("body")
+        description = request.form.get("description")
         author = request.form.get("author")
         date = request.form.get("date")
         attachements = request.files.getlist("attachements")
@@ -135,6 +136,7 @@ def create_article_post():
             title is not None
             and image is not None
             and body is not None
+            and description is not None
             and author is not None
             and date is not None
         ):
@@ -147,13 +149,16 @@ def create_article_post():
                     image.save("static/" + image_path)
                     attachements_path = []
                     for i in range(len(attachements)):
-                        extension = os.path.splitext(image.filename)[1][1:].lower()
-                        if extension in utils.ALLOWED_EXTENSIONS:
-                            extra_path = f"articles/{now}/attachement_{i}.{extension}"
-                            attachements[i].save("static/" + extra_path)
-                            attachements_path.append(extra_path)
-                        else:
-                            abort(400)
+                        if attachements[i].filename != "":
+                            extension = os.path.splitext(image.filename)[1][1:].lower()
+                            if extension in utils.ALLOWED_EXTENSIONS:
+                                extra_path = (
+                                    f"articles/{now}/attachement_{i}.{extension}"
+                                )
+                                attachements[i].save("static/" + extra_path)
+                                attachements_path.append(extra_path)
+                            else:
+                                abort(400)
                     date = int(
                         time.mktime(datetime.strptime(date, "%Y-%m-%d").timetuple())
                     )
@@ -165,9 +170,11 @@ def create_article_post():
                             date,
                             title,
                             body,
+                            description,
                             image_path,
                             ",".join(attachements_path),
                             None,
+                            0,
                         )
                     )
                     return redirect(url_for("core.articles"))

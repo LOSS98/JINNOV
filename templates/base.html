@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/header-fullsize.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/animation-header.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/header_mobile.css') }}">
@@ -28,7 +29,7 @@
                         <li><a href="{{url_for('aboutus')}}">
                             Qui sommes-nous ?
                         </a></li>
-                        <li><a href="{{url_for('actualites')}}">
+                        <li><a href="{{url_for('core.articles')}}">
                             Nos actualités
                         </a></li>
                         <li><a href="{{url_for('etudes')}}">
@@ -71,7 +72,7 @@
                             </li>
                         </ul>
                         <li>
-                            <a href="{{url_for('actualites')}}">
+                            <a href="{{url_for('core.articles')}}">
                                 Nos actualités
                             </a>
                         </li>

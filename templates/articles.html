@@ -1,21 +1,34 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Articles</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-
-    {% for article in articles %}
-    <a href="{{url_for('core.article', id=article.id)}}">
-      <img src="{{url_for('static', filename=article.image)}}" height="100px">
-      <h1>{{article.title}}</h1>
-      <span>Par : {{article.author_name}} le {{article.strDate()}}</span>
+{% extends "base.html" %}
+{% block head %}
+<title>JINNOV | Nos actualités</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/actu.css')}}">
+{% endblock %}
+{% block body %}
+<h1>Nos actualités</h1>
+{% if highlighted %}
+<div class="news-box">
+  <h2>À la une</h2>
+  <div id="news-top">
+    <a class="news" href="{{url_for('core.article', id=highlighted.id)}}">
+      <img src="{{url_for('static', filename=highlighted.image)}}">
+      <h3>{{highlighted.title}}</h3>
+      <h5>Le {{highlighted.strDate()}}</h5>
+      <span>{{highlighted.description}}</span>
+    </a>
+  </div>
+</div>
+{% endif %}
+<div class="news-box">
+  <h2>Tous nos articles</h2>
+  <div id="news-grid">
+    {% for a in articles %}
+    <a class="news" href="{{url_for('core.article', id=a.id)}}">
+      <img src="{{url_for('static', filename=a.image)}}">
+      <h3>{{a.title}}</h3>
+      <h5>Le {{a.strDate()}}</h5>
+      <span>{{a.description}}</span>
     </a>
     {% endfor %}
-
-  </body>
-</html>
+  </div>
+</div>
+{% endblock %}
