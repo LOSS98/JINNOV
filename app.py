@@ -38,6 +38,9 @@ def etudes():
 def liste_membres():
     return render_template("soon.html")
 
+@app.route('/prestations')
+def presta():
+    return render_template("presta.html")
 
 # Register blueprints
 app.register_blueprint(blueprints.auth.auth)
