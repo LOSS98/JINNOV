@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="{{url_for('static', filename='css/article.css')}}">
 {% endblock %}
 {% block body %}
-<div class="header">
-  <h1>{{article.title}}</h1>
+<div class="bg-header">
+  <div class="bg-filter"></div>
 </div>
+<h1 class="text-header">{{article.title}}</h1>
 <div class="content">
   {{article.body|safe}}
 </div>

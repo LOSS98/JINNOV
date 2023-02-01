@@ -1,22 +1,35 @@
-.header {
+.bg-header {
   width: 100%;
-  height: 500px;
-  background: var(--image) no-repeat;
+  height: 400px;
+  background-image: var(--image);
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
-.header>h1 {
+.bg-filter {
+  width: 100%;
+  height: 400px;
+  background: #3d5467;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.text-header {
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 200px;
   margin-top: 0;
   color: white;
   font-size: 500%;
+  opacity: 1;
 }
 
 .content {
-  margin: 50px;
+  margin: 100px;
+}
+
+.content p {
+  text-align: justify;
 }
 
 .p-image {
@@ -29,7 +42,16 @@
   font-style: italic;
 }
 
+.strong {
+  font-weight: bold;
+}
+
 figure img {
   width: 20vw;
   height: auto;
+}
+
+figure figcaption {
+  text-align: center;
+  font-size: 80%;
 }
