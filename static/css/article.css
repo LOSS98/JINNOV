@@ -55,3 +55,15 @@ figure figcaption {
   text-align: center;
   font-size: 80%;
 }
+
+@media screen and (orientation: portrait),
+screen and (max-width: 750px) and (orientation: landscape) {
+
+  .p-image {
+    display: block;
+  }
+
+  figure img {
+    width: 100%;
+  }
+}
