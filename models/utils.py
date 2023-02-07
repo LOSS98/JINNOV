@@ -54,9 +54,9 @@ def create_mail_devis():
         """
 
         # mail connection informations
-        sender_email = os.getenv("MAIL_USERNAME")
+        sender_email = os.getenv("MAIL_DEVIS_USERNAME")
         receiver_email = os.getenv("MAIL_DEVIS_RECIPIENT")
-        connection_token = os.getenv("MAIL_PASSWORD")
+        connection_token = os.getenv("MAIL_DEVIS_PASSWORD")
 
         # mail creation
         msg = EmailMessage()
