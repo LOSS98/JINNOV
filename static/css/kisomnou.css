@@ -1,40 +1,42 @@
-body{
+body {
     overflow-x: hidden;
-    margin : 0px
+    margin: 0px
 }
 
-main{
+main {
     margin: 0px;
     margin-top: -1px;
-    font-family: 'Inter',sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 #grand-titre {
-    padding-top : 1px;
+    padding-top: 1px;
     background-color: #df8848;
     text-align: center;
     min-height: 150px;
 }
 
-#grand-titre > #bigh1 {
+#grand-titre>#bigh1 {
     font-size: 450%;
     position: relative;
-    color : white;
+    color: white;
+    margin-bottom: 0;
+    margin-top: 62px;
 }
 
-#grand-titre > svg {
-    margin-top:-34px;
+#grand-titre>svg {
+    margin-top: -34px;
     width: 100vw;
     height: auto;
 }
 
-#spacer{
+#spacer {
     height: 119px;
     background-color: white;
     margin-bottom: -20px;
 }
 
-.part-title{
+.part-title {
     font-size: 300%;
 }
 
@@ -44,6 +46,7 @@ main{
     font-size: 1.5vw;
     text-align: center;
     margin-bottom: 40px;
+    font-weight: 500;
 }
 
 #desc {
@@ -51,29 +54,28 @@ main{
     margin-right: 10%;
 }
 
-#desc > #splitter {
+#desc>#splitter {
     display: flex;
     align-items: center;
     margin-top: -60px;
 }
 
-#desc > #splitter > div {
+#desc>#splitter>div {
     width: 80%;
     margin-right: 2%;
 }
 
-#desc > #splitter  p {
+#desc>#splitter p {
     width: 100%;
     height: 100%;
     text-align: justify;
     font-size: 1.2vw;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 10px 0;
 
 }
 
-#desc > #splitter > img {
-    width: 50%;
+#desc>#splitter>img {
+    width: 40%;
     height: auto;
     margin-left: 2%;
 }
@@ -95,8 +97,9 @@ main{
     margin-bottom: 6vh;
 }
 
-#scroller{
+#scroller {
     display: flex;
+    justify-content: center;
     overflow-x: scroll;
     padding-left: 3vw;
     padding-right: 3vw;
@@ -104,14 +107,14 @@ main{
     scroll-behavior: smooth;
 }
 
-/*#scroller::-webkit-scrollbar{
+#scroller::-webkit-scrollbar {
     display: none;
-}*/
+}
 
-.valeur{
+.valeur {
     margin-left: 1.5%;
     margin-right: 1.5%;
-    display : flex;
+    display: flex;
     flex-direction: column;
     align-content: center;
     min-width: 250px;
@@ -125,43 +128,43 @@ main{
     width: 100%;
 }
 
-.valeur > div {
+.valeur>div {
     width: 36%;
-    padding: 12% ;
+    padding: 12%;
     margin-left: auto;
-    margin-right: auto ;
+    margin-right: auto;
     border-radius: 50%;
 }
 
-#zero{
-    color : #3d5467;
+#zero {
+    color: #3d5467;
 }
 
-#zero > div {
+#zero>div {
     background-color: #3d5467;
-}   
-
-#un{
-    color : #df8848;
 }
 
-#un > div {
+#un {
+    color: #df8848;
+}
+
+#un>div {
     background-color: #df8848;
-}   
+}
 
 #deux {
-    color : #96a8b0;
+    color: #96a8b0;
 }
 
-#deux > div {
+#deux>div {
     background-color: #96a8b0;
-}   
+}
 
 #trois {
-    color : #bd5b18;
+    color: #bd5b18;
 }
 
-#trois > div {
+#trois>div {
     background-color: #bd5b18;
 }
 
@@ -169,15 +172,15 @@ main{
     color: #436c7c;
 }
 
-#quatre > div {
+#quatre>div {
     background-color: #436c7c;
-}   
+}
 
-.valeur > h2 {
+.valeur>h2 {
     text-align: center;
 }
 
-.valeur > p {
+.valeur>p {
     text-align: center;
     font-size: 100%;
 }
@@ -186,7 +189,7 @@ main{
     background-color: #436c7c;
     padding-left: 10%;
     padding-right: 10%;
-    padding-top : 120px;
+    padding-top: 120px;
     margin-top: -70px;
     padding-bottom: 10vh;
 }
@@ -200,7 +203,7 @@ main{
     align-items: center;
 }
 
-#CNJE div a{
+#CNJE div a {
     width: 20%;
 }
 
@@ -214,13 +217,13 @@ main{
     font-size: 1.2vw;
     margin-top: -10px;
     text-align: justify;
-    color : white;
+    color: white;
 }
 
 #INSA {
     padding-left: 10%;
     padding-right: 10%;
-    padding-top : 120px;
+    padding-top: 120px;
     margin-top: -70px;
     padding-bottom: 5vh;
 }
@@ -247,12 +250,12 @@ main{
     margin: 5%;
     font-size: 1.2vw;
     text-align: justify;
-    color : black;
+    color: black;
 }
 
-@media screen and (orientation : portrait){
+@media screen and (orientation : portrait) {
 
-    .part-title{
+    .part-title {
         font-size: 300%;
         text-align: center;
     }
@@ -263,56 +266,55 @@ main{
     }
 
     #grand-titre {
-        padding-top : 1px;
+        padding-top: 1px;
         background-color: #df8848;
         text-align: center;
         height: 150px;
         padding-bottom: 50px;
     }
 
-    #grand-titre > #bigh1 {
+    #grand-titre>#bigh1 {
         font-size: 10vw;
         position: relative;
-        color : white;
+        color: white;
     }
 
-    #grand-titre > svg {
-        margin-top:-14px;
+    #grand-titre>svg {
+        margin-top: -14px;
         width: 100vw;
         height: auto;
     }
 
-    #desc > #splitter {
+    #desc>#splitter {
         display: flex;
         flex-direction: column;
         align-content: center;
     }
 
-    #desc > #splitter > div {
+    #desc>#splitter>div {
         margin-right: 0px;
-        width :100%;
+        width: 100%;
     }
 
 
-    #desc > #splitter  p {
+    #desc>#splitter p {
         width: 100%;
         text-align: justify;
         font-size: 1.8vh;
         margin-bottom: 3vh;
     }
-    
-    #desc > #splitter > a {
+
+    #desc>#splitter>a {
         width: 100%;
         height: auto;
     }
-    
-    #desc > #splitter > a > img {
+
+    #desc>#splitter>a>img {
         width: 100%;
     }
 
-    #CNJE{
+    #CNJE {
         margin-top: -85px;
-        margin-bottom: 2vh ;
+        margin-bottom: 2vh;
     }
 }
-
