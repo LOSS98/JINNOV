@@ -99,12 +99,12 @@ main {
 
 #scroller {
     display: flex;
-    justify-content: center;
     overflow-x: scroll;
     padding-left: 3vw;
     padding-right: 3vw;
     padding-bottom: 2vh;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
 #scroller::-webkit-scrollbar {
@@ -154,6 +154,7 @@ main {
 
 #deux {
     color: #96a8b0;
+    scroll-snap-align: center;
 }
 
 #deux>div {
