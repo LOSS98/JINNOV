@@ -42,6 +42,10 @@ def liste_membres():
 def presta():
     return render_template("presta.html")
 
+@app.errorhandler(404)
+def knowhere(it):
+    return render_template("404.html")
+
 # Register blueprints
 app.register_blueprint(blueprints.auth.auth)
 app.register_blueprint(blueprints.adminpanel.adminpanel)
