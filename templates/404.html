@@ -5,13 +5,13 @@
 {% block body %}
     <div id="container404">
         <div id="left-column404">
-        <h1> 404</h1>
-        <h2>La page que vous recherchez n'a pas été trouvée</h2>
-        <br>
-        <a href="https://jinnov-insa.fr/"> Retour à la page d'accueil </a>
+            <h1> 404</h1>
+            <h2>La page que vous recherchez n'a pas été trouvée</h2>
+            <br>
+            <a href="/"> Retour à la page d'accueil </a>
         </div>
         <div id="right-column404">
-        <img src="Picto homme perdu.svg">
+            <img src="{{url_for('static',filename='img/404.svg')}}">
         </div>
     </div>
 {% endblock %}
