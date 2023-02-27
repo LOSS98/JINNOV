@@ -8,15 +8,20 @@ import blueprints
 # Fields
 app = Flask(__name__)
 
+def getAgreement():
+    agreement = request.cookies.get("agreement")
+    return ['true','false'][agreement==None],agreement
 
 @app.route("/formulaire_etudiant", methods=["GET", "POST"])
 def etuform():
-    return render_template("mail_form_student.html")
+    has,agr = getAgreement()
+    return render_template("mail_form_student.html",has_agreed=has,agreement=agr)
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    has,agr = getAgreement()
+    return render_template("index.html",has_agreed=has,agreement=agr)
 
 
 @app.route("/contact")

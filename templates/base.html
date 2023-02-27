@@ -6,10 +6,15 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/animation-header.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/header_mobile.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-fullsize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/popup.css') }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-        {% block head %}{% endblock %}  
+        {% block head %}{% endblock %}
+        <script>
+            var has_agreed = {{has_agreed}};
+            var agreement = {{agreement}};
+        </script>
     </head>
     <body>
         <header id="header">
@@ -46,6 +51,17 @@
         <main>
         {% block body %}{% endblock %}
         </main>
+        <div id="cookie-popup">
+            <div id="img-container">
+                <img src="{{url_for('static', filename='img/cookie.png')}}"/>
+            </div>
+            <h1>Notre site utilise des cookies</h1>
+            <p>Les données que nous collectons sont uniquement utilisées pour ameliorer le site !</p>
+            <div id="buttonline">
+                <div id="deny-button"><p>Refuser</p></div>
+                <div id="accept-button"><p>Accepter</p></div>
+            </div>
+        </div>
         <footer>
             <div id="footer-container">
                 <div id="footer-first-column">
@@ -149,5 +165,6 @@
     </body>
     <script src="{{ url_for('static', filename='js/header.js') }}"></script>
     <script src="{{ url_for('static', filename='js/header_mobile.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popup.js')}}"></script>
     {% block script %}{% endblock %}
 </html>
