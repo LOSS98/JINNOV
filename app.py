@@ -49,6 +49,7 @@ def liste_membres():
 
 @app.route('/prestations')
 def presta():
+    has,agr = getAgreement()
     return render_template("presta.html",has_agreed=has,agreement=agr)
 
 @app.errorhandler(404)
