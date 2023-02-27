@@ -11,10 +11,12 @@ function set_cookie(){
 }
 
 if(has_agreed){
-    document.getElementById("cookie-popup").style.display = "none"
     if(agreement == "1"){
         set_cookie()
     } 
+}
+if(!has_agreed){
+    document.getElementById("cookie-popup").style.display = "block"
 }
 
 acc.addEventListener("click", (e)=>{
