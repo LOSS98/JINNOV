@@ -26,30 +26,35 @@ def index():
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    has,agr = getAgreement()
+    return render_template("contact.html",has_agreed=has,agreement=agr)
 
 
 @app.route("/qui_sommes_nous")
 def aboutus():
-    return render_template("kisomnou.html")
+    has,agr = getAgreement()
+    return render_template("kisomnou.html",has_agreed=has,agreement=agr)
 
 
 @app.route("/etudes")
 def etudes():
-    return render_template("soon.html")
+    has,agr = getAgreement()
+    return render_template("soon.html",has_agreed=has,agreement=agr)
 
 
 @app.route("/liste_membres")
 def liste_membres():
-    return render_template("soon.html")
+    has,agr = getAgreement()
+    return render_template("soon.html",has_agreed=has,agreement=agr)
 
 @app.route('/prestations')
 def presta():
-    return render_template("presta.html")
+    return render_template("presta.html",has_agreed=has,agreement=agr)
 
 @app.errorhandler(404)
 def knowhere(it):
-    return render_template("404.html")
+    has,agr = getAgreement()
+    return render_template("404.html",has_agreed=has,agreement=agr)
 
 # Register blueprints
 app.register_blueprint(blueprints.auth.auth)
