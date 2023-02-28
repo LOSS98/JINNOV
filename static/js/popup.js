@@ -21,11 +21,11 @@ if(!has_agreed){
 
 acc.addEventListener("click", (e)=>{
     document.getElementById("cookie-popup").style.display = "none"
-    document.cookie = "agreement=1; expires=never; path=/"
+    document.cookie = "agreement=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"
     set_cookie()
 })
 
 den.addEventListener("click", (e)=>{
     document.getElementById("cookie-popup").style.display = "none"
-    document.cookie = "agreement=0; expires=never; path=/"
+    document.cookie = "agreement=0;expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"
 })
