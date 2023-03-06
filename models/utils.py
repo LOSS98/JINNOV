@@ -18,10 +18,10 @@ def send_mail(
     :param receiver_email: The email address of the person you want to send the email to
     :param connection_token: This is the application token of the email address you're sending from
     """
-    
-    server = smtplib.SMTP('smtp.gmail.com:587')
+
+    server = smtplib.SMTP("smtp.gmail.com:587")
     server.starttls()
-    server.login(sender_email,connection_token)
+    server.login(sender_email, connection_token)
     server.sendmail(sender_email, receiver_email, message)
     server.quit()
 
@@ -54,9 +54,9 @@ def create_mail_devis():
         """
 
         # mail connection informations
-        sender_email = os.getenv("MAIL_USERNAME")
+        sender_email = os.getenv("MAIL_DEVIS_USERNAME")
         receiver_email = os.getenv("MAIL_DEVIS_RECIPIENT")
-        connection_token = os.getenv("MAIL_PASSWORD")
+        connection_token = os.getenv("MAIL_DEVIS_PASSWORD")
 
         # mail creation
         msg = EmailMessage()
@@ -88,9 +88,9 @@ def create_mail_student():
         annee: str = request.form.get("annee_etude")
 
         # mail connection informations
-        sender_email = os.getenv("MAIL_USERNAME")
+        sender_email = os.getenv("MAIL_STUDENT_USERNAME")
         receiver_email = os.getenv("MAIL_STUDENT_RECIPIENT")
-        connection_token = os.getenv("MAIL_PASSWORD")
+        connection_token = os.getenv("MAIL_STUDENT_PASSWORD")
 
         # message creation
         message = f"""
