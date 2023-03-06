@@ -24,14 +24,14 @@ body{
         z-index: 1000;
         font-family: 'Inter', sans-serif;
         background-color: #ffffff;
-        padding-top : 10px;
-        padding-bottom: 10px;
+        padding-top : 7px;
+        padding-bottom: 7px;
         padding-left : 10%;
         padding-right: 10%;
         margin-left : 0px;
         margin-right : 0px;
         position:sticky;
-        min-height: 70px;
+        min-height: 50px;
         top:0;
         right:0;
         left:0;
@@ -42,7 +42,7 @@ body{
     }
 
     header #headerlogojinnov{
-        width: 180px;
+        width: 120px;
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -50,13 +50,14 @@ body{
 
     header ul {
         z-index: 1000;
-        margin-top : 10px;
+        margin-top : -4px;
         display: flex;
     }
 
     header li {
         list-style: none;
         z-index: inherit;
+        font-size: 80%;
     }
 
     header a {
@@ -72,10 +73,7 @@ body{
     }
 
     header a#contact-us-button{
-        padding-left : 15px;
-        padding-right : 15px;
-        padding-bottom: 15px;
-        padding-top : 15px;
+        padding: 11px;
         margin-right : 5px;
         margin-left : 5px;
         border-radius: 25px;
@@ -110,15 +108,13 @@ body{
 @media screen and (max-width : 1260px) and (orientation : landscape) and (min-width : 800px){
     header nav{
         display: flex;
-        align-items: center;
-        width: 900px;
-    }
-    header ul{
-        width: 900px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     header ul li{
-        font-size: 90%;
+        font-size: 70%;
     }
 
     header {
