@@ -30,28 +30,36 @@
     <div id="disp-presta">
         <h1 class="part-title">Nos prestations</h1>
         <div class="row" id="a">
-            <div class="element">
-                <img src="{{ url_for('static', filename='img/icon1.png')}}">
-                <div class="title-holder"><h1>DIGITALISATION</h1></div>
-                <p>Développement web, mobile et logiciel<br>Audit de systèmes informatiques</p>
-            </div>
-            <div class="element">
-                <img src="{{ url_for('static', filename='img/icon2.png')}}">
-                <div class="title-holder"><h1>PROTECTION DES DONNÉES</h1></div>
-                <p>Audit RGPD<br>Mise en conformité<br>Formation </p>
-            </div>
+            <a href="{{url_for('presta')}}#digitalisation">
+                <div class="element" >
+                    <img src="{{ url_for('static', filename='img/icon1.png')}}">
+                    <div class="title-holder"><h1>DIGITALISATION</h1></div>
+                    <p>Développement web, mobile et logiciel<br>Audit de systèmes informatiques</p>
+                </div>
+            </a>
+            <a href="{{url_for('presta')}}#protection">
+                <div class="element">
+                    <img src="{{ url_for('static', filename='img/icon2.png')}}">
+                    <div class="title-holder"><h1>PROTECTION DES DONNÉES</h1></div>
+                    <p>Audit RGPD<br>Mise en conformité<br>Formation </p>
+                </div>
+            </a>
         </div>
         <div class="row" id="b">
-            <div class="element">
-                <img src="{{ url_for('static', filename='img/icon3.png')}}">
-                <div class="title-holder"><h1>CONCEPTION MÉCANIQUE</h1></div>
-                <p>Calculs de structures<br>Modélisation de pièces<br>Prototypage</p>
-            </div>
-            <div class="element">
-                <img src="{{ url_for('static', filename='img/icon4.png')}}">
-                <div class="title-holder"><h1>ENERGÉTIQUE DU BÂTIMENT</h1></div>
-                <p>Audit Énergétique des bâtiments</p>
-            </div>
+            <a href="{{url_for('presta')}}#conception">
+                <div class="element">
+                    <img src="{{ url_for('static', filename='img/icon3.png')}}">
+                    <div class="title-holder"><h1>CONCEPTION MÉCANIQUE</h1></div>
+                    <p>Calculs de structures<br>Modélisation de pièces<br>Prototypage</p>
+                </div>
+            </a>
+            <a href="{{url_for('presta')}}#energetique">
+                <div class="element">
+                    <img src="{{ url_for('static', filename='img/icon4.png')}}">
+                    <div class="title-holder"><h1>ENERGÉTIQUE DU BÂTIMENT</h1></div>
+                    <p>Audit Énergétique des bâtiments</p>
+                </div>
+            </a>
         </div>
 </div>
 <div id="borderbottom">
@@ -128,39 +136,47 @@
         </div>
     </div>
 </div>
+<div id="BFM">
+    <h1 class="part-title">Notre passage sur BFM Business</h1>
+    <iframe src="https://www.youtube.com/embed/I70_zqAEcis?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 <div id="partnership">
     <h1 class="part-title">Nos partenaires</h1>
     <div id="img-holder">
-        <div class="img-holder-line">
-            <a href="https://www.epnak.org/" target="_blank">
-                <img src="{{ url_for('static', filename='img/logos_EPNAK.svg')}}">
-            </a>
-            <a href="https://junior-entreprises.com/" target="_blank">
-                <img src="{{ url_for('static', filename='img/cnje.png')}}">
-            </a>
-            <a href="https://centralelilleprojets.fr/fr" target="_blank">
-                <img src="{{ url_for('static', filename='img/CLP.png')}}">
-            </a>
-        </div>
-        <div class="img-holder-line">
-            <a href="https://www.linkedin.com/company/juniors-insa/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Junior_insa.png')}}">
-            </a>
-            <a href="https://www.insa-hautsdefrance.fr/" target="_blank">
-                <img src="{{ url_for('static', filename='img/insahdf.svg')}}">
-            </a>
-            <a href="https://www.linkedin.com/company/juniors-nord/" target="_blank">
-                <img src="{{ url_for('static', filename='img/JENORD.png')}}">
-            </a>
-        </div>
-        <div class="img-holder-line">
-            <a href="https://fondation.groupe-insa.fr/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Logo_Fondation_INSA_couleur.png')}}">
-            </a>
-            <a href="https://mooc.gestiondeprojet.pm/" target="_blank">
-                <img src="{{ url_for('static', filename='img/mooc.png')}}">
-            </a>
-        </div>
+        <a href="https://www.epnak.org/" target="_blank">
+            <img src="{{ url_for('static', filename='img/logos_EPNAK.svg')}}">
+        </a>
+        <a href="https://junior-entreprises.com/" target="_blank">
+            <img src="{{ url_for('static', filename='img/cnje.png')}}">
+        </a>
+        <a href="https://centralelilleprojets.fr/fr" target="_blank">
+            <img src="{{ url_for('static', filename='img/CLP.png')}}">
+        </a>
+        <a href="https://www.linkedin.com/company/juniors-insa/" target="_blank">
+            <img src="{{ url_for('static', filename='img/Junior_insa.png')}}">
+        </a>
+        <a href="https://www.insa-hautsdefrance.fr/" target="_blank">
+            <img src="{{ url_for('static', filename='img/insahdf.svg')}}">
+        </a>
+        <a href="https://www.linkedin.com/company/juniors-nord/" target="_blank">
+            <img src="{{ url_for('static', filename='img/JENORD.png')}}">
+        </a>
+        <a href="https://fondation.groupe-insa.fr/" target="_blank">
+            <img src="{{ url_for('static', filename='img/Logo_Fondation_INSA_couleur.png')}}">
+        </a>
+        <a href="https://mooc.gestiondeprojet.pm/" target="_blank">
+            <img src="{{ url_for('static', filename='img/mooc.png')}}">
+        </a>
+        <a>
+        </a>
+        <a href="https://i.mtr.cool/VVQGQO/" target="_blank">
+            <img src="{{ url_for('static', filename='img/metricool.png')}}">
+        </a>
+        <a href="https://www.bfmtv.com/economie/" target="_blank">
+            <img src="{{ url_for('static', filename='img/Logo_BFM_Business_2020.svg')}}">
+        </a>
+        <a>
+        </a>
     </div>
 </div>
 {% endblock %}

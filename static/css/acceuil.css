@@ -167,6 +167,12 @@ svg#out_wave {
     margin-right: auto;
 }
 
+#disp-presta a {
+    display: contents;
+    text-decoration: none;
+    color : black;
+}
+
 #bordertop img {
     height: 200px;
     width: 100%;
@@ -297,21 +303,43 @@ svg#out_wave {
 #partnership #img-holder {
     margin-left: 20%;
     margin-right: 20%;
-}
-
-#partnership #img-holder .img-holder-line {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 40px;
 }
 
 #partnership #img-holder a {
     margin-left: auto;
     margin-right: auto;
+    width: 130px;
+    height: 130px;
+    padding: 20px;
+    border : solid #dfe4e7  2px;
+    border-radius: 20px;
+    display: grid;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+#partnership #img-holder a:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 #partnership #img-holder img {
-    height: 60px;
+    max-height: 130px;
+    max-width: 130px;
+}
+
+#BFM {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+}
+
+#BFM iframe {
+    width: 50%;
+    aspect-ratio: 16/9;
 }
 
 @media screen and (max-width : 1260px) and (orientation : landscape){
@@ -408,8 +436,21 @@ svg#out_wave {
         text-align: center;
     } 
 
+    #partnership #img-holder a {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+        border : solid #dfe4e7  2px;
+        border-radius: 15px;
+        display: grid;
+        align-items: center;
+    }
+
     #partnership #img-holder img {
-        height: 50px;
+        max-height: 100px;
+        max-width: 100px;
     }
 
     .avantages-line {
@@ -566,8 +607,21 @@ screen and (max-width : 750px) and (orientation : landscape) {
         margin-right: 5%;
     }
 
+    #partnership #img-holder a {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80px;
+        height: 80px;
+        padding: 10px;
+        border : solid #dfe4e7  2px;
+        border-radius: 10px;
+        display: grid;
+        align-items: center;
+    }
+
     #partnership #img-holder img {
-        height: 40px;
+        max-height: 80px;
+        max-width: 80px;
     }
 }
 
@@ -617,8 +671,21 @@ screen and (max-width : 750px) and (orientation : landscape) {
         font-size: 400%;
     }
 
+    #partnership #img-holder a {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+        border : solid #dfe4e7  2px;
+        border-radius: 15px;
+        display: grid;
+        align-items: center;
+    }
+
     #partnership #img-holder img {
-        height: 50px;
+        max-height: 100px;
+        max-width: 100px;
     }
 
     .shuttle .paragraph>p {
