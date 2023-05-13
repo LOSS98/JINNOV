@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prestations/main.css') }}">
+    <title>JINNOV | Développement web</title>
+{% endblock %}
+
+{% block body %}
+<section class="section1">
+    <h1>Vous souhaitez digitaliser votre entreprise et créer un site web performant ?</h1>
+    <p>Plongez dans le monde digital et propulsez votre entreprise grâce à un site web sur-mesure qui saura attirer et fidéliser vos clients ! 
+        Que vous recherchiez un site e-commerce pour booster vos ventes, un site vitrine pour présenter votre entreprise de manière attrayante, 
+        un blog pour partager votre expertise ou un site institutionnel pour renforcer votre crédibilité, nous sommes là pour vous. 
+        <br><br>Chez JINNOV, 
+        nous créons des sites web personnalisés, optimisés pour le référencement naturel (SEO), afin d'améliorer votre visibilité en ligne et 
+        d'accroître votre succès. Saisissez cette opportunité de donner un coup d'accélérateur à votre entreprise et de vous démarquer dans 
+        l'univers numérique.</p>
+    <br>
+    <a href="/"> Nous contacter </a>
+</section>
+<br><br>
+
+<div style="position: relative; background-color: #2F2F2F;">
+    <div style="position: relative; background-color: #2F2F2F;">
+        <div id="section2-container" style="position: relative;">
+            <div class="top-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div id="section2">
+                <br>
+                <h1>Les bénéfices du développement web avec JINNOV</h1>
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Accompagnez la transition de votre entreprise au numérique</h2>
+                        <p>Positionnez votre entreprise avec succès dans le monde du digital. Un site web optimal vous
+                            permettra d'attirer de nouveaux clients,
+                            de renforcer votre image de marque et d'augmenter votre visibilité en ligne. Profitez de
+                            notre expertise pour vous démarquer de la
+                            concurrence et réussir dans un monde numérique de plus en plus exigeant.
+                        </p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/transitionnum.png') }}" alt="argument1">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/lentilles.png') }}" alt="argument1">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Renforcez votre présence sur le marché</h2>
+                        <p>Présentez votre entreprise et mettez en avant vos avantages concurrentiels au plus vite. Le
+                            développement d’un site vitrine
+                            est rapide et vous permet d’augmenter votre visibilité et crédibilité auprès de vos
+                            prospects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Offrez une expérience utilisateur fluide et intuitive</h2>
+                        <p>Proposez à vos visiteurs une navigation agréable et efficace. Nos solutions de
+                            digitalisation sont conçues pour offrir une expérience utilisateur optimale, adaptée à
+                            tous les appareils pour répondre aux attentes de vos clients et prospects,
+                            encourageant ainsi l'engagement et la fidélisation.</p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/telephone.png') }}" alt="argument1">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/collaboration.png') }}" alt="argument1">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Convertissez tous vos prospects en clients</h2>
+                        <p>Nous travaillons à optimiser votre tunnel de conversion et à mettre en place des
+                            stratégies efficaces pour transformer vos visiteurs en clients. Grâce à des appels
+                            à l'action clairs, des formulaires de contact simplifiés et un contenu pertinent,
+                            nous vous aidons à générer des leads qualifiés et à augmenter vos ventes.</p>
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Optimisez votre visibilité en ligne</h2>
+                        <p>Augmentez la visibilité de votre site web sur les moteurs de recherche et
+                            attirez un trafic qualifié. Nous travaillons sur les aspects techniques, le
+                            contenu et la popularité de votre site pour améliorer sa position dans les
+                            résultats de recherche et générer un trafic organique ciblé, essentiel pour
+                            la croissance de votre entreprise.</p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/visibilite.png') }}" alt="argument1">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="bottom-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<section class="method">
+    <h1>Découvrez notre méthode de travail</h1>
+    <div class="steps">
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/Analyse.png')}}" alt="Icône étape 1" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Analyse et planification</h2>
+                <p>Nous évaluons vos besoins, définissons vos objectifs et élaborons un plan détaillé pour votre projet de développement web.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/design.png')}}" alt="Icône étape 2" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Conception</h2>
+                <p>Nous créons des maquettes pour vous permettre de visualiser et valider le rendu final de votre site web avant le début du développement.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/devweb.png')}}" alt="Icône étape 1" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Développement et intégration</h2>
+                <p>Nous mettons en œuvre les fonctionnalités nécessaires pour que votre site réponde à vos attentes, en gardant un contact constant avec vous pour être au plus proche de vos besoins.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/optimisation.png')}}" alt="Icône étape 1" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Tests et optimisation</h2>
+                <p>Nous vérifions la qualité et la performance de votre site web sur différents appareils et navigateurs pour garantir une expérience utilisateur optimale.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/lancement.png')}}" alt="Icône étape 1" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Lancement et début de la garantie</h2>
+                <p>Après la mise en ligne de votre site, nous assurons une période de garantie pour que vous puissiez vous assurer de son fonctionnement et être entièrement satisfait.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+
+<section class="confiance">
+    <h1>Pourquoi nous faire confiance ?</h1>
+    <div class="pourquoinouscontainer">
+      <div class="cards-container">
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/accompagnement.png')}}" alt="Icône argument 1" />
+          <h3>Accompagnement</h3>
+          <p>Un chargé d'affaires est à votre 
+            disposition et suit votre mission de 
+            A à Z.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/Personnalisation.png')}}" alt="Icône argument 2" />
+          <h3>Personnalisation</h3>
+          <p>Toutes nos missions sont uniques. 
+            Nous nous adaptons à 100% en 
+            fonction de votre demande.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/qualité.png')}}" alt="Icône argument 3" />
+          <h3>Qualité</h3>
+          <p>Un chargé qualité supervise votre 
+            mission et s’assure de la qualité du 
+            livrable fournit.</p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="CTA">
+    <h2>Prêt à booster votre présence en ligne avec un site web sur-mesure ? <br>
+        Contactez-nous dès maintenant pour discuter de votre projet et 
+        obtenir un devis personnalisé !</h2>
+        <br>
+        <a href="/">Demander un devis</a>
+</section>
+{% endblock %}

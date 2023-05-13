@@ -1,0 +1,402 @@
+body {
+    margin: 0;
+}
+
+.section1 {
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.section1 a {
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    background-color: #df8848;
+    border: none;
+    border-radius: 45px;
+    padding: 15px 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.top-wave {
+    /* height : 50 et width : 170*/
+    position: absolute;
+    top: 0;
+    width: 101%;
+    left: -0.1%;
+    overflow: hidden;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-2px);
+}
+
+.top-wave svg {
+    position: relative;
+    display: block;
+    width: calc(170% + 1.3px);
+    height: 50px;
+}
+
+.top-wave .shape-fill {
+    fill: #FFFFFF;
+}
+
+.bottom-wave {
+    position: absolute;
+    bottom: 0;
+    width: 101%;
+    left: -0.1%;
+    overflow: hidden;
+    line-height: 0;
+    /*margin-bottom: 0;*/
+    margin: 0;
+    padding: 0;
+    transform: translateY(2px);
+}
+
+.bottom-wave svg {
+    position: relative;
+    display: block;
+    width: calc(170% + 1.3px);
+    height: 50px;
+}
+
+.bottom-wave .shape-fill {
+    fill: #FFFFFF;
+}
+
+#section2 {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+#section2 h1 {
+    text-align: center;
+    color: white;
+}
+
+#section2 h2 {
+    color: white;
+}
+
+#section2 p {
+    color: white;
+    text-align: justify;
+}
+
+.argument {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+    height: auto;
+    /* Add this line */
+}
+
+.argumenttexte,
+.argumenttexte2 {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    /* Add this line */
+}
+
+.argumenttexte h2,
+.argumenttexte2 h2 {
+    margin: 0;
+}
+
+.argumenttexte2 h2 {
+    text-align: right;
+}
+
+.argumenttexte,
+.argumenttexte2 {
+    width: 85%;
+    padding: 1%;
+}
+
+.argumentimage {
+    display: flex;
+    /* Add this line */
+    justify-content: center;
+    /* Add this line */
+    max-width: 300px;
+    /* Add a max-width in pixels */
+    padding: 1%;
+    width: 15%;
+}
+
+.argumentimage img {
+    width: 100%;
+    max-width: 300px;
+    /* Add a max-width in pixels */
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.method {
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.method h1 {
+    font-size: 200%;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-container,
+.icon-container-orange,
+.step-content {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.icon-container,
+.icon-container-orange {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    /*height: 60px;*/
+    border-radius: 30%;
+    padding: 15px;
+}
+
+.icon-container {
+    background-color: #3d5467;
+}
+
+.icon-container-orange {
+    background-color: #df8848;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.icon-container img,
+.icon-container-orange img {
+    width: 100%;
+
+    object-fit: contain;
+}
+
+.step-content {
+    width: 95%;
+}
+
+.step-content h2 {
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 150%;
+}
+
+.step-content p {
+    margin: 0;
+    text-align: justify;
+}
+
+
+.CTA {
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 5vw;
+    margin-top: 5vw;
+}
+
+.CTA h2 {
+    font-weight: 500;
+}
+
+.CTA a {
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    background-color: #df8848;
+    border: none;
+    border-radius: 45px;
+    padding: 15px 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.confiance{
+    margin-bottom: 0;
+}
+
+.confiance h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pourquoinouscontainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15%;
+    box-shadow: 0 0px 10px 5px #dcdcdc;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 275px;
+}
+
+.card img {
+    width: 100px;
+    object-fit: contain;
+}
+
+.card h3 {
+    margin: 10px;
+    font-size: 150%;
+}
+
+.card p {
+    margin: 10px;
+}
+
+
+
+/* Media queries for different screen sizes */
+@media screen and (min-width: 0px) {
+/*Pour tous les téléphones*/
+
+    .argumentimage {
+        width: 0%;
+    }
+
+    .argumenttexte,
+    .argumenttexte2 {
+        width: 100%;
+    }
+
+    .icon-container,
+    .icon-container-orange {
+        width: 50px;
+    }
+
+    .step-content h2 {
+        font-size: 125%;
+    }
+
+    .method h1 {
+        font-size: 150%;
+    }
+
+    .CTA h2 {
+        font-size: 125%;
+    }
+
+    .step {
+        gap: 10px;
+    }
+
+    .CTA{
+        margin-bottom: 10vw;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .argumentimage {
+        width: 35%;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .argumentimage {
+        width: 25%;
+    }
+
+    .section1,
+    #section2,
+    .method,
+    .CTA {
+        margin-left: 8vw;
+        margin-right: 8vw;
+    }
+
+    .icon-container,
+    .icon-container-orange {
+        width: 70px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .argumentimage {
+        width: 15%;
+    }
+
+    .section1,
+    #section2,
+    .CTA {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+
+    .method {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+    .icon-container,
+    .icon-container-orange {
+        width: 80px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .argumentimage {
+        width: 13%;
+    }
+
+    .section1,
+    #section2,
+    .CTA {
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+
+    .method {
+        margin-left: 30vw;
+        margin-right: 30vw;
+    }
+
+}
