@@ -52,7 +52,7 @@ def presta():
     has,agr = getAgreement()
     return render_template("presta.html",has_agreed=has,agreement=agr)
 
-@app.route('/developpement_web')
+@app.route('/prestations/developpement_web')
 def devweb():
     has,agr = getAgreement()
     return render_template("prestations/devweb.html",has_agreed=has,agreement=agr)
