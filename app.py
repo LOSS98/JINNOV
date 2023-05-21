@@ -57,6 +57,21 @@ def devweb():
     has,agr = getAgreement()
     return render_template("prestations/devweb.html",has_agreed=has,agreement=agr)
 
+@app.route('/prestations/developpement_mobile')
+def devmobile():
+    has,agr = getAgreement()
+    return render_template("prestations/devmobile.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/audit_informatique')
+def auditinfo():
+    has,agr = getAgreement()
+    return render_template("prestations/auditinfo.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/protections_des_donnees')
+def protectiondonnees():
+    has,agr = getAgreement()
+    return render_template("prestations/protectiondonnees.html",has_agreed=has,agreement=agr)
+
 @app.errorhandler(404)
 def knowhere(it):
     has,agr = getAgreement()
