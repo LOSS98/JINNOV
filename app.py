@@ -119,7 +119,7 @@ load_dotenv()
 # Dirs
 os.makedirs("static/articles", exist_ok=True)
 os.makedirs("static/etudes", exist_ok=True)
-'''
+
 # Database System
 sql_connector.sql_connector = sql_connector.SQLConnector(
     host=os.getenv("DATABASE_HOST"),
@@ -128,7 +128,7 @@ sql_connector.sql_connector = sql_connector.SQLConnector(
     database=os.getenv("DATABASE_NAME"),
 )
 sql_connector.sql_connector.connect()
-'''
+
 # Secret Key reading
 if not os.path.exists("secret.key"):
     raise Exception("SecretKeyNotFound")
