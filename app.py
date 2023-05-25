@@ -72,6 +72,27 @@ def protectiondonnees():
     has,agr = getAgreement()
     return render_template("prestations/protectiondonnees.html",has_agreed=has,agreement=agr)
 
+@app.route('/prestations/audit_energetique')
+def auditenergetique():
+    has,agr = getAgreement()
+    return render_template("prestations/auditenergetique.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/dimensionnement')
+def dimensionnement():
+    has,agr = getAgreement()
+    return render_template("prestations/dimensionnement.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/modelisation')
+def modelisation():
+    has,agr = getAgreement()
+    return render_template("prestations/modelisation.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/prototypage')
+def prototypage():
+    has,agr = getAgreement()
+    return render_template("prestations/prototypage.html",has_agreed=has,agreement=agr)
+
+
 @app.errorhandler(404)
 def knowhere(it):
     has,agr = getAgreement()
