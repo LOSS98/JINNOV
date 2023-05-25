@@ -72,6 +72,27 @@ def protectiondonnees():
     has,agr = getAgreement()
     return render_template("prestations/protectiondonnees.html",has_agreed=has,agreement=agr)
 
+@app.route('/prestations/audit_energetique')
+def auditenergetique():
+    has,agr = getAgreement()
+    return render_template("prestations/auditenergetique.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/dimensionnement')
+def dimensionnement():
+    has,agr = getAgreement()
+    return render_template("prestations/dimensionnement.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/modelisation')
+def modelisation():
+    has,agr = getAgreement()
+    return render_template("prestations/modelisation.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/prototypage')
+def prototypage():
+    has,agr = getAgreement()
+    return render_template("prestations/prototypage.html",has_agreed=has,agreement=agr)
+
+
 @app.errorhandler(404)
 def knowhere(it):
     has,agr = getAgreement()
@@ -90,7 +111,7 @@ load_dotenv()
 # Dirs
 os.makedirs("static/articles", exist_ok=True)
 os.makedirs("static/etudes", exist_ok=True)
-
+'''
 # Database System
 sql_connector.sql_connector = sql_connector.SQLConnector(
     host=os.getenv("DATABASE_HOST"),
@@ -99,7 +120,7 @@ sql_connector.sql_connector = sql_connector.SQLConnector(
     database=os.getenv("DATABASE_NAME"),
 )
 sql_connector.sql_connector.connect()
-
+'''
 # Secret Key reading
 if not os.path.exists("secret.key"):
     raise Exception("SecretKeyNotFound")

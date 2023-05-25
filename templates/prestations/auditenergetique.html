@@ -4,18 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/prestations/main.css') }}">
-    <title>JINNOV | Développement mobile</title>
+    <title>JINNOV | Audit Energétique</title>
 {% endblock %}
 
 {% block body %}
 <section class="section1">
-    <h1>Vous cherchez à créer une application mobile innovante pour votre entreprise ou vos clients ?</h1>
-    <p>Adoptez une stratégie numérique efficace et dynamisez votre entreprise grâce à une application mobile sur mesure qui captivera vos 
-        utilisateurs ! Que vous souhaitiez améliorer l'expérience client, augmenter l'engagement utilisateur ou développer un nouveau service, 
-        nous sommes à votre écoute.
-        <br><br> Chez JINNOV,
-        nous développons des applications mobiles personnalisées, conçues pour offrir une interface intuitive et une performance optimale. 
-        C'est votre chance d'offrir une nouvelle dimension à votre entreprise et de se distinguer dans l'espace mobile.</p>
+    <h1>Vous cherchez à optimiser l'efficacité énergétique de votre entreprise et à réduire votre empreinte écologique ?</h1>
+    <p> Immergez-vous dans le monde de l'efficacité énergétique et propulsez votre entreprise vers un futur durable avec un audit énergétique sur-mesure. Que vous souhaitiez améliorer l'efficacité de vos systèmes de chauffage, de refroidissement, d'éclairage ou de production d'énergie, notre équipe est prête à vous aider.
+        <br><br>
+        Chez JINNOV, nous réalisons des audits énergétiques détaillés, visant à réduire vos coûts d'exploitation tout en favorisant une utilisation plus responsable de l'énergie. Ne manquez pas cette chance de transformer votre entreprise en leader de la transition énergétique et de vous démarquer comme un pionnier écologique dans votre secteur.
+    </p>
     <br>
     <a href="{{url_for('contact')}}"> Nous contacter </a>
 </section>
@@ -34,51 +32,47 @@
             </div>
             <div id="section2">
                 <br>
-                <h1>Les bénéfices du développement mobile avec JINNOV</h1>
+                <h1>Les bénéfices de l’audit énergétique avec JINNOV</h1>
                 <div class="argument">
                     <div class="argumenttexte">
-                        <h2>Augmentez votre accessibilité et votre engagement client</h2>
-                        <p>Les applications mobiles offrent à vos client·e·s un accès instantané à vos services 
-                            et produits, où qu'ils soient. En proposant une application mobile, vous facilitez l’accès à votre entreprise et renforcez l'engagement client.
-
+                        <h2>Identifiez les sources d'économies d'énergie</h2>
+                        <p>Notre audit énergétique des bâtiments vous permet de détecter les zones d'inefficacités énergétiques et les sources de gaspillage. Nous identifions les mesures correctives et les améliorations possibles pour réduire votre consommation d'énergie et réaliser des économies sur vos factures.
                         </p>
                     </div>
                     <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/aimant.png') }}" alt="Aimant à prospects">
+                        <img src="{{ url_for('static', filename='img/prestations/lampeeco.png') }}" alt="Lampe écologique">
                     </div>
                 </div>
 
                 <div class="argument">
                     <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations//telephone.png') }}" alt="Téléphone utilisateur">
+                        <img src="{{ url_for('static', filename='img/prestations/maisontemperature.png') }}" alt="Maison avec conford thermique">
                     </div>
                     <div class="argumenttexte2">
-                        <h2>Offrez une expérience utilisateur optimisée et personnalisée
+                        <h2>Améliorez le confort thermique</h2>
+                        <p>L'audit en protection des données vous permet d'identifier les risques potentiels pour la confidentialité de vos données et de mettre en place des mesures de protection appropriées. Nous veillons à ce que vos informations sensibles restent confidentielles et à l'abri des accès non autorisés.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Réduisez votre empreinte environnementale</h2>
+                        <p>En diminuant votre consommation d'énergie, vous réduisez également les émissions de CO2 et l'impact environnemental de votre bâtiment. L'audit énergétique du bâtiment est une étape clé pour rendre votre structure plus respectueuse de l'environnement et contribuer à la lutte contre le changement climatique.</p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/co2minimal.png') }}" alt="CO2 minimal">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/maisonchere.png') }}" alt="Maison chère">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Valorisez votre patrimoine immobilier
                         </h2>
-                        <p>Nos solutions de développement mobile sont conçues pour offrir une expérience utilisateur adaptée aux smartphones et tablettes, assurant une navigation fluide et attrayante. Nous prenons en compte les attentes de vos clients et prospects pour créer une expérience utilisateur personnalisée et engageante.
-
-                        </p>
-                    </div>
-                </div>
-
-                <div class="argument">
-                    <div class="argumenttexte">
-                        <h2>Exploitez les fonctionnalités intégrées aux appareils mobiles</h2>
-                        <p>Les applications mobiles permettent d'utiliser les fonctionnalités natives des appareils pour offrir une expérience plus riche et interactive à vos utilisateurs. Profitez de la géolocalisation et des notifications pour améliorer votre relation client et stimuler l'engagement.                        </p>
-                    </div>
-                    <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/telnotif.png') }}" alt="Notifications téléphone">
-                    </div>
-                </div>
-
-                <div class="argument">
-                    <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/telparametres.png') }}" alt="Telephone avec parametres">
-                    </div>
-                    <div class="argumenttexte2">
-                        <h2>Assurez une maintenance et des mises à jour facilitées</h2>
-                        <p>Nos ingénieurs conçoivent des applications mobiles avec une architecture flexible et bien structurée, facilitant ainsi les modifications et les mises à jour ultérieures. Grâce à notre expertise, votre application s'adapte aisément aux évolutions technologiques et répond aux attentes de vos clients.
-                        </p>
+                        <p>Un bâtiment éco-énergétique est plus attractif sur le marché immobilier. En améliorant la performance énergétique de votre structure, vous augmentez sa valeur et la qualité de vie des occupants.</p>
                     </div>
                 </div>
 
@@ -106,30 +100,30 @@
                 </div>
             </div>
             <div class="step-content">
-                <h2>Analyse et planification</h2>
-                <p>Nous étudions vos besoins et vos objectifs pour définir la meilleure stratégie de développement mobile pour votre entreprise.</p>
+                <h2>Analyse des besoins et cadrage</h2>
+                <p>Nous évaluons vos besoins, vos objectifs et votre environnement pour définir le périmètre et les objectifs de l'audit énergétique.</p>
             </div>
         </div>
         <div class="step">
             <div class="icon-container-orange">
                 <div class="icon-wrapper">
-                    <img src="{{url_for('static', filename='img/prestations/design.png')}}" alt="Pinceau ordinateur" />
+                    <img src="{{url_for('static', filename='img/prestations/diagnosticenergetique.png')}}" alt="Prise de courant liée à une feuille" />
                 </div>
             </div>
             <div class="step-content">
-                <h2>Conception</h2>
-                <p>Nous créons des maquettes et des prototypes pour visualiser l'apparence et les fonctionnalités de votre application mobile.</p>
+                <h2>Diagnostic énergétique</h2>
+                <p>Nos experts réalisent une analyse détaillée de la performance énergétique de vos bâtiments, en étudiant leur enveloppe, leurs équipements et leur consommation d'énergie.</p>
             </div>
         </div>
         <div class="step">
             <div class="icon-container">
                 <div class="icon-wrapper">
-                    <img src="{{url_for('static', filename='img/prestations/devweb.png')}}" alt="Developpement de site web" />
+                    <img src="{{url_for('static', filename='img/prestations/rapportaudit.png')}}" alt="Rapport d'audit" />
                 </div>
             </div>
             <div class="step-content">
-                <h2>Développement et intégration</h2>
-                <p>Nous développons votre application mobile sur les plateformes iOS et Android en utilisant les technologies et les langages de programmation les plus adaptés.</p>
+                <h2>Rapport d'audit et recommandations</h2>
+                <p>Nous vous fournissons un rapport d'audit détaillé et clair, présentant les résultats de l'analyse, les problèmes identifiés et nos recommandations pour améliorer la performance énergétique de vos bâtiments.</p>
             </div>
         </div>
         <div class="step">
@@ -139,19 +133,8 @@
                 </div>
             </div>
             <div class="step-content">
-                <h2>Tests et optimisation</h2>
-                <p>Nous effectuons des tests rigoureux pour garantir la qualité, la performance et la sécurité de votre application mobile avant son lancement.</p>
-            </div>
-        </div>
-        <div class="step">
-            <div class="icon-container">
-                <div class="icon-wrapper">
-                    <img src="{{url_for('static', filename='img/prestations/lancement.png')}}" alt="Fusee" />
-                </div>
-            </div>
-            <div class="step-content">
-                <h2>Lancement et suivi</h2>
-                <p>Nous vous accompagnons dans le déploiement de votre application sur les stores et assurons un suivi pour optimiser son évolution et ses performances.</p>
+                <h2>Accompagnement dans la mise en œuvre</h2>
+                <p>Si nécessaire, notre équipe vous accompagne dans la mise en œuvre des améliorations recommandées pour vous assurer d'optimiser au mieux vos performances énergétiques.</p>
             </div>
         </div>
     </div>
@@ -177,7 +160,7 @@
             fonction de votre demande.</p>
         </div>
         <div class="card">
-          <img src="{{url_for('static', filename='img/prestations/qualité.png')}}" alt="Qualité" />
+          <img src="{{url_for('static', filename='img/prestations/qualité.png')}}" alt="Qualite" />
           <h3>Qualité</h3>
           <p>Un chargé qualité supervise votre 
             mission et s’assure de la qualité du 
@@ -187,7 +170,7 @@
     </div>
 </section>
 <section class="CTA">
-    <h2>Prêt à booster votre présence en ligne avec une application mobile sur-mesure ? <br>
+    <h2>Prêt à améliorer l'efficacité énergétique de vos bâtiments ?<br>
         Contactez-nous dès maintenant pour discuter de votre projet et 
         obtenir un devis personnalisé !</h2>
         <br>
