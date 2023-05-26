@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, make_response, render_template
 from dotenv import load_dotenv
 from models.database import sql_connector
 from models.utils import *
@@ -94,11 +94,12 @@ def prototypage():
 
 @app.route('/sitemap.xml')
 def sitemap():
-    return render_template("sitemap.xml")
+    return app.send_static_file('sitemap.xml')
 
 @app.route('/robots.txt')
 def robots():
-    return render_template("robots.txt")
+    return app.send_static_file('robots.txt')
+
 
 @app.errorhandler(404)
 def knowhere(it):
