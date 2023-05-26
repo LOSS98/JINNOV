@@ -36,7 +36,7 @@ def aboutus():
     return render_template("kisomnou.html",has_agreed=has,agreement=agr)
 
 
-@app.route("/etudes")
+'''@app.route("/etudes")
 def etudes():
     has,agr = getAgreement()
     return render_template("soon.html",has_agreed=has,agreement=agr)
@@ -45,7 +45,7 @@ def etudes():
 @app.route("/liste_membres")
 def liste_membres():
     has,agr = getAgreement()
-    return render_template("soon.html",has_agreed=has,agreement=agr)
+    return render_template("soon.html",has_agreed=has,agreement=agr)'''
 
 @app.route('/prestations')
 def presta():
