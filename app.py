@@ -92,6 +92,13 @@ def prototypage():
     has,agr = getAgreement()
     return render_template("prestations/prototypage.html",has_agreed=has,agreement=agr)
 
+@app.route('/sitemap.xml')
+def sitemap():
+    return render_template("sitemap.xml")
+
+@app.route('/robots.txt')
+def robots():
+    return render_template("robots.txt")
 
 @app.errorhandler(404)
 def knowhere(it):

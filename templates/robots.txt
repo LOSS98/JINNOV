@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://jinnov-insa.fr/sitemap.xml
