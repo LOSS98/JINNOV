@@ -24,7 +24,7 @@ body {
     /* height : 50 et width : 170*/
     position: absolute;
     top: 0;
-    width: 101%;
+    width: 100%;
     left: -0.1%;
     overflow: hidden;
     line-height: 0;
@@ -47,7 +47,7 @@ body {
 .bottom-wave {
     position: absolute;
     bottom: 0;
-    width: 101%;
+    width: 100%;
     left: -0.1%;
     overflow: hidden;
     line-height: 0;

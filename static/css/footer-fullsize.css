@@ -81,6 +81,17 @@ footer div#footer-third-column img {
 }
 
 footer #legal-mentions{
-    text-align: center;
-    font-size: 100%;
+    text-align: center; 
 }
+
+/*@media screen and (min-width: 0px) {
+    footer #legal-mentions{
+        font-size: 50%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    footer #legal-mentions{
+        font-size: 100%;
+    }
+}*/

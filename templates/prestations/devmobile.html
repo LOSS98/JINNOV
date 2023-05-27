@@ -4,19 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/prestations/main.css') }}">
-    <title>JINNOV | Développement web</title>
+    <title>JINNOV | Développement mobile</title>
 {% endblock %}
 
 {% block body %}
 <section class="section1">
-    <h1>Vous souhaitez digitaliser votre entreprise et créer un site web performant ?</h1>
-    <p>Plongez dans le monde digital et propulsez votre entreprise grâce à un site web sur-mesure qui saura attirer et fidéliser vos clients ! 
-        Que vous recherchiez un site e-commerce pour booster vos ventes, un site vitrine pour présenter votre entreprise de manière attrayante, 
-        un blog pour partager votre expertise ou un site institutionnel pour renforcer votre crédibilité, nous sommes là pour vous. 
-        <br><br>Chez JINNOV, 
-        nous créons des sites web personnalisés, optimisés pour le référencement naturel (SEO), afin d'améliorer votre visibilité en ligne et 
-        d'accroître votre succès. Saisissez cette opportunité de donner un coup d'accélérateur à votre entreprise et de vous démarquer dans 
-        l'univers numérique.</p>
+    <h1>Vous cherchez à créer une application mobile innovante pour votre entreprise ou vos clients ?</h1>
+    <p>Adoptez une stratégie numérique efficace et dynamisez votre entreprise grâce à une application mobile sur mesure qui captivera vos 
+        utilisateurs ! Que vous souhaitiez améliorer l'expérience client, augmenter l'engagement utilisateur ou développer un nouveau service, 
+        nous sommes à votre écoute.
+        <br><br> Chez JINNOV,
+        nous développons des applications mobiles personnalisées, conçues pour offrir une interface intuitive et une performance optimale. 
+        C'est votre chance d'offrir une nouvelle dimension à votre entreprise et de se distinguer dans l'espace mobile.</p>
     <br>
     <a href="{{url_for('contact')}}"> Nous contacter </a>
 </section>
@@ -35,73 +34,51 @@
             </div>
             <div id="section2">
                 <br>
-                <h1>Les bénéfices du développement web avec JINNOV</h1>
+                <h1>Les bénéfices du développement mobile avec JINNOV</h1>
                 <div class="argument">
                     <div class="argumenttexte">
-                        <h2>Accompagnez la transition de votre entreprise au numérique</h2>
-                        <p>Positionnez votre entreprise avec succès dans le monde du digital. Un site web optimal vous
-                            permettra d'attirer de nouveaux clients,
-                            de renforcer votre image de marque et d'augmenter votre visibilité en ligne. Profitez de
-                            notre expertise pour vous démarquer de la
-                            concurrence et réussir dans un monde numérique de plus en plus exigeant.
+                        <h2>Augmentez votre accessibilité et votre engagement client</h2>
+                        <p>Les applications mobiles offrent à vos client·e·s un accès instantané à vos services 
+                            et produits, où qu'ils soient. En proposant une application mobile, vous facilitez l’accès à votre entreprise et renforcez l'engagement client.
+
                         </p>
                     </div>
                     <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/transitionnum.png') }}" alt="Site web">
+                        <img src="{{ url_for('static', filename='img/prestations/aimant.png') }}" alt="Aimant à prospects">
                     </div>
                 </div>
 
                 <div class="argument">
                     <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/lentilles.png') }}" alt="Jumelles">
+                        <img src="{{ url_for('static', filename='img/prestations/telephone.png') }}" alt="Téléphone utilisateur">
                     </div>
                     <div class="argumenttexte2">
-                        <h2>Renforcez votre présence sur le marché</h2>
-                        <p>Présentez votre entreprise et mettez en avant vos avantages concurrentiels au plus vite. Le
-                            développement d’un site vitrine
-                            est rapide et vous permet d’augmenter votre visibilité et crédibilité auprès de vos
-                            prospects.
+                        <h2>Offrez une expérience utilisateur optimisée et personnalisée
+                        </h2>
+                        <p>Nos solutions de développement mobile sont conçues pour offrir une expérience utilisateur adaptée aux smartphones et tablettes, assurant une navigation fluide et attrayante. Nous prenons en compte les attentes de vos clients et prospects pour créer une expérience utilisateur personnalisée et engageante.
+
                         </p>
                     </div>
                 </div>
 
                 <div class="argument">
                     <div class="argumenttexte">
-                        <h2>Offrez une expérience utilisateur fluide et intuitive</h2>
-                        <p>Proposez à vos visiteurs une navigation agréable et efficace. Nos solutions de
-                            digitalisation sont conçues pour offrir une expérience utilisateur optimale, adaptée à
-                            tous les appareils pour répondre aux attentes de vos clients et prospects,
-                            encourageant ainsi l'engagement et la fidélisation.</p>
+                        <h2>Exploitez les fonctionnalités intégrées aux appareils mobiles</h2>
+                        <p>Les applications mobiles permettent d'utiliser les fonctionnalités natives des appareils pour offrir une expérience plus riche et interactive à vos utilisateurs. Profitez de la géolocalisation et des notifications pour améliorer votre relation client et stimuler l'engagement.                        </p>
                     </div>
                     <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/telephone.png') }}" alt="Telephone utilisateur">
+                        <img src="{{ url_for('static', filename='img/prestations/telnotif.png') }}" alt="Notifications téléphone">
                     </div>
                 </div>
 
                 <div class="argument">
                     <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/collaboration.png') }}" alt="Serrage de main">
+                        <img src="{{ url_for('static', filename='img/prestations/telparametres.png') }}" alt="Telephone avec parametres">
                     </div>
                     <div class="argumenttexte2">
-                        <h2>Convertissez tous vos prospects en clients</h2>
-                        <p>Nous travaillons à optimiser votre tunnel de conversion et à mettre en place des
-                            stratégies efficaces pour transformer vos visiteurs en clients. Grâce à des appels
-                            à l'action clairs, des formulaires de contact simplifiés et un contenu pertinent,
-                            nous vous aidons à générer des leads qualifiés et à augmenter vos ventes.</p>
-                    </div>
-                </div>
-
-                <div class="argument">
-                    <div class="argumenttexte">
-                        <h2>Optimisez votre visibilité en ligne</h2>
-                        <p>Augmentez la visibilité de votre site web sur les moteurs de recherche et
-                            attirez un trafic qualifié. Nous travaillons sur les aspects techniques, le
-                            contenu et la popularité de votre site pour améliorer sa position dans les
-                            résultats de recherche et générer un trafic organique ciblé, essentiel pour
-                            la croissance de votre entreprise.</p>
-                    </div>
-                    <div class="argumentimage">
-                        <img src="{{ url_for('static', filename='img/prestations/visibilite.png') }}" alt="Ordinateur boost">
+                        <h2>Assurez une maintenance et des mises à jour facilitées</h2>
+                        <p>Nos ingénieurs conçoivent des applications mobiles avec une architecture flexible et bien structurée, facilitant ainsi les modifications et les mises à jour ultérieures. Grâce à notre expertise, votre application s'adapte aisément aux évolutions technologiques et répond aux attentes de vos clients.
+                        </p>
                     </div>
                 </div>
 
@@ -130,7 +107,7 @@
             </div>
             <div class="step-content">
                 <h2>Analyse et planification</h2>
-                <p>Nous évaluons vos besoins, définissons vos objectifs et élaborons un plan détaillé pour votre projet de développement web.</p>
+                <p>Nous étudions vos besoins et vos objectifs pour définir la meilleure stratégie de développement mobile pour votre entreprise.</p>
             </div>
         </div>
         <div class="step">
@@ -141,7 +118,7 @@
             </div>
             <div class="step-content">
                 <h2>Conception</h2>
-                <p>Nous créons des maquettes pour vous permettre de visualiser et valider le rendu final de votre site web avant le début du développement.</p>
+                <p>Nous créons des maquettes et des prototypes pour visualiser l'apparence et les fonctionnalités de votre application mobile.</p>
             </div>
         </div>
         <div class="step">
@@ -152,7 +129,7 @@
             </div>
             <div class="step-content">
                 <h2>Développement et intégration</h2>
-                <p>Nous mettons en œuvre les fonctionnalités nécessaires pour que votre site réponde à vos attentes, en gardant un contact constant avec vous pour être au plus proche de vos besoins.</p>
+                <p>Nous développons votre application mobile sur les plateformes iOS et Android en utilisant les technologies et les langages de programmation les plus adaptés.</p>
             </div>
         </div>
         <div class="step">
@@ -163,7 +140,7 @@
             </div>
             <div class="step-content">
                 <h2>Tests et optimisation</h2>
-                <p>Nous vérifions la qualité et la performance de votre site web sur différents appareils et navigateurs pour garantir une expérience utilisateur optimale.</p>
+                <p>Nous effectuons des tests rigoureux pour garantir la qualité, la performance et la sécurité de votre application mobile avant son lancement.</p>
             </div>
         </div>
         <div class="step">
@@ -173,8 +150,8 @@
                 </div>
             </div>
             <div class="step-content">
-                <h2>Lancement et début de la garantie</h2>
-                <p>Après la mise en ligne de votre site, nous assurons une période de garantie pour que vous puissiez vous assurer de son fonctionnement et être entièrement satisfait.</p>
+                <h2>Lancement et suivi</h2>
+                <p>Nous vous accompagnons dans le déploiement de votre application sur les stores et assurons un suivi pour optimiser son évolution et ses performances.</p>
             </div>
         </div>
     </div>
@@ -210,7 +187,7 @@
     </div>
 </section>
 <section class="CTA">
-    <h2>Prêt à booster votre présence en ligne avec un site web sur-mesure ? <br>
+    <h2>Prêt à booster votre présence en ligne avec une application mobile sur-mesure ? <br>
         Contactez-nous dès maintenant pour discuter de votre projet et 
         obtenir un devis personnalisé !</h2>
         <br>
