@@ -71,6 +71,14 @@ a {
     margin-top: -8vh;
 }*/
 
+svg#out_wave {
+    position: relative;
+    display: block;
+    margin-bottom: -1px;
+    border: 0px;
+    transform: translateY(2px);
+}
+
 #slogan {
     margin-top: calc(2.2vh - 20px);
     margin-bottom: 50px;
@@ -171,6 +179,12 @@ a {
     display: contents;
     text-decoration: none;
     color : black;
+}
+
+#bordertop svg{
+    position: relative;
+    display: block;
+    margin-bottom: -1px;
 }
 
 #bordertop img {
