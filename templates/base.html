@@ -14,6 +14,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+        <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11146796969"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11146796969'); </script>
         {% block head %}{% endblock %}
         <script>
             var has_agreed = {{has_agreed}};
@@ -81,13 +82,6 @@
                                 Qui sommes-nous ?
                             </a>
                         </li>
-                        <ul>
-                            <li>
-                                <a href="{{url_for('liste_membres')}}">
-                                    Liste des membres
-                                </a>
-                            </li>
-                        </ul>
                         <li>
                             <a href="{{url_for('core.articles')}}">
                                 Nos actualités
@@ -163,7 +157,7 @@
                 </div>
             </div>
             <div id="legal-mentions">
-                <p>2021-2023 JINNOV | INSA Hauts-de-France</p>
+                <p>2022-2023 JINNOV | INSA Hauts-de-France</p>
             </div>
         </footer>
     </body>

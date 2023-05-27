@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prestations/main.css') }}">
+    <title>JINNOV | Audit Energétique</title>
+{% endblock %}
+
+{% block body %}
+<section class="section1">
+    <h1>Vous cherchez à optimiser l'efficacité énergétique de votre entreprise et à réduire votre empreinte écologique ?</h1>
+    <p> Immergez-vous dans le monde de l'efficacité énergétique et propulsez votre entreprise vers un futur durable avec un audit énergétique sur-mesure. Que vous souhaitiez améliorer l'efficacité de vos systèmes de chauffage, de refroidissement, d'éclairage ou de production d'énergie, notre équipe est prête à vous aider.
+        <br><br>
+        Chez JINNOV, nous réalisons des audits énergétiques détaillés, visant à réduire vos coûts d'exploitation tout en favorisant une utilisation plus responsable de l'énergie. Ne manquez pas cette chance de transformer votre entreprise en leader de la transition énergétique et de vous démarquer comme un pionnier écologique dans votre secteur.
+    </p>
+    <br>
+    <a href="{{url_for('contact')}}"> Nous contacter </a>
+</section>
+<br><br>
+
+<div style="position: relative; background-color: #2F2F2F;">
+    <div style="position: relative; background-color: #2F2F2F;">
+        <div id="section2-container" style="position: relative;">
+            <div class="top-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div id="section2">
+                <br>
+                <h1>Les bénéfices de l’audit énergétique avec JINNOV</h1>
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Identifiez les sources d'économies d'énergie</h2>
+                        <p>Notre audit énergétique des bâtiments vous permet de détecter les zones d'inefficacités énergétiques et les sources de gaspillage. Nous identifions les mesures correctives et les améliorations possibles pour réduire votre consommation d'énergie et réaliser des économies sur vos factures.
+                        </p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/lampeeco.png') }}" alt="Lampe écologique">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/maisontemperature.png') }}" alt="Maison avec conford thermique">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Améliorez le confort thermique</h2>
+                        <p>L'audit en protection des données vous permet d'identifier les risques potentiels pour la confidentialité de vos données et de mettre en place des mesures de protection appropriées. Nous veillons à ce que vos informations sensibles restent confidentielles et à l'abri des accès non autorisés.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Réduisez votre empreinte environnementale</h2>
+                        <p>En diminuant votre consommation d'énergie, vous réduisez également les émissions de CO2 et l'impact environnemental de votre bâtiment. L'audit énergétique du bâtiment est une étape clé pour rendre votre structure plus respectueuse de l'environnement et contribuer à la lutte contre le changement climatique.</p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/co2minimal.png') }}" alt="CO2 minimal">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/maisonchere.png') }}" alt="Maison chère">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Valorisez votre patrimoine immobilier
+                        </h2>
+                        <p>Un bâtiment éco-énergétique est plus attractif sur le marché immobilier. En améliorant la performance énergétique de votre structure, vous augmentez sa valeur et la qualité de vie des occupants.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="bottom-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<section class="method">
+    <h1>Découvrez notre méthode de travail</h1>
+    <div class="steps">
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/analyse.png')}}" alt="Loupe engrenage" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Analyse des besoins et cadrage</h2>
+                <p>Nous évaluons vos besoins, vos objectifs et votre environnement pour définir le périmètre et les objectifs de l'audit énergétique.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/diagnosticenergetique.png')}}" alt="Prise de courant liée à une feuille" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Diagnostic énergétique</h2>
+                <p>Nos experts réalisent une analyse détaillée de la performance énergétique de vos bâtiments, en étudiant leur enveloppe, leurs équipements et leur consommation d'énergie.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/rapportaudit.png')}}" alt="Rapport d'audit" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Rapport d'audit et recommandations</h2>
+                <p>Nous vous fournissons un rapport d'audit détaillé et clair, présentant les résultats de l'analyse, les problèmes identifiés et nos recommandations pour améliorer la performance énergétique de vos bâtiments.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/optimisation.png')}}" alt="Vitesse rapide" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Accompagnement dans la mise en œuvre</h2>
+                <p>Si nécessaire, notre équipe vous accompagne dans la mise en œuvre des améliorations recommandées pour vous assurer d'optimiser au mieux vos performances énergétiques.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+
+<section class="confiance">
+    <h1>Pourquoi nous faire confiance ?</h1>
+    <div class="pourquoinouscontainer">
+      <div class="cards-container">
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/accompagnement.png')}}" alt="Accompagnement" />
+          <h3>Accompagnement</h3>
+          <p>Un chargé d'affaires est à votre 
+            disposition et suit votre mission de 
+            A à Z.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/personnalisation.png')}}" alt="Personnalisation" />
+          <h3>Personnalisation</h3>
+          <p>Toutes nos missions sont uniques. 
+            Nous nous adaptons à 100% en 
+            fonction de votre demande.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/qualité.png')}}" alt="Qualite" />
+          <h3>Qualité</h3>
+          <p>Un chargé qualité supervise votre 
+            mission et s’assure de la qualité du 
+            livrable fournit.</p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="CTA">
+    <h2>Prêt à améliorer l'efficacité énergétique de vos bâtiments ?<br>
+        Contactez-nous dès maintenant pour discuter de votre projet et 
+        obtenir un devis personnalisé !</h2>
+        <br>
+        <a href="{{url_for('contact')}}#devis">Demander un devis</a>
+</section>
+{% endblock %}

@@ -17,6 +17,11 @@ body {
     margin-right: 20%;
 }
 
+#prestalist li a {
+    text-decoration: none;
+    color: #3d5467;
+}
+
 .ptitle {
     font-size: 200%;
 }

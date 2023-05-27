@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prestations/main.css') }}">
+    <title>JINNOV | Audit de systèmes informatiques</title>
+{% endblock %}
+
+{% block body %}
+<section class="section1">
+    <h1>Vous cherchez à optimiser vos systèmes informatiques ?</h1>
+    <p>Assurez la sécurité de vos systèmes informatiques et protégez votre entreprise contre les cybermenaces avec nos audits informatiques !
+        Que vous ayez besoin d'évaluer votre infrastructure, de renforcer la sécurité de vos données ou d'optimiser vos systèmes, nous sommes là pour vous aider.
+        <br><br> Chez JINNOV,
+        nous effectuons des audits informatiques détaillés pour identifier les points forts et les axes d'amélioration de vos systèmes informatiques. Saisissez cette opportunité pour garantir la fiabilité, la performance et la sécurité de votre infrastructure informatique.
+    </p>
+    <br>
+    <a href="{{url_for('contact')}}"> Nous contacter </a>
+</section>
+<br><br>
+
+<div style="position: relative; background-color: #2F2F2F;">
+    <div style="position: relative; background-color: #2F2F2F;">
+        <div id="section2-container" style="position: relative;">
+            <div class="top-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div id="section2">
+                <br>
+                <h1>Les bénéfices des audits informatiques avec JINNOV</h1>
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Evaluez l'efficacité de vos systèmes informatiques</h2>
+                        <p>Nos audits informatiques vous permettent d'identifier les points forts et les axes d'amélioration de vos systèmes informatiques. En évaluant leur performance, leur fiabilité et leur sécurité, nous vous aidons à optimiser vos infrastructures et à garantir leur bon fonctionnement.
+                        </p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/inspection.png') }}" alt="Inspection">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/protectionnoir.png') }}" alt="Protection des données">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Garantissez la sécurité de vos données</h2>
+                        <p>La sécurité de vos données est une priorité absolue. Nos audits informatiques permettent d'évaluer les risques potentiels et de mettre en place des mesures de protection adaptées pour assurer la confidentialité, l'intégrité et la disponibilité de vos informations sensibles.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Optimisez vos coûts et votre productivité</h2>
+                        <p>Un audit informatique vous permet d'identifier les inefficacités de votre système et de mettre en œuvre des solutions pour réduire les coûts et améliorer la productivité. En optimisant vos infrastructures, vous pouvez ainsi dégager des ressources pour investir dans d'autres domaines de votre entreprise.
+                        </p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/optimisertemps.png') }}" alt="Optimisation du temps">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/planeteevolutions.png') }}" alt="Evolution mondiale">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Anticipez les évolutions technologiques
+                        </h2>
+                        <p>Nos ingénieurs sont à l'écoute des dernières tendances et innovations technologiques. En réalisant un audit de vos systèmes informatiques, nous vous aidons à anticiper les évolutions du marché et à vous adapter rapidement pour conserver votre avantage concurrentiel.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="bottom-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<section class="method">
+    <h1>Découvrez notre méthode de travail</h1>
+    <div class="steps">
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/analyse.png')}}" alt="Loupe engrenage" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Analyse des besoins et cadrage</h2>
+                <p>Nous commençons par évaluer vos besoins, vos objectifs et votre environnement informatique pour définir le périmètre et les objectifs de l'audit.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/diagnosticordi.png')}}" alt="Diagnostic" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Diagnostic de l'infrastructure</h2>
+                <p>Nous analysons en détail votre infrastructure, votre réseau et vos systèmes d'information pour identifier les points forts et les points faibles de votre système informatique.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/devweb.png')}}" alt="Diagnostic" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Tests et optimisation</h2>
+                <p>Nous vérifions la qualité et la performance de votre site web sur différents appareils et navigateurs pour garantir une expérience utilisateur optimale.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/optimisation.png')}}" alt="Vitesse rapide" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Rapport d'audit et recommandations</h2>
+                <p>Nous vous fournissons un rapport d'audit détaillé et clair, présentant les résultats de l'analyse, les problèmes identifiés et nos recommandations pour améliorer votre infrastructure informatique.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/lancement.png')}}" alt="Fusee" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Accompagnement dans la mise en œuvre</h2>
+                <p>Si nécessaire, notre équipe vous accompagne dans la mise en œuvre des améliorations recommandées pour vous assurer d'obtenir les meilleurs résultats et une infrastructure informatique optimale.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+
+<section class="confiance">
+    <h1>Pourquoi nous faire confiance ?</h1>
+    <div class="pourquoinouscontainer">
+      <div class="cards-container">
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/accompagnement.png')}}" alt="Accompagnement" />
+          <h3>Accompagnement</h3>
+          <p>Un chargé d'affaires est à votre 
+            disposition et suit votre mission de 
+            A à Z.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/personnalisation.png')}}" alt="Personnalisation" />
+          <h3>Personnalisation</h3>
+          <p>Toutes nos missions sont uniques. 
+            Nous nous adaptons à 100% en 
+            fonction de votre demande.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/qualité.png')}}" alt="Qualite" />
+          <h3>Qualité</h3>
+          <p>Un chargé qualité supervise votre 
+            mission et s’assure de la qualité du 
+            livrable fournit.</p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="CTA">
+    <h2>Prêt à booster vos performances grâce à nos audits informatiques ?<br>
+        Contactez-nous dès maintenant pour discuter de votre projet et 
+        obtenir un devis personnalisé !</h2>
+        <br>
+        <a href="{{url_for('contact')}}#devis">Demander un devis</a>
+</section>
+{% endblock %}

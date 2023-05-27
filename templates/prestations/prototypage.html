@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prestations/main.css') }}">
+    <title>JINNOV | Prototypage / Fabrication additive</title>
+{% endblock %}
+
+{% block body %}
+<section class="section1">
+    <h1>Vous souhaitez concrétiser vos idées innovantes et de passer rapidement de la conception à la réalisation ?</h1>
+    <p> Plongez dans le monde du prototypage et de la fabrication additive avec JINNOV. Que vous ayez besoin d'un prototype pour valider une nouvelle conception, d'une série limitée pour tester le marché, ou d'une production en petite série, nous pouvons vous aider.
+        <br><br>
+        Chez JINNOV, nous tirons parti de la fabrication additive pour transformer vos idées en réalité tangible, rapidement et efficacement. Saisissez cette opportunité de donner vie à vos innovations et de vous démarquer comme un pionnier dans l'univers de la fabrication numérique.
+    </p>
+    <br>
+    <a href="{{url_for('contact')}}"> Nous contacter </a>
+</section>
+<br><br>
+
+<div style="position: relative; background-color: #2F2F2F;">
+    <div style="position: relative; background-color: #2F2F2F;">
+        <div id="section2-container" style="position: relative;">
+            <div class="top-wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div id="section2">
+                <br>
+                <h1>Les bénéfices de la fabrication additive avec JINNOV</h1>
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Pour valider rapidement vos idées</h2>
+                        <p>La fabrication additive permet de créer rapidement des prototypes fonctionnels pour tester et valider vos concepts avant de passer à la production en série. Gagnez du temps et minimisez les risques en validant vos idées avant d'investir dans la production.</p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/validerlogo.png') }}" alt="Bouclier protection">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/efficientmateriaux.png') }}" alt="Données chiffrées">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Pour une personnalisation et une flexibilité accrues</h2>
+                        <p>Le prototypage rapide et la fabrication additive offrent une grande liberté de conception, vous permettant de créer des pièces personnalisées et adaptées à vos besoins spécifiques.</p>
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Pour une production à la demande</h2>
+                        <p>La fabrication additive permet de produire des pièces en petite série ou à la demande, réduisant les coûts de stockage et facilitant la gestion de votre chaîne d'approvisionnement. Profitez de cette flexibilité pour répondre rapidement aux besoins de vos clients et vous adapter aux évolutions du marché.</p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/productiondemande.png') }}" alt="Serrure fermée">
+                    </div>
+                </div>
+
+                <div class="argument">
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/devdurable.png') }}" alt="Ordinateur protégé">
+                    </div>
+                    <div class="argumenttexte2">
+                        <h2>Pour un développement durable</h2>
+                        <p>La fabrication additive réduit les déchets de matériaux et optimise l'utilisation des ressources, contribuant ainsi à la réduction de l'impact environnemental de vos projets.</p>
+                    </div>
+                </div>
+                <div class="argument">
+                    <div class="argumenttexte">
+                        <h2>Pour une collaboration étroite avec nos ingénieurs</h2>
+                        <p>Notre équipe d'ingénieurs vous accompagne tout au long du processus de prototypage et de fabrication additive, de la conception à la production des pièces. Bénéficiez de leur expertise pour optimiser vos projets et tirer le meilleur parti des technologies de fabrication additive.</p>
+                    </div>
+                    <div class="argumentimage">
+                        <img src="{{ url_for('static', filename='img/prestations/collaboration.png') }}" alt="Ordinateur boost">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="bottom-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<section class="method">
+    <h1>Découvrez notre méthode de travail</h1>
+    <div class="steps">
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/analyse.png')}}" alt="Loupe engrenage" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Analyse des besoins et définition du projet</h2>
+                <p>Nous évaluons vos besoins et vos objectifs pour déterminer les spécificités de votre projet et les contraintes à prendre en compte lors du prototypage et de la fabrication additive.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/design.png')}}" alt="Pinceau ordinateur" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Conception et modélisation</h2>
+                <p>Nos ingénieurs réalisent des modélisations 3D précises et détaillées pour concevoir des prototypes optimisés, en tenant compte des contraintes techniques, réglementaires et environnementales.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/rapportaudit.png')}}" alt="Rapport d'audit" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Prototypage et fabrication additive</h2>
+                <p>Nous utilisons des technologies d'impression 3D avancées pour créer rapidement des prototypes fonctionnels et des produits sur-mesure, en respectant les normes de qualité et de durabilité.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="icon-container-orange">
+                <div class="icon-wrapper">
+                    <img src="{{url_for('static', filename='img/prestations/optimisation.png')}}" alt="Vitesse rapide" />
+                </div>
+            </div>
+            <div class="step-content">
+                <h2>Suivi et assistance technique</h2>
+                <p>Notre équipe vous accompagne tout au long de la réalisation de votre projet pour s'assurer que les prototypes et les produits finaux répondent à vos attentes et pour vous aider à résoudre d'éventuelles difficultés rencontrées lors du processus de développement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+
+<section class="confiance">
+    <h1>Pourquoi nous faire confiance ?</h1>
+    <div class="pourquoinouscontainer">
+      <div class="cards-container">
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/accompagnement.png')}}" alt="Accompagnement" />
+          <h3>Accompagnement</h3>
+          <p>Un chargé d'affaires est à votre 
+            disposition et suit votre mission de 
+            A à Z.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/personnalisation.png')}}" alt="Personnalisation" />
+          <h3>Personnalisation</h3>
+          <p>Toutes nos missions sont uniques. 
+            Nous nous adaptons à 100% en 
+            fonction de votre demande.</p>
+        </div>
+        <div class="card">
+          <img src="{{url_for('static', filename='img/prestations/qualité.png')}}" alt="Qualite" />
+          <h3>Qualité</h3>
+          <p>Un chargé qualité supervise votre 
+            mission et s’assure de la qualité du 
+            livrable fournit.</p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="CTA">
+    <h2>Prêt à accélérer le développement de vos produits grâce au prototypage et à la fabrication additive ?<br>
+        Contactez-nous dès maintenant pour discuter de votre projet et 
+        obtenir un devis personnalisé !</h2>
+        <br>
+        <a href="{{url_for('contact')}}#devis">Demander un devis</a>
+</section>
+{% endblock %}

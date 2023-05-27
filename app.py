@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, make_response, render_template
 from dotenv import load_dotenv
 from models.database import sql_connector
 from models.utils import *
@@ -36,7 +36,7 @@ def aboutus():
     return render_template("kisomnou.html",has_agreed=has,agreement=agr)
 
 
-@app.route("/etudes")
+'''@app.route("/etudes")
 def etudes():
     has,agr = getAgreement()
     return render_template("soon.html",has_agreed=has,agreement=agr)
@@ -45,12 +45,61 @@ def etudes():
 @app.route("/liste_membres")
 def liste_membres():
     has,agr = getAgreement()
-    return render_template("soon.html",has_agreed=has,agreement=agr)
+    return render_template("soon.html",has_agreed=has,agreement=agr)'''
 
 @app.route('/prestations')
 def presta():
     has,agr = getAgreement()
     return render_template("presta.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/developpement_web')
+def devweb():
+    has,agr = getAgreement()
+    return render_template("prestations/devweb.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/developpement_mobile')
+def devmobile():
+    has,agr = getAgreement()
+    return render_template("prestations/devmobile.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/audit_informatique')
+def auditinfo():
+    has,agr = getAgreement()
+    return render_template("prestations/auditinfo.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/protections_des_donnees')
+def protectiondonnees():
+    has,agr = getAgreement()
+    return render_template("prestations/protectiondonnees.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/audit_energetique')
+def auditenergetique():
+    has,agr = getAgreement()
+    return render_template("prestations/auditenergetique.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/dimensionnement')
+def dimensionnement():
+    has,agr = getAgreement()
+    return render_template("prestations/dimensionnement.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/modelisation')
+def modelisation():
+    has,agr = getAgreement()
+    return render_template("prestations/modelisation.html",has_agreed=has,agreement=agr)
+
+@app.route('/prestations/prototypage')
+def prototypage():
+    has,agr = getAgreement()
+    return render_template("prestations/prototypage.html",has_agreed=has,agreement=agr)
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return app.send_static_file('sitemap.xml')
+
+@app.route('/robots.txt')
+def robots():
+    return app.send_static_file('robots.txt')
+
 
 @app.errorhandler(404)
 def knowhere(it):
