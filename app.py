@@ -94,20 +94,12 @@ def prototypage():
 
 @app.route('/sitemap.xml')
 def sitemap():
-<<<<<<< HEAD
     return app.send_static_file('sitemap.xml')
 
 @app.route('/robots.txt')
 def robots():
     return app.send_static_file('robots.txt')
 
-=======
-    return render_template("sitemap.xml")
-
-@app.route('/robots.txt')
-def robots():
-    return render_template("robots.txt")
->>>>>>> 50ef611 (Ajout du sitemap.xml et du fichier robots.txt)
 
 @app.errorhandler(404)
 def knowhere(it):
