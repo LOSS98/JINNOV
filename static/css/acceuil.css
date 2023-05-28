@@ -66,11 +66,6 @@ a {
     height: 17vh;
 }
 
-/*svg#out_wave {
-    width: 100vw;
-    margin-top: -8vh;
-}*/
-
 svg#out_wave {
     position: relative;
     display: block;
@@ -474,13 +469,6 @@ svg#out_wave {
     
 }
 
-@media screen and (max-width : 1050px) {
-    /*svg#out_wave {
-        width: 100vw;
-        margin-top: -6vh;
-    }*/
-}
-
 @media screen and (orientation : portrait),
 screen and (max-width : 750px) and (orientation : landscape) {
     body {
@@ -515,11 +503,6 @@ screen and (max-width : 750px) and (orientation : landscape) {
         margin-left: 1vw;
         margin-right: 1vw;
     }
-
-    /*svg#out_wave {
-        margin-top: -3vh;
-        margin-bottom: -1px;
-    }*/
 
     #slogan {
         margin-top: 7vh;
